@@ -1,0 +1,37 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --toastify-color-success: #a13a66; /* Vino frambuesa */
+    --toastify-color-error: #c8083d;   /* Rojo acento */
+    --toastify-color-warning: #e4b8c2; /* Rosa empolvado */
+    --toastify-color-info: #4c1938;    /* Vino oscuro */
+    --toastify-color-light: #fff9f6;   /* Fondo crema */
+  }
+
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+/* Transición más suave para el submenú */
+.submenu-transition {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+  

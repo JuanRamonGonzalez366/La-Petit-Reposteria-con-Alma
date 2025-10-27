@@ -1,0 +1,117 @@
+{
+  "home": {
+    "bannerTitle": "Petit",
+    "bannerSubtitle": "Repostería con alma",
+    "bannerButton": "Ver más",
+
+    "featuredTitle": "Productos Destacados",
+
+    "troncoName": "Pastel Tronco de Cereza",
+    "troncoDesc": "Rollo de bizcocho de chocolate relleno de cereza cubierto de ganache de chocolate.",
+
+    "rusoName": "Pastel Ruso Blanco",
+    "rusoDesc": "Bizcocho de vainilla bañado con licor de café, cubierto con almendras tostadas y decorado con salsa de moka.",
+
+    "tiramisuName": "Tiramisú",
+    "tiramisuDesc": "Inspirado en el tradicional postre italiano proveniente de la región del Véneto.",
+
+    "aboutTitle": "Quiénes Somos",
+    "aboutText": "En Petit Plaisir, somos una casa de repostería con más de 20 años de experiencia elaborando productos como pasteles, galletas, panadería, postres, gelatinas y más. Todo lo que ofrecemos está hecho con recetas propias, ingredientes naturales y los valores que nos caracterizan: dedicación, esfuerzo, amor y respeto en cada creación.",
+
+    "ctaTitle": "¿Quieres personalizar tu pedido?",
+    "ctaText": "Contáctanos y endulza tus momentos más especiales.",
+    "ctaButton": "Contáctanos",
+
+    "contactTitle": "Contáctanos",
+    "contactText": "Estamos listos para atenderte y endulzar tus momentos especiales. Llámanos, escríbenos o visítanos en nuestra sucursal.",
+    "contactWhatsapp": "Quejas y Sugerencias",
+    "contactAddress":"Dirección",
+    "contactSocial":"Siguenos en nuestras redes sociales",
+
+    "commentsTitle": "Deja tu comentario",
+    "commentName": "Nombre",
+    "commentEmail": "Correo electrónico",
+    "commentMessage": "Mensaje",
+    "sendMessage": "Enviar mensaje",
+    "sending": "Enviando...",
+    "commentsList": "Comentarios recientes",
+
+    "promoTitle":"Novedades",
+    "promoName": "Dia de Muertos",
+    "promoText1": "Pan de muerto tan rico, que hasta la calaca lo disfruta",
+    "promoText2": "Porque los muertos también tienen buen paladar",
+    "promoText3": "No es solo pan… es recuerdo, es sabor, es homenaje",
+    "promoButton": "Ver más"
+
+  },
+
+  "cart": {
+    "title": "Tu pedido",
+    "empty": "Tu carrito está vacío 🍰",
+    "total": "Total",
+    "whatsapp": "Enviar pedido por WhatsApp",
+    "clear": "Vaciar carrito"
+  },
+
+  "header": {
+    "home": "Inicio",
+    "products": "Productos",
+    "cafeteria": "Cafetería",
+    "sucursales": "Sucursales",
+    "jobs": "Bolsa de Trabajo",
+    "billing": "Facturación",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
+  },
+
+  "sucursales": {
+    "sucursalesTitle":"Nuestras Sucursales",
+    "sucursalesSubTitle":"Encuentra tu Petit Reposteria con Alma más cercano y disfruta de nuestras delicias en cualquiera de nuestras sucursales con servicio de cafetería y Rappi.",
+    "sucursalesButton":"Ver Ubicación"
+  },
+
+  "special": {
+  "title": "Pedidos Especiales",
+  "subtitle": "Celebra tus momentos más importantes con un pastel único, hecho especialmente para ti. Consulta nuestras categorías y contáctanos por WhatsApp para cotizar tu pedido.",
+  "loading": "Cargando pasteles especiales...",
+  "cta": "Realiza tu pedido especial"
+},
+
+  "products": {
+    "productsTitle": "Nuestros Productos",
+    "productsNewsTitle": "Novedades",
+    "productsAll": "Todos",
+    "productsChoco": "Chocolate",
+    "productsVainilla": "Vainilla",
+    "productsQueso": "Queso",
+    "productsTresLeches": "Tres Leches",
+    "productsCafe": "Cafe",
+    "productsClasico": "Clasico",
+    "productsGelatina": "Gelatina",
+    "productsAzucar": "Sin Azucar",
+    "productsPanaderia": "Panaderia",
+    "productsReposteria": "Reposteria",
+    "productsVelas": "Velas",
+    "productsPedidos": "Solo por Pedido",
+    "productsFav": "Mis Favoritos",
+    "productsDescription": "Descubre nuestra selección de pasteles frescos, hechos artesanalmente cada día, disponibles en una variedad de sabores y presentaciones para cada ocasión.",
+    "productsButton": "Ver Más",
+    "productsPieza": "Pieza",
+    "productsKilo": "Kilo"
+  },
+
+  "cafe": {
+    "cafeteriaTitle": "Casa de Reposteria y café",
+    "cafeteriaSubTitle": "Disfruta nuestro café artesanal, postres y bebidas únicas en nuestras sucursales con cafetería. Consulta aquí nuestro menú y direcciones.",
+    "cafeteriaSearch": "Cargando menú de cafetería...",
+    "cafeteriaCat1": "Barra de espresso",
+    "cafeteriaCat2": "Frappastel",
+    "cafeteriaCat3": "Tés y Tisanas",
+    "cafeteriaCat4": "Otras bebidas y extras",
+    "cafeteriaButtonSmall": "Chico",
+    "cafeteriaButtonLarge": "Grande",
+    "cafeteriaSucursales":"Sucursales con servicio de cafetería",
+    "cafeteriaSucursalesButton":"Ver en Google Maps"
+  }
+
+}
