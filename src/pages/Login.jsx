@@ -35,7 +35,7 @@ export default function Login() {
   useEffect(() => {
     if (user) {
       if (role === "admin") {
-        navigate("/admin")
+        navigate("/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN")
       } else {
         navigate("/")
       }

@@ -92,16 +92,16 @@ export default function Header() {
           <NavLink to="/" className={linkClass}>
             {lang === "es" ? "Inicio" : "Home"}
           </NavLink>
-          <NavLink to="/productos" className={linkClass}>
+          <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass}>
             {lang === "es" ? "Productos" : "Products"}
           </NavLink>
-          <NavLink to="/cafeteria" className={linkClass}>
+          <NavLink to="/c5f81wnh8tD29JX+apIYQpwFHwP3w5E31j71ZGa8knBwmdqvW/ttOpuAKiVu6sJe" className={linkClass}>
             {lang === "es" ? "Cafetería" : "Coffee Shop"}
           </NavLink>
-          <NavLink to="/pedidosespeciales" className={linkClass}>
+          <NavLink to="/jdg9DL3muQqzJOuOLmae21cZvH861bBV3QmSQKCOJPGX5MI+t3LiP+XxEzj33EijLUREeoz/TW/JbZk9swdbsA" className={linkClass}>
             {lang === "es" ? "Pedidos Especiales" : "Special Orders"}
           </NavLink>
-          <NavLink to="/sucursales" className={linkClass}>
+          <NavLink to="/SD9wrfTl3r/mTdgppUT8fDJQL9UqI34oyF5kcfaYvNKjWscyJ5V1yiGGAx26KZB3" className={linkClass}>
             {lang === "es" ? "Sucursales" : "Branches"}
           </NavLink>
 
@@ -137,7 +137,7 @@ export default function Header() {
             }}
           >
             <NavLink
-              to="/bolsadetrabajo"
+              to="/PoztxJ04ullrJPmqS7ZpDhBQchWL8aWgNXt+tFGa1lHXxvAAjkg4QemCr06KR+ZP"
               className="block px-4 py-2 hover:bg-rose/20 text-left whitespace-nowrap"
               onClick={() => setMoreOpen(false)}
             >
@@ -145,7 +145,7 @@ export default function Header() {
             </NavLink>
 
             <NavLink
-              to="/facturacion"
+              to="/sWB7AuVkuH9cwxeonb7YJW4Td0nim7ISf8xNllbl1zow2SJX6BFY7t9MO4jMlW8o"
               className="block px-4 py-2 hover:bg-rose/20 text-left whitespace-nowrap"
               onClick={() => setMoreOpen(false)}
             >
@@ -154,7 +154,7 @@ export default function Header() {
 
             {role === "admin" && (
               <NavLink
-                to="/admin"
+                to="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN"
                 className="block px-4 py-2 hover:bg-rose/20 text-left whitespace-nowrap"
                 onClick={() => setMoreOpen(false)}
               >
@@ -186,13 +186,13 @@ export default function Header() {
           ) : (
             <>
               <Link
-                to="/login"
+                to="/au5Z4YhReMcxh1r0WdbGNrGiMU7+j6CfaUrMxP2TGJNv7ZgI72muOl1gie2Lc7da"
                 className="bg-red text-cream px-3 py-1 rounded hover:bg-wine/80 transition"
               >
                 {lang === "es" ? "Iniciar sesión" : "Login"}
               </Link>
               <Link
-                to="/register"
+                to="/R/pka3Igof2dpoOaMHXhACqm7+/L8K1PQ2ovWlhfFH3ZFeBwua4iQnLJmXLsd0aI"
                 className="bg-cream border border-wine px-3 py-1 rounded text-wine hover:bg-wine/20 transition"
               >
                 {lang === "es" ? "Crear cuenta" : "Register"}
@@ -219,38 +219,38 @@ export default function Header() {
           <NavLink to="/" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Inicio" : "Home"}
           </NavLink>
-          <NavLink to="/productos" className={linkClass} onClick={toggleMenu}>
+          <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Productos" : "Products"}
           </NavLink>
-          <NavLink to="/cafeteria" className={linkClass} onClick={toggleMenu}>
+          <NavLink to="/c5f81wnh8tD29JX+apIYQpwFHwP3w5E31j71ZGa8knBwmdqvW/ttOpuAKiVu6sJe" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Cafetería" : "Coffee Shop"}
           </NavLink>
           <NavLink
-            to="/pedidosespeciales"
+            to="/jdg9DL3muQqzJOuOLmae21cZvH861bBV3QmSQKCOJPGX5MI+t3LiP+XxEzj33EijLUREeoz/TW/JbZk9swdbsA"
             className={linkClass}
             onClick={toggleMenu}
           >
             {lang === "es" ? "Pedidos Especiales" : "Special Orders"}
           </NavLink>
-          <NavLink to="/sucursales" className={linkClass} onClick={toggleMenu}>
+          <NavLink to="/SD9wrfTl3r/mTdgppUT8fDJQL9UqI34oyF5kcfaYvNKjWscyJ5V1yiGGAx26KZB3" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Sucursales" : "Branches"}
           </NavLink>
           <NavLink
-            to="/bolsadetrabajo"
+            to="/PoztxJ04ullrJPmqS7ZpDhBQchWL8aWgNXt+tFGa1lHXxvAAjkg4QemCr06KR+ZP"
             className={linkClass}
             onClick={toggleMenu}
           >
             {lang === "es" ? "Bolsa de Trabajo" : "Careers"}
           </NavLink>
           <NavLink
-            to="/facturacion"
+            to="/sWB7AuVkuH9cwxeonb7YJW4Td0nim7ISf8xNllbl1zow2SJX6BFY7t9MO4jMlW8o"
             className={linkClass}
             onClick={toggleMenu}
           >
             {lang === "es" ? "Facturación" : "Billing"}
           </NavLink>
           {role === "admin" && (
-            <NavLink to="/admin" className={linkClass} onClick={toggleMenu}>
+            <NavLink to="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN" className={linkClass} onClick={toggleMenu}>
               {lang === "es" ? "Panel Admin" : "Admin Panel"}
             </NavLink>
           )}
@@ -270,14 +270,14 @@ export default function Header() {
           ) : (
             <>
               <Link
-                to="/login"
+                to="/au5Z4YhReMcxh1r0WdbGNrGiMU7+j6CfaUrMxP2TGJNv7ZgI72muOl1gie2Lc7da"
                 onClick={toggleMenu}
                 className="bg-red text-cream px-4 py-2 rounded-lg"
               >
                 {lang === "es" ? "Iniciar sesión" : "Login"}
               </Link>
               <Link
-                to="/register"
+                to="/R/pka3Igof2dpoOaMHXhACqm7+/L8K1PQ2ovWlhfFH3ZFeBwua4iQnLJmXLsd0aI"
                 onClick={toggleMenu}
                 className="border border-wine text-wine px-4 py-2 rounded-lg"
               >

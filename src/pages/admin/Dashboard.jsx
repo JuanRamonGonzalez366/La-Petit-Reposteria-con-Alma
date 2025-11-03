@@ -7,7 +7,7 @@ export default function Dashboard() {
       <div className="grid sm:grid-cols-3 gap-6">
         {/* Productos */}
         <Link
-          to="/admin/productos"
+          to="/Fcm5Qpimck7lCl+L35tOt3qNoIe0FVVSmhdFs//ik+Xn3k+ZcwPpYgjUmlwytLRd"
           className="bg-white p-6 rounded-2xl border border-rose/30 text-center hover:bg-rose/20 transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">🧁 Pasteleria</h2>
@@ -15,28 +15,28 @@ export default function Dashboard() {
         </Link>
         {/*Pastekeria*/}
         <Link
-          to="/admin/cafeteria"
+          to="/WvSIxhg7Zi0x2P0+vwlvRVxU5qqY4p5T/A10OYD0ajivoZ58dIcjpjZvGb7+MlSK"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">☕ Cafetería</h2>
           <p className="text-sm text-center text-wineDark/70">Agrega y edita los productos del menú.</p>
         </Link>
         <Link
-          to="/admin/pedidosespeciales"
+          to="/rbuvrD9G0kE6JYHvC39TuU0g8Lfj97IByG/45n6NfcPDShkIdeuc4Tv7CtY9zyTpnhCyxRImHyZLPDLXsHInpw"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">🎂 Pedidos Especiales</h2>
           <p className="text-sm text-center text-wineDark/70">Agrega y edita los pasteles especiales para esos dias unicos.</p>
         </Link>
         <Link
-          to="/admin/bolsadetrabajo"
+          to="/e/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvMNwc56tcByHjA4KAhUjJgAohtbrA"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">📋 Bolsa de Trabajo</h2>
           <p className="text-sm text-center text-wineDark/70">Mira laas solicitudes de trabajo y encuentra al mejor candidato</p>
         </Link>
         <Link
-          to="/admin/facturacion"
+          to="/chWDrcJtqc4R7GqAaRD84hTBtiIVBVr7pRNnysODTRZYUM70/Bx/DUEhmZF9nDPpJn6ZVvER6CQW1iK5VbWEw"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">💰 Facturación</h2>
