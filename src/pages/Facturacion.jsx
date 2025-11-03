@@ -188,7 +188,7 @@ export default function Facturacion() {
         Completa tus datos fiscales y de compra. Recuerda **enviar tu Constancia de Situación Fiscal (CSF) al correo indicado** y confirma al final.
       </p>
 
-      <form onSubmit={onSubmit} className="max-w-5xl mx-auto bg-cream rounded-2xl border border-rose/30 shadow-sm p-6 space-y-8">
+      <form onSubmit={onSubmit} className="max-w-5xl mx-auto bg-cream rounded-2xl border border-wineDark/20 shadow-sm p-6 space-y-8">
         {/* FACTURACIÓN */}
         <section>
           <h2 className="font-display text-2xl text-wine mb-4">Facturación</h2>

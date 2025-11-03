@@ -1,11 +1,57 @@
-import React from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useCart } from "../context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { mxn } from "../utils/money";
 
 export default function CartDrawer({ open, onClose }) {
-  const { cart, removeFromCart, updateQty, total, clearCart } = useCart();
+  const {
+    cart,
+    removeFromCart,
+    setQuantity,
+    increase,
+    decrease,
+    subtotal,
+    discount = 0,
+    shipping = 0,
+    taxes = 0,
+    total,
+    clearCart,
+  } = useCart();
   const { t } = useTranslation();
+
+  // Cerrar con ESC y devolver el foco al abrir/cerrar
+  const drawerRef = useRef(null);
+  const lastFocusedRef = useRef(null);
+
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    if (open) {
+      lastFocusedRef.current = document.activeElement;
+      document.addEventListener("keydown", onKey);
+      setTimeout(() => drawerRef.current?.querySelector("button, input, a")?.focus(), 10);
+    }
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      if (lastFocusedRef.current && typeof lastFocusedRef.current.focus === "function") {
+        lastFocusedRef.current.focus();
+      }
+    };
+  }, [open, onClose]);
+
+  const whatsappText = useMemo(() => {
+    const lines = cart.map((i) =>
+      `• ${i.title}${i.options?.size ? ` (${i.options.size})` : ""} x${i.qty} — ${mxn(i.price * i.qty)}`
+    );
+    return encodeURIComponent(
+      `Hola! Quiero hacer este pedido:\n\n${lines.join("\n")}\n\n` +
+      `Subtotal: ${mxn(subtotal)}\n` +
+      (discount ? `Descuento: -${mxn(discount)}\n` : "") +
+      (shipping ? `Envío: ${mxn(shipping)}\n` : "") +
+      (taxes ? `Impuestos: ${mxn(taxes)}\n` : "") +
+      `Total: ${mxn(total)}`
+    );
+  }, [cart, subtotal, discount, shipping, taxes, total]);
 
   return (
     <AnimatePresence>
@@ -17,19 +63,26 @@ export default function CartDrawer({ open, onClose }) {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/50 flex justify-end z-50"
           onClick={onClose}
+          aria-modal="true"
+          role="dialog"
+          aria-label={t("cart.title")}
         >
           <motion.div
+            ref={drawerRef}
             onClick={(e) => e.stopPropagation()}
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="bg-cream w-full max-w-sm h-full shadow-xl flex flex-col"
+            transition={{ type: "tween", duration: 0.28 }}
+            className="bg-cream w-full max-w-sm h-full shadow-xl flex flex-col outline-none"
           >
             {/* Header */}
-            <header className="p-4 border-b border-rose flex justify-between items-center">
+            <header className="p-4 border-b border-rose flex justify-between items-center sticky top-0 bg-cream">
               <h2 className="text-lg font-semibold text-wine">{t("cart.title")}</h2>
-              <button onClick={onClose} className="text-wineDark/70 hover:text-red transition">
+              <button
+                onClick={onClose}
+                className="text-wineDark/70 hover:text-red transition focus:outline-none focus:ring-2 focus:ring-rose rounded"
+              >
                 ✕
               </button>
             </header>
@@ -39,57 +92,119 @@ export default function CartDrawer({ open, onClose }) {
               {cart.length === 0 ? (
                 <p className="text-center text-wineDark/70">{t("cart.empty")}</p>
               ) : (
-                cart.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-3 border-b border-rose/30 pb-2"
-                  >
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-16 h-16 object-cover rounded-lg border border-rose/30"
-                    />
-                    <div className="flex-1">
-                      <h3 className="font-medium text-wine">{item.title}</h3>
-                      <p className="text-sm text-wineDark/70">${item.price}</p>
-                      <input
-                        type="number"
-                        min="1"
-                        value={item.qty}
-                        onChange={(e) => updateQty(item.id, Number(e.target.value))}
-                        className="w-16 mt-1 border border-wine/30 rounded-md px-2 py-0.5 text-center text-wineDark"
+                cart.map((item) => {
+                  const lineKey = `${item.id}::${item.options ? JSON.stringify(item.options) : ""}`;
+                  return (
+                    <motion.div
+                      key={lineKey}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-3 border-b border-rose/30 pb-2"
+                    >
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-16 h-16 object-cover rounded-lg border border-rose/30"
+                        loading="lazy"
                       />
-                    </div>
-                    <button onClick={() => removeFromCart(item.id)} className="text-red hover:scale-110 transition-transform">
-                      🗑️
-                    </button>
-                  </motion.div>
-                ))
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-medium text-wine truncate">{item.title}</h3>
+                        {item.options?.size && (
+                          <p className="text-xs text-wineDark/70">{item.options.size}</p>
+                        )}
+                        <p className="text-sm text-wineDark/70">{mxn(item.price)}</p>
+
+                        {/* Controles de cantidad */}
+                        <div className="mt-1 inline-flex items-center gap-2">
+                          <button
+                            onClick={() => decrease(item.id, item.options)}
+                            className="w-7 h-7 rounded-md border border-wine/30 text-wine hover:bg-rose/20"
+                            aria-label="Disminuir"
+                          >
+                            –
+                          </button>
+                          <input
+                            type="number"
+                            min={1}
+                            max={99}
+                            value={item.qty}
+                            onChange={(e) =>
+                              setQuantity(item.id, item.options, Number(e.target.value))
+                            }
+                            className="w-14 border border-wine/30 rounded-md px-2 py-0.5 text-center text-wineDark"
+                          />
+                          <button
+                            onClick={() => increase(item.id, item.options)}
+                            className="w-7 h-7 rounded-md border border-wine/30 text-wine hover:bg-rose/20"
+                            aria-label="Aumentar"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="text-right">
+                        <div className="text-sm font-semibold text-wine">
+                          {mxn(item.price * item.qty)}
+                        </div>
+                        <button
+                          onClick={() => removeFromCart(item.id, item.options)}
+                          className="text-red hover:scale-110 transition-transform mt-1"
+                          aria-label="Eliminar"
+                          title="Eliminar"
+                        >
+                          🗑️
+                        </button>
+                      </div>
+                    </motion.div>
+                  );
+                })
               )}
             </div>
 
             {/* Footer */}
-            <footer className="p-4 border-t border-rose space-y-3 bg-cream">
-              <div className="flex justify-between font-semibold text-wine">
-                <span>{t("cart.total")}:</span>
-                <motion.span key={total} initial={{ scale: 0.9 }} animate={{ scale: 1 }} transition={{ duration: 0.2 }}>
-                  ${total}
-                </motion.span>
+            <footer className="p-4 border-t border-rose space-y-3 bg-cream sticky bottom-0">
+              <div className="space-y-1 text-wineDark/80 text-sm">
+                <div className="flex justify-between">
+                  <span>Subtotal</span><span>{mxn(subtotal)}</span>
+                </div>
+                {discount ? (
+                  <div className="flex justify-between">
+                    <span>Descuento</span><span>-{mxn(discount)}</span>
+                  </div>
+                ) : null}
+                {shipping ? (
+                  <div className="flex justify-between">
+                    <span>Envío</span><span>{mxn(shipping)}</span>
+                  </div>
+                ) : null}
+                {taxes ? (
+                  <div className="flex justify-between">
+                    <span>Impuestos</span><span>{mxn(taxes)}</span>
+                  </div>
+                ) : null}
+                <div className="flex justify-between font-semibold text-wine mt-2">
+                  <span>{t("cart.total")}:</span>
+                  <motion.span key={total} initial={{ scale: 0.9 }} animate={{ scale: 1 }} transition={{ duration: 0.2 }}>
+                    {mxn(total)}
+                  </motion.span>
+                </div>
               </div>
-              <button
-                onClick={() => {
-                  const msg = encodeURIComponent(
-                    `Hola! Quiero hacer este pedido:\n\n${cart.map((i) => `${i.title} x${i.qty} - $${i.price * i.qty}`).join("\n")}\n\nTotal: $${total}`
-                  );
-                  window.open(`https://wa.me/5213311505057?text=${msg}`, "_blank");
-                }}
-                className="w-full bg-green-600 text-cream py-2 rounded-lg hover:bg-green-700 transition"
+
+              {/* CTA WhatsApp (número ajusta al que uses) */}
+              <a
+                href={`https://wa.me/5213311505057?text=${whatsappText}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-block text-center bg-green-600 text-cream py-2 rounded-lg hover:bg-green-700 transition"
               >
                 {t("cart.whatsapp")}
-              </button>
-              <button onClick={clearCart} className="bg-red w-full text-cream py-2 rounded-lg hover:bg-wine transition">
+              </a>
+
+              <button
+                onClick={clearCart}
+                className="bg-red w-full text-cream py-2 rounded-lg hover:bg-wine transition"
+              >
                 {t("cart.clear")}
               </button>
             </footer>

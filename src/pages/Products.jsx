@@ -38,6 +38,7 @@ export default function Products() {
     "productsReposteria",
     "productsVelas",
     "productsPedidos",
+    "productsNews",
   ]
 
   // 🔹 Cargar productos desde Firestore
