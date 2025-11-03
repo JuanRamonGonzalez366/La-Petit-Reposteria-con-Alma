@@ -3,6 +3,7 @@ import { useAuth } from "../auth/AuthProvider";
 import logo from "../assets/logo recortado.png";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import i18n from "../i18n";
 
 export default function Header() {
   const { user, role, logout } = useAuth();
@@ -15,7 +16,7 @@ export default function Header() {
   // 🔹 Cargar idioma guardado
   useEffect(() => {
     const savedLang = localStorage.getItem("lang") || "es";
-    setLang(savedLang);
+    setLang(i18n.language || localStorage.getItem("lang") || "es");
   }, []);
 
   // 🔹 Cambiar idioma
@@ -23,8 +24,8 @@ export default function Header() {
     const newLang = lang === "es" ? "en" : "es";
     setLang(newLang);
     localStorage.setItem("lang", newLang);
-    window.location.reload();
-  };
+    i18n.changeLanguage(newLang); // ✅ sin recargar la página
+};
 
   // 🔹 Mostrar / ocultar header al hacer scroll
   useEffect(() => {
@@ -65,7 +66,7 @@ export default function Header() {
     >
       {/* Overlay translúcido */}
       {/*Acomodar de nuevo el fondo cuando encontemos una mejor alternativa bg-rose/20*/}
-      <div className="absolute inset-0 bg-rose/20 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-rose backdrop-blur-sm"></div>
 
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-0 h-20">
         {/* LOGO */}

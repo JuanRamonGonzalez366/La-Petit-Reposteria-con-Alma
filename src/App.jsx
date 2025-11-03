@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import AuthProvider from './auth/AuthProvider'
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './auth/ProtectedRoute'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Spinner from './components/Spinner'
@@ -27,6 +27,7 @@ const PedidosEspeciales = lazy(() => import('./pages/PedidosEspeciales'))
 const Privacidad = lazy(() => import('./pages/Privacidad') )
 const PedidosEspecialesAdmin = lazy(() => import('./pages/admin/PedidosEspecialesAdmin'))
 const BolsaTrabajoAdmin = lazy(() => import('./pages/admin/BolsaTrabajoAdmin'))
+const FacturacionAdmin = lazy(() => import('./pages/admin/FacturacionAdmin'))
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -94,6 +95,14 @@ export default function App() {
                   element={
                     <ProtectedRoute requiredRole="admin">
                       <BolsaTrabajoAdmin />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin/facturacion"
+                  element={
+                    <ProtectedRoute requiredRole="admin">
+                      <FacturacionAdmin />
                     </ProtectedRoute>
                   }
                 />
