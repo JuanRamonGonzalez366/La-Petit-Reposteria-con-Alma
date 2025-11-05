@@ -48,14 +48,15 @@ export default function ProductsAdmin() {
     "Vainilla",
     "Queso",
     "Tres Leches",
-    "Café",
-    "Clásico",
+    "Cafe",
+    "Clasico",
     "Gelatina",
-    "Sin azúcar",
-    "Panadería",
-    "Repostería",
+    "Sin azucar",
+    "Panaderia",
+    "Reposteria",
     "Velas",
     "Solo por pedido",
+    "Novedades",
   ]
 
   // Escucha en tiempo real

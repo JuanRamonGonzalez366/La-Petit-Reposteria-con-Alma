@@ -2,7 +2,7 @@ export default function Footer() {
     return (
       <footer className="bg-rose text-center text-wine py-4 text-sm">
         <a
-          href="/privacidad"
+          href="/rUGzraozwH/Rl9yhSPMmJk+AYvq90MXIVMIJC9SP8QOlRSlGkait3xizUiWgY3Ff"
           className="underline hover:text-wineDark transition"
           target="_blank"
           rel="noopener noreferrer"

@@ -27,6 +27,7 @@ const Privacidad = lazy(() => import('./pages/Privacidad') )
 const PedidosEspecialesAdmin = lazy(() => import('./pages/admin/PedidosEspecialesAdmin'))
 const BolsaTrabajoAdmin = lazy(() => import('./pages/admin/BolsaTrabajoAdmin'))
 const FacturacionAdmin = lazy(() => import('./pages/admin/FacturacionAdmin'))
+const SeedData = lazy(() => import('./pages/admin/SeedData'))
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -110,6 +111,14 @@ export default function App() {
                     <ProtectedRoute requiredRole="admin">
                       <FacturacionAdmin />
                     </ProtectedRoute>
+                  }
+                />
+                <Route
+                path="/admin/seed"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <SeedData />
+                  </ProtectedRoute>
                   }
                 />
               </Routes>

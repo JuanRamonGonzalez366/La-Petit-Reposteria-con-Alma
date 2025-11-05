@@ -1,8 +1,10 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { mxn } from "../utils/money";
+import ShippingPicker from "./ShippingPicker";
+import { createStripeCheckout, createMPCheckout } from "../api/payments";
 
 export default function CartDrawer({ open, onClose }) {
   const {
@@ -13,17 +15,19 @@ export default function CartDrawer({ open, onClose }) {
     decrease,
     subtotal,
     discount = 0,
-    shipping = 0,
     taxes = 0,
-    total,
     clearCart,
   } = useCart();
   const { t } = useTranslation();
 
-  // Cerrar con ESC y devolver el foco al abrir/cerrar
+  // Estado de envío (Picker emite amount, express, expressFee, earlyOnly, branchId, distanceKm)
+  const [shipping, setShipping] = useState({ amount: 0, express: false, expressFee: 0, earlyOnly: false });
+
+  const grandTotal = subtotal + (shipping?.amount || 0) + (shipping?.express ? (shipping?.expressFee || 0) : 0) - (discount || 0) + (taxes || 0);
+
+  // Accesibilidad: ESC y focus
   const drawerRef = useRef(null);
   const lastFocusedRef = useRef(null);
-
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     if (open) {
@@ -39,19 +43,43 @@ export default function CartDrawer({ open, onClose }) {
     };
   }, [open, onClose]);
 
+  // Mensaje para WhatsApp
   const whatsappText = useMemo(() => {
-    const lines = cart.map((i) =>
-      `• ${i.title}${i.options?.size ? ` (${i.options.size})` : ""} x${i.qty} — ${mxn(i.price * i.qty)}`
-    );
-    return encodeURIComponent(
-      `Hola! Quiero hacer este pedido:\n\n${lines.join("\n")}\n\n` +
-      `Subtotal: ${mxn(subtotal)}\n` +
-      (discount ? `Descuento: -${mxn(discount)}\n` : "") +
-      (shipping ? `Envío: ${mxn(shipping)}\n` : "") +
-      (taxes ? `Impuestos: ${mxn(taxes)}\n` : "") +
-      `Total: ${mxn(total)}`
-    );
-  }, [cart, subtotal, discount, shipping, taxes, total]);
+  const lines = [
+    "Hola! Quiero hacer este pedido:\n",
+    ...cart.map(i => `• ${i.title}${i.options?.size ? ` (${i.options.size})` : ""} x${i.qty} — ${mxn(i.price * i.qty)}`),
+    "",
+    `Subtotal: ${mxn(subtotal)}`,
+    shipping?.amount ? `Envío: ${mxn(shipping.amount)}` : null,
+    shipping?.express ? `Express: ${mxn(shipping.expressFee || 0)}` : null,
+    discount ? `Descuento: -${mxn(discount)}` : null,
+    taxes ? `Impuestos: ${mxn(taxes)}` : null,
+    `Total: ${mxn(grandTotal)}`
+  ].filter(Boolean).join("\n");
+
+  return encodeURIComponent(lines);
+}, [cart, subtotal, discount, taxes, shipping, grandTotal]);
+
+
+  // Handlers de pago
+  const payWithStripe = async () => {
+    const payload = {
+      items: cart,
+      shipping: { amount: shipping.amount, express: shipping.express, expressFee: shipping.expressFee },
+      customer: {}, // si tienes user.email, agrégalo aquí
+    };
+    const { url } = await createStripeCheckout(payload);
+    window.location.href = url;
+  };
+
+  const payWithMP = async () => {
+    const payload = {
+      items: cart,
+      shipping: { amount: shipping.amount, express: shipping.express, expressFee: shipping.expressFee },
+    };
+    const { url } = await createMPCheckout(payload);
+    window.location.href = url;
+  };
 
   return (
     <AnimatePresence>
@@ -164,34 +192,41 @@ export default function CartDrawer({ open, onClose }) {
 
             {/* Footer */}
             <footer className="p-4 border-t border-rose space-y-3 bg-cream sticky bottom-0">
+              {/* Entrega */}
+              <ShippingPicker onChange={setShipping} />
+
+              {/* Totales */}
               <div className="space-y-1 text-wineDark/80 text-sm">
-                <div className="flex justify-between">
-                  <span>Subtotal</span><span>{mxn(subtotal)}</span>
-                </div>
-                {discount ? (
-                  <div className="flex justify-between">
-                    <span>Descuento</span><span>-{mxn(discount)}</span>
-                  </div>
+                <div className="flex justify-between"><span>Subtotal</span><span>{mxn(subtotal)}</span></div>
+                <div className="flex justify-between"><span>Envío</span><span>{mxn(shipping?.amount || 0)}</span></div>
+                {shipping?.express ? (
+                  <div className="flex justify-between"><span>Express</span><span>{mxn(shipping?.expressFee || 0)}</span></div>
                 ) : null}
-                {shipping ? (
-                  <div className="flex justify-between">
-                    <span>Envío</span><span>{mxn(shipping)}</span>
-                  </div>
+                {discount ? (
+                  <div className="flex justify-between"><span>Descuento</span><span>-{mxn(discount)}</span></div>
                 ) : null}
                 {taxes ? (
-                  <div className="flex justify-between">
-                    <span>Impuestos</span><span>{mxn(taxes)}</span>
-                  </div>
+                  <div className="flex justify-between"><span>Impuestos</span><span>{mxn(taxes)}</span></div>
                 ) : null}
                 <div className="flex justify-between font-semibold text-wine mt-2">
                   <span>{t("cart.total")}:</span>
-                  <motion.span key={total} initial={{ scale: 0.9 }} animate={{ scale: 1 }} transition={{ duration: 0.2 }}>
-                    {mxn(total)}
+                  <motion.span key={grandTotal} initial={{ scale: 0.9 }} animate={{ scale: 1 }} transition={{ duration: 0.2 }}>
+                    {mxn(grandTotal)}
                   </motion.span>
                 </div>
               </div>
 
-              {/* CTA WhatsApp (número ajusta al que uses) */}
+              {/* Botones de pago */}
+              <div className="grid grid-cols-2 gap-2">
+                <button onClick={payWithStripe} className="bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition">
+                  Pagar con Stripe
+                </button>
+                <button onClick={payWithMP} className="bg-[#00A650] text-white py-2 rounded-lg hover:opacity-90 transition">
+                  Pagar con MP
+                </button>
+              </div>
+
+              {/* WhatsApp */}
               <a
                 href={`https://wa.me/5213311505057?text=${whatsappText}`}
                 target="_blank"
@@ -201,10 +236,7 @@ export default function CartDrawer({ open, onClose }) {
                 {t("cart.whatsapp")}
               </a>
 
-              <button
-                onClick={clearCart}
-                className="bg-red w-full text-cream py-2 rounded-lg hover:bg-wine transition"
-              >
+              <button onClick={clearCart} className="bg-red w-full text-cream py-2 rounded-lg hover:bg-wine transition">
                 {t("cart.clear")}
               </button>
             </footer>
