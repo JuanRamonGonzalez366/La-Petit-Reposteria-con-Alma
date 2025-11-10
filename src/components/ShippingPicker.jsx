@@ -4,6 +4,8 @@ import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { computeShipping } from "../utils/shipping";
 import { mxn } from "../utils/money";
 
+const DIST_CORRECTION = 1.35; // factor opcional para aproximar carretera si no usas API de rutas
+
 export default function ShippingPicker({ onChange }) {
   const [branches, setBranches] = useState([]);
   const [rules, setRules] = useState(null);
@@ -26,7 +28,7 @@ export default function ShippingPicker({ onChange }) {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        setCustomer({ coords, municipality: "" }); // si usas geocoding, llena municipality
+        setCustomer({ coords, municipality: "" }); // si luego usas geocoder, rellenas municipality
       },
       () => alert("No se pudo obtener ubicación")
     );
@@ -34,7 +36,16 @@ export default function ShippingPicker({ onChange }) {
 
   useEffect(() => {
     if (customer && branches.length && rules) {
+      // computeShipping puede aceptar un drivingKm opcional; mientras, aplico corrección
       const sh = computeShipping({ customer, branches, rules });
+      // corrige distancia visual (opcional)
+      if (sh?.distanceKm) {
+        sh.distanceKm = Number((sh.distanceKm * DIST_CORRECTION).toFixed(1));
+        // Recalcula monto si tu computeShipping usa distanceKm; si no, puedes aumentar basePerKm en rules
+        if (typeof sh.recalcAmountFromKm === "function") {
+          sh.amount = sh.recalcAmountFromKm(sh.distanceKm);
+        }
+      }
       setShipping(sh);
       onChange?.({ ...sh, express, expressFee: express ? sh.expressFee : 0 });
     }
@@ -61,12 +72,32 @@ export default function ShippingPicker({ onChange }) {
             <div><span className="font-medium">Sucursal asignada:</span> {shipping.branchName}</div>
             <div><span className="font-medium">Distancia aprox:</span> {shipping.distanceKm} km</div>
             <div><span className="font-medium">Envío:</span> {mxn(shipping.amount)}</div>
+
+            {/* Mostrar origen coords + link (opcional) */}
+            {customer?.coords && (
+              <div className="text-xs text-wineDark/60">
+                Origen: {customer.coords.lat.toFixed(5)}, {customer.coords.lng.toFixed(5)} ·{" "}
+                <a
+                  href={`https://www.google.com/maps?q=${customer.coords.lat},${customer.coords.lng}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
+                  Ver en Maps
+                </a>
+              </div>
+            )}
+
             {shipping.notes?.length ? <div className="text-xs text-wineDark/60">{shipping.notes.join(" · ")}</div> : null}
             {shipping.earlyOnly && <div className="text-xs text-red">Zona lejana: solo horarios tempranos</div>}
           </div>
 
-          <label className="flex items-center gap-2 text-sm">
-            <input type="checkbox" checked={express} onChange={(e) => setExpress(e.target.checked)} />
+          <label className="flex items-center gap-2 text-sm mt-2">
+            <input
+              type="checkbox"
+              checked={express}
+              onChange={(e) => setExpress(e.target.checked)}
+            />
             <span>Entrega express (+{mxn(shipping.expressFee)})</span>
           </label>
         </>

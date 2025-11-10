@@ -334,10 +334,6 @@ export default function Products() {
             </motion.div>
           </motion.div>
         )}
-
-        <h1 className="font-display text-3xl text-wine  mt-8 mb-8 text-center mb-10">
-        {t("products.productsNewsTitle")}
-        </h1>
       </AnimatePresence>
     </main>
   )

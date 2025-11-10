@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { mxn } from "../utils/money";
 import ShippingPicker from "./ShippingPicker";
 import { createStripeCheckout, createMPCheckout } from "../api/payments";
+import { useNavigate } from "react-router-dom";
 
 export default function CartDrawer({ open, onClose }) {
   const {
@@ -22,6 +23,7 @@ export default function CartDrawer({ open, onClose }) {
 
   // Estado de envío (Picker emite amount, express, expressFee, earlyOnly, branchId, distanceKm)
   const [shipping, setShipping] = useState({ amount: 0, express: false, expressFee: 0, earlyOnly: false });
+  const navigate = useNavigate();
 
   const grandTotal = subtotal + (shipping?.amount || 0) + (shipping?.express ? (shipping?.expressFee || 0) : 0) - (discount || 0) + (taxes || 0);
 
@@ -192,9 +194,12 @@ export default function CartDrawer({ open, onClose }) {
 
             {/* Footer */}
             <footer className="p-4 border-t border-rose space-y-3 bg-cream sticky bottom-0">
-              {/* Entrega */}
-              <ShippingPicker onChange={setShipping} />
-
+              <button
+                onClick={() => { onClose?.(); navigate("/checkout"); }}
+                className="w-full bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition"
+              >
+                Añadir dirección de envío / Ir a checkout
+              </button>
               {/* Totales */}
               <div className="space-y-1 text-wineDark/80 text-sm">
                 <div className="flex justify-between"><span>Subtotal</span><span>{mxn(subtotal)}</span></div>
@@ -215,20 +220,9 @@ export default function CartDrawer({ open, onClose }) {
                   </motion.span>
                 </div>
               </div>
-
-              {/* Botones de pago */}
-              <div className="grid grid-cols-2 gap-2">
-                <button onClick={payWithStripe} className="bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition">
-                  Pagar con Stripe
-                </button>
-                <button onClick={payWithMP} className="bg-[#00A650] text-white py-2 rounded-lg hover:opacity-90 transition">
-                  Pagar con MP
-                </button>
-              </div>
-
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/5213311505057?text=${whatsappText}`}
+                href={`https://wa.me/5213317212178?text=${whatsappText}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-block text-center bg-green-600 text-cream py-2 rounded-lg hover:bg-green-700 transition"

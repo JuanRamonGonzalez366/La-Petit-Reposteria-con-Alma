@@ -1,7 +1,9 @@
 {
   "home": {
-    "bannerTitle": "Petit",
-    "bannerSubtitle": "Repostería con alma",
+    "bannerTitle": "Petit repotería con alma",
+    "bannerSubtitle3": "Prueben nuestros productos de temporada como el exquisito pan de muerto",
+    "bannerSubtitle2": "¡Disfruta de nuestra selección de pasteles frescos, hechos artesanalmente cada día, disponibles en una variedad de sabores y presentaciones para cada ocasión!",
+    "bannerSubtitle1": "Conocenos y aprende mas de nosotros la gran familia de pastelería de Petit Plaisir",
     "bannerButton": "Ver más",
 
     "featuredTitle": "Productos Destacados",
@@ -113,6 +115,51 @@
     "cafeteriaButtonLarge": "Grande",
     "cafeteriaSucursales":"Sucursales con servicio de cafetería",
     "cafeteriaSucursalesButton":"Ver en Google Maps"
-  }
+  },
+
+  "about": {
+    "title": "Repostería con alma desde 1998",
+    "subtitle": "Casa de repostería con más de 20 años elaborando pasteles, galletas, panadería, postres y gelatinas, con recetas propias, ingredientes naturales y procesos tradicionales.",
+    "heroAlt": "Pastelería artesanal Petit Plaisir",
+
+    "sliceHeading": "La rebanada de tu antojo",
+    "sliceText": "En Petit puedes elegir el tamaño de tu rebanada entre más de 20 sabores. Fresco del día, sin conservadores y con la calidad que nos distingue.",
+    "slicePoint1": "Más de 20 sabores para elegir.",
+    "slicePoint2": "Elige el tamaño exacto de tu rebanada.",
+    "slicePoint3": "Preparaciones frescas y del día.",
+    "sliceImg1Alt": "Cupcakes y repostería fresca",
+    "sliceImg2Alt": "Cheesecake artesanal",
+    "sliceImg3Alt": "Pastel de chocolate",
+
+    "traditionTitle": "Tradición",
+    "traditionDesc": "Recetas propias, procesos tradicionales y dedicación en cada detalle.",
+    "cafeTitle": "Cafetería",
+    "cafeDesc": "Bebidas calientes y frías para acompañar tu postre (disponible en sucursales seleccionadas).",
+    "sliceTitle": "Rebanada a tu gusto",
+    "sliceDesc": "Tú eliges el tamaño y el sabor: disfruta tu momento, a tu manera.",
+    "branchesTitle": "Sucursales",
+    "branchesDesc": "Matriz y múltiples ubicaciones en el AMG para acercarte tu dulce favorito.",
+
+    "catCakes": "Pasteles",
+    "catCheesecakes": "Cheesecakes",
+    "catBakery": "Panadería",
+    "catDesserts": "Postres",
+    "catGelatins": "Gelatinas",
+    "catSpecialOrders": "Pedidos especiales",
+
+    "briefBranchesTitle": "Sucursales y horarios",
+    "briefBranchesText": "Visítanos en nuestras tiendas. Te atendemos con gusto durante el día.",
+    "branch1Name": "Matriz · Tlaquepaque Centro",
+    "branch1Addr": "Francisco I. Madero No. 163, C.P. 45693",
+    "branch2Name": "Río Nilo · Jardines de la Paz",
+    "branch2Addr": "Av. Río Nilo #2916",
+    "branch3Name": "Revolución · Universitaria",
+    "branch3Addr": "Calz. Revolución 1856, C.P. 44840",
+
+    "hours": "8:30 AM – 9:00 PM",
+    "ctaTitle": "¿Listo para consentirte?",
+    "ctaSubtitle": "Explora sabores, elige tu rebanada y vive el dulce placer."
+}
+
 
 }

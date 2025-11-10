@@ -42,6 +42,13 @@ export default function Dashboard() {
           <h2 className="text-xl text-center font-semibold text-wine mb-2">💰 Facturación</h2>
           <p className="text-sm text-center text-wineDark/70">Mira y lleva el control de las facturas.</p>
         </Link>
+        <Link
+          to="/hyrfr/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvMNwc56tcByHjA4KAhUjJgAohtbrA"
+          className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
+        >
+          <h2 className="text-xl text-center font-semibold text-wine mb-2">📰 Novedades</h2>
+          <p className="text-sm text-center text-wineDark/70">Mira las novedades por temporada.</p>
+        </Link>
       </div>
     </main>
   )

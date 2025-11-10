@@ -1,6 +1,7 @@
-const BASE = import.meta.env.VITE_API_BASE || ""; // si está vacío, fallará (mejor que 404 silencioso)
+const BASE = import.meta.env.VITE_API_BASE || "";
 
 export async function createStripeCheckout(payload) {
+  if (!BASE) throw new Error("VITE_API_BASE no configurado");
   const res = await fetch(`${BASE}/create-checkout/stripe`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -11,6 +12,7 @@ export async function createStripeCheckout(payload) {
 }
 
 export async function createMPCheckout(payload) {
+  if (!BASE) throw new Error("VITE_API_BASE no configurado");
   const res = await fetch(`${BASE}/create-checkout/mp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

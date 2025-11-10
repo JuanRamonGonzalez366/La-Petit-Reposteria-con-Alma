@@ -28,6 +28,9 @@ const PedidosEspecialesAdmin = lazy(() => import('./pages/admin/PedidosEspeciale
 const BolsaTrabajoAdmin = lazy(() => import('./pages/admin/BolsaTrabajoAdmin'))
 const FacturacionAdmin = lazy(() => import('./pages/admin/FacturacionAdmin'))
 const SeedData = lazy(() => import('./pages/admin/SeedData'))
+const Checkout = lazy(() => import('./pages/Checkout'))
+const Novedades = lazy(() => import('./pages/Novedades'));
+const NovedadesAdmin = lazy(() => import('./pages/admin/NovedadesAdmin'));
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -50,7 +53,9 @@ export default function App() {
                 <Route path="/au5Z4YhReMcxh1r0WdbGNrGiMU7+j6CfaUrMxP2TGJNv7ZgI72muOl1gie2Lc7da" element={<Login />} />
                 <Route path="/R/pka3Igof2dpoOaMHXhACqm7+/L8K1PQ2ovWlhfFH3ZFeBwua4iQnLJmXLsd0aI" element={<Register />} />
                 <Route path="/jdg9DL3muQqzJOuOLmae21cZvH861bBV3QmSQKCOJPGX5MI+t3LiP+XxEzj33EijLUREeoz/TW/JbZk9swdbsA" element={<PedidosEspeciales />} />
-                <Route path='/rUGzraozwH/Rl9yhSPMmJk+AYvq90MXIVMIJC9SP8QOlRSlGkait3xizUiWgY3Ff' element={<Privacidad/>} />
+                <Route path="/rUGzraozwH/Rl9yhSPMmJk+AYvq90MXIVMIJC9SP8QOlRSlGkait3xizUiWgY3Ff" element={<Privacidad/>} />
+                <Route path="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" element={<Novedades />} />
+                <Route path="/checkout" element={<Checkout />} />
                 <Route
                   path="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN"
                   element={
@@ -92,7 +97,7 @@ export default function App() {
                 <Route
                   path="/rbuvrD9G0kE6JYHvC39TuU0g8Lfj97IByG/45n6NfcPDShkIdeuc4Tv7CtY9zyTpnhCyxRImHyZLPDLXsHInpw"
                   element={
-                    <ProtectedRoute requiredRole="admin">
+                    <ProtectedRoute requiredRole={['admin']}>
                       <PedidosEspecialesAdmin />
                     </ProtectedRoute>
                   }
@@ -100,7 +105,7 @@ export default function App() {
                 <Route
                   path="/e/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvMNwc56tcByHjA4KAhUjJgAohtbrA"
                   element={
-                    <ProtectedRoute requiredRole="admin">
+                    <ProtectedRoute requiredRole={['admin']}>
                       <BolsaTrabajoAdmin />
                     </ProtectedRoute>
                   }
@@ -108,7 +113,7 @@ export default function App() {
                 <Route
                   path="/chWDrcJtqc4R7GqAaRD84hTBtiIVBVr7pRNnysODTRZYUM70/Bx/DUEhmZF9nDPpJn6ZVvER6CQW1iK5VbWEw"
                   element={
-                    <ProtectedRoute requiredRole="admin">
+                    <ProtectedRoute requiredRole={['admin']}>
                       <FacturacionAdmin />
                     </ProtectedRoute>
                   }
@@ -116,9 +121,17 @@ export default function App() {
                 <Route
                 path="/admin/seed"
                 element={
-                  <ProtectedRoute requiredRole="admin">
+                  <ProtectedRoute requiredRole={['admin']}>
                     <SeedData />
                   </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/hyrfr/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvMNwc56tcByHjA4KAhUjJgAohtbrA"
+                  element={
+                    <ProtectedRoute allow={['admin']}>
+                      <NovedadesAdmin />
+                    </ProtectedRoute>
                   }
                 />
               </Routes>

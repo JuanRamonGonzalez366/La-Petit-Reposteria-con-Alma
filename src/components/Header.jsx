@@ -95,6 +95,9 @@ export default function Header() {
           <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass}>
             {lang === "es" ? "Productos" : "Products"}
           </NavLink>
+          <NavLink to="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" className={linkClass}>
+            {lang === "es" ? "Novedades" : "News"}
+          </NavLink>
           <NavLink to="/c5f81wnh8tD29JX+apIYQpwFHwP3w5E31j71ZGa8knBwmdqvW/ttOpuAKiVu6sJe" className={linkClass}>
             {lang === "es" ? "Cafetería" : "Coffee Shop"}
           </NavLink>
@@ -221,6 +224,9 @@ export default function Header() {
           </NavLink>
           <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Productos" : "Products"}
+          </NavLink>
+          <NavLink to="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" className={linkClass} onClick={toggleMenu}>
+            {lang === "es" ? "Novedades" : "News"}
           </NavLink>
           <NavLink to="/c5f81wnh8tD29JX+apIYQpwFHwP3w5E31j71ZGa8knBwmdqvW/ttOpuAKiVu6sJe" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Cafetería" : "Coffee Shop"}

@@ -1,7 +1,9 @@
 {
   "home": {
     "bannerTitle": "Petit",
-    "bannerSubtitle": "Pastry with soul",
+    "bannerSubtitle3": "Try our seasonal products like the exquisite bread of the dead",
+    "bannerSubtitle2": "Enjoy our freshly baked cakes, handmade every day, available in a variety of flavors and presentations for every occasion!",
+    "bannerSubtitle1": "Meet us and learn more about the great family of Petit Plaisir's pastery",
     "bannerButton": "See more",
 
     "featuredTitle": "Featured Products",
@@ -112,6 +114,50 @@
     "cafeteriaButtonLarge": "Large",
     "cafeteriaSucursales":"Branchs with cafeteria service",
     "cafeteriaSucursalesButton":"See on Google Maps"
+  },
+
+  "about": {
+    "title": "Baking with soul since 1998",
+    "subtitle": "A pastry house with 20+ years making cakes, cookies, breads, desserts and gelatins—our own recipes, natural ingredients and traditional processes.",
+    "heroAlt": "Petit Plaisir artisan pastry",
+
+    "sliceHeading": "Your slice, your way",
+    "sliceText": "Pick your slice size from 20+ flavors. Freshly made, no preservatives, same Petit quality.",
+    "slicePoint1": "20+ flavors to choose from.",
+    "slicePoint2": "Select the exact slice size.",
+    "slicePoint3": "Fresh and made for the day.",
+    "sliceImg1Alt": "Cupcakes and fresh pastry",
+    "sliceImg2Alt": "Artisan cheesecake",
+    "sliceImg3Alt": "Chocolate cake",
+
+    "traditionTitle": "Tradition",
+    "traditionDesc": "House recipes, traditional methods and care in every detail.",
+    "cafeTitle": "Coffee Shop",
+    "cafeDesc": "Hot & cold drinks to pair your dessert (available in selected branches).",
+    "sliceTitle": "Slice to taste",
+    "sliceDesc": "You choose size and flavor—enjoy your moment your way.",
+    "branchesTitle": "Branches",
+    "branchesDesc": "Main store and multiple locations in the metro area.",
+
+    "catCakes": "Cakes",
+    "catCheesecakes": "Cheesecakes",
+    "catBakery": "Bakery",
+    "catDesserts": "Desserts",
+    "catGelatins": "Gelatins",
+    "catSpecialOrders": "Special orders",
+
+    "briefBranchesTitle": "Branches & hours",
+    "briefBranchesText": "Visit us in-store. We’re happy to serve you.",
+    "branch1Name": "Main · Tlaquepaque Centro",
+    "branch1Addr": "Francisco I. Madero No. 163, 45693",
+    "branch2Name": "Río Nilo · Jardines de la Paz",
+    "branch2Addr": "Av. Río Nilo #2916",
+    "branch3Name": "Revolución · Universitaria",
+    "branch3Addr": "Calz. Revolución 1856, 44840",
+
+    "hours": "8:30 AM – 9:00 PM",
+    "ctaTitle": "Ready to treat yourself?",
+    "ctaSubtitle": "Explore flavors, pick your slice and enjoy the sweet pleasure."
   }
 
 }

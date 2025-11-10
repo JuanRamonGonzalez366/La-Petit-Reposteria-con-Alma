@@ -74,6 +74,23 @@ export default function Home() {
             <SwiperSlide>
               <div className="relative w-full h-full">
                 <img
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760316252/cr6b9q7zbppxskt8aiwl.jpg"
+                  alt="Promoción 3"
+                  className="w-full h-full object-cover"
+                  style={{ minHeight: "100%", minWidth: "100%" }}
+                />
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+                  <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
+                  <p className="mb-8 text-center">{t("home.bannerSubtitle1")}</p>
+                  <a href="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                    {t("home.bannerButton")}      
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="relative w-full h-full">
+                <img
                   src="https://res.cloudinary.com/dzjupasme/image/upload/v1760316016/mjexq6vfusfdhopcvgqn.jpg"
                   alt="Promoción 3"
                   className="w-full h-full object-cover"
@@ -81,9 +98,9 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
                   <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
-                  <p className="mb-4">{t("home.bannerSubtitle")}</p>
-                  <a href="/nosotros" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                    {t("home.bannerButton")}      
+                  <p className="mb-4 text-center">{t("home.bannerSubtitle3")}</p>
+                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                    {t("home.bannerButton")}
                   </a>
                 </div>
               </div>
@@ -98,24 +115,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
                   <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
-                  <p className="mb-4">{t("home.bannerSubtitle")}</p>
-                  <a href="/nosotros" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                    {t("home.bannerButton")}
-                  </a>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative w-full h-full">
-                <img
-                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760316252/cr6b9q7zbppxskt8aiwl.jpg"
-                  alt="Promoción 3"
-                  className="w-full h-full object-cover"
-                  style={{ minHeight: "100%", minWidth: "100%" }}
-                />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
-                  <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
-                  <p className="mb-4">{t("home.bannerSubtitle")}</p>
+                  <p className="mb-4 text-center">{t("home.bannerSubtitle2")}</p>
                   <a href="/nosotros" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.bannerButton")}
                   </a>
@@ -185,7 +185,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText1")}
                   </p> 
-                  <a href="/productos" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -204,7 +204,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText2")}
                   </p> 
-                  <a href="/productos" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -223,7 +223,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText3")}
                   </p>   
-                  <a href="/productos" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -236,7 +236,7 @@ export default function Home() {
         <section className="bg-wine text-white py-16 text-center">
           <h2 className="font-display text-3xl mb-4">{t("home.ctaTitle")}</h2>
           <p className="mb-6 text-lg">{t("home.ctaText")}</p>
-          <a href="/pedidosespeciales" className="bg-red px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">
+          <a href="/jdg9DL3muQqzJOuOLmae21cZvH861bBV3QmSQKCOJPGX5MI+t3LiP+XxEzj33EijLUREeoz/TW/JbZk9swdbsA" className="bg-red px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">
             {t("home.ctaButton")}
           </a>
         </section>
