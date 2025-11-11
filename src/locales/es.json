@@ -52,7 +52,8 @@
     "empty": "Tu carrito está vacío 🍰",
     "total": "Total",
     "whatsapp": "Enviar pedido por WhatsApp",
-    "clear": "Vaciar carrito"
+    "clear": "Vaciar carrito",
+    "checkout": "Proceder al pago"
   },
 
   "header": {
@@ -159,7 +160,14 @@
     "hours": "8:30 AM – 9:00 PM",
     "ctaTitle": "¿Listo para consentirte?",
     "ctaSubtitle": "Explora sabores, elige tu rebanada y vive el dulce placer."
-}
+  },
 
-
+  "nov": {
+  "title": "Novedades & Temporadas",
+  "subtitle": "Disfruta de nuestras ediciones especiales y productos por temporada.",
+  "filterActive": "Sólo activas",
+  "allTags": "Todas las etiquetas",
+  "allSeasons": "Todas las temporadas",
+  "empty": "No hay novedades disponibles por ahora."
+  }
 }

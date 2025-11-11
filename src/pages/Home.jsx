@@ -15,6 +15,8 @@ import pasteleria from "../assets/pasteleria.jpg";
 
 export default function Home() {
   const { t } = useTranslation();
+  const whatsappGeneral =
+    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Quisiera%20realizar%20un%20pedido%20especial.%20%F0%9F%8E%82";
 
   // --- Estado para comentarios ---
   const [form, setForm] = useState({ nombre: "", correo: "", mensaje: "" });
@@ -185,7 +187,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText1")}
                   </p> 
-                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -204,7 +206,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText2")}
                   </p> 
-                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -223,7 +225,7 @@ export default function Home() {
                   <p className="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
                     {t("home.promoText3")}
                   </p>   
-                  <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  <a href="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.promoButton")}
                   </a>
                 </div>
@@ -236,9 +238,14 @@ export default function Home() {
         <section className="bg-wine text-white py-16 text-center">
           <h2 className="font-display text-3xl mb-4">{t("home.ctaTitle")}</h2>
           <p className="mb-6 text-lg">{t("home.ctaText")}</p>
-          <a href="/jdg9DL3muQqzJOuOLmae21cZvH861bBV3QmSQKCOJPGX5MI+t3LiP+XxEzj33EijLUREeoz/TW/JbZk9swdbsA" className="bg-red px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition">
-            {t("home.ctaButton")}
-          </a>
+          <a
+                    href={whatsappGeneral}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+                  >
+                    {t("special.cta", "Realiza tu pedido especial")}
+                  </a>
         </section>
 
         {/* Contacto */}

@@ -27,10 +27,13 @@ const Privacidad = lazy(() => import('./pages/Privacidad') )
 const PedidosEspecialesAdmin = lazy(() => import('./pages/admin/PedidosEspecialesAdmin'))
 const BolsaTrabajoAdmin = lazy(() => import('./pages/admin/BolsaTrabajoAdmin'))
 const FacturacionAdmin = lazy(() => import('./pages/admin/FacturacionAdmin'))
-const SeedData = lazy(() => import('./pages/admin/SeedData'))
+/* const SeedData = lazy(() => import('./pages/admin/SeedData'))*/
 const Checkout = lazy(() => import('./pages/Checkout'))
 const Novedades = lazy(() => import('./pages/Novedades'));
 const NovedadesAdmin = lazy(() => import('./pages/admin/NovedadesAdmin'));
+/* const SeedI18nProducts = lazy(() => import('./pages/admin/SeedI18nProducts')); */
+
+
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -118,14 +121,14 @@ export default function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route
+                {/* <Route
                 path="/admin/seed"
                 element={
                   <ProtectedRoute requiredRole={['admin']}>
                     <SeedData />
                   </ProtectedRoute>
                   }
-                />
+                /> */}
                 <Route
                   path="/hyrfr/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvMNwc56tcByHjA4KAhUjJgAohtbrA"
                   element={
@@ -134,6 +137,14 @@ export default function App() {
                     </ProtectedRoute>
                   }
                 />
+                {/* <Route
+                  path="/admin/seed-i18n"
+                  element={
+                    <ProtectedRoute allow={['admin']}>
+                      <SeedI18nProducts />
+                    </ProtectedRoute>
+                  }
+                /> */}
               </Routes>
             </Suspense>
           </main>

@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { collection, onSnapshot, query, where, orderBy } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { cld } from "../utils/cloudinary";
+// import { toast } from "react-toastify"; // si luego agregas un botón “Agregar al carrito”
 
 export default function Novedades() {
   const { t } = useTranslation();
@@ -13,7 +14,6 @@ export default function Novedades() {
   const [onlyActive, setOnlyActive] = useState(true);
 
   useEffect(() => {
-    // Traemos todo y filtramos en cliente (simple). Si prefieres, arma queries compuestas.
     const ref = collection(db, "novelties");
     const q = query(ref, orderBy("priority", "desc"));
     const unsub = onSnapshot(q, (snap) => {
@@ -33,7 +33,7 @@ export default function Novedades() {
       const inWindow =
         !onlyActive ||
         (
-          (n.active !== false) && // si no existe, se considera true
+          (n.active !== false) &&
           (!from || now >= from) &&
           (!to || now <= to)
         );
@@ -45,7 +45,6 @@ export default function Novedades() {
     });
   }, [items, tag, season, onlyActive]);
 
-  // Saca tags y seasons detectadas para filtros
   const allTags = useMemo(() => {
     const set = new Set();
     items.forEach(n => (n.tags || []).forEach(t => set.add(t)));
@@ -60,17 +59,17 @@ export default function Novedades() {
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[96px] px-4 sm:px-6 lg:px-12 pb-10">
-      <h1 className="font-display text-4xl text-wine mb-6">{t("nov.title", "Novedades & Temporadas")}</h1>
-      <p className="text-wineDark/80 mb-8">
+      <h1 className="font-display text-4xl text-wine mb-6 text-center">{t("nov.title", "Novedades & Temporadas")}</h1>
+      <p className="text-wineDark/80 mb-8 text-center">
         {t("nov.subtitle", "Ediciones especiales y productos por temporada.")}
       </p>
 
       {/* Filtros */}
-      <div className="flex flex-wrap gap-3 items-center mb-8">
-        <div className="flex items-center gap-2">
-          <label className="text-sm text-wineDark/80">{t("nov.filterActive", "Sólo activas")}</label>
+      <div className="flex flex-wrap gap-3 items-center mb-8 text-center">
+        <label className="flex items-center gap-2 text-sm text-wineDark/80 text-center">
           <input type="checkbox" checked={onlyActive} onChange={(e)=>setOnlyActive(e.target.checked)} />
-        </div>
+          {t("nov.filterActive", "Sólo activas")}
+        </label>
 
         <select
           className="border border-rose/40 bg-white rounded-lg px-3 py-2 text-sm text-wine"
@@ -105,12 +104,20 @@ export default function Novedades() {
                 exit={{ opacity: 0, y: 16 }}
                 className="bg-white border border-rose/30 rounded-2xl overflow-hidden shadow-suave"
               >
-                <img
-                  src={cld(n.img, { w: 900, h: 600 })}
-                  alt={n.title}
-                  className="w-full h-56 object-cover"
-                  loading="lazy"
-                />
+                {/* 👇 No renderizar img si no hay URL */}
+                {n.img ? (
+                  <img
+                    src={cld(n.img, { w: 900, h: 600 })}
+                    alt={n.title}
+                    className="w-full h-56 object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-56 bg-rose/10 border-b border-rose/30 flex items-center justify-center text-sm text-wineDark/70">
+                    Sin imagen
+                  </div>
+                )}
+
                 <div className="p-4">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-wine font-semibold text-lg">{n.title}</h3>
@@ -120,7 +127,6 @@ export default function Novedades() {
                   </div>
                   <p className="text-sm text-wineDark/80 mt-1">{n.desc}</p>
 
-                  {/* Chips */}
                   <div className="flex flex-wrap gap-2 mt-3">
                     {n.season && (
                       <span className="text-xs bg-rose/20 text-wine px-2 py-1 rounded-full">

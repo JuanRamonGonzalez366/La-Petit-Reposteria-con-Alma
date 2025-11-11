@@ -194,12 +194,7 @@ export default function CartDrawer({ open, onClose }) {
 
             {/* Footer */}
             <footer className="p-4 border-t border-rose space-y-3 bg-cream sticky bottom-0">
-              <button
-                onClick={() => { onClose?.(); navigate("/checkout"); }}
-                className="w-full bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition"
-              >
-                Añadir dirección de envío / Ir a checkout
-              </button>
+              
               {/* Totales */}
               <div className="space-y-1 text-wineDark/80 text-sm">
                 <div className="flex justify-between"><span>Subtotal</span><span>{mxn(subtotal)}</span></div>
@@ -220,16 +215,13 @@ export default function CartDrawer({ open, onClose }) {
                   </motion.span>
                 </div>
               </div>
-              {/* WhatsApp */}
-              <a
-                href={`https://wa.me/5213317212178?text=${whatsappText}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-block text-center bg-green-600 text-cream py-2 rounded-lg hover:bg-green-700 transition"
+              <button
+                onClick={() => { onClose?.(); navigate("/checkout"); }}
+                className="w-full bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition"
               >
-                {t("cart.whatsapp")}
-              </a>
-
+                {t("cart.checkout")}
+              </button>
+              
               <button onClick={clearCart} className="bg-red w-full text-cream py-2 rounded-lg hover:bg-wine transition">
                 {t("cart.clear")}
               </button>
@@ -239,4 +231,4 @@ export default function CartDrawer({ open, onClose }) {
       )}
     </AnimatePresence>
   );
-}
+}             

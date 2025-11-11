@@ -1,20 +1,47 @@
-// src/auth/ProtectedRoute.jsx
-import { Navigate } from 'react-router-dom';
-import { useAuth } from './AuthProvider';
+import { useEffect, useState } from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../lib/firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function ProtectedRoute({
-  allow,            // array de roles permitidos
-  requiredRole,     // string de un único rol
-    children,
-    redirectTo = '/login',
+  children,
+  allow,           // preferido: array de roles permitidos
+  requiredRole,    // compat: alias que también aceptamos
 }) {
-    const { user, role, loading } = useAuth();
+  const rolesAllowed = allow || requiredRole || []; // compat
+  const location = useLocation();
+  const [state, setState] = useState({ loading: true, allowed: false });
 
-    if (loading) return <div className="p-6">Cargando…</div>;
-    if (!user) return <Navigate to={redirectTo} replace />;
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, async (user) => {
+      if (!user) return setState({ loading: false, allowed: false });
+      try {
+        const snap = await getDoc(doc(db, "users", user.uid));
+        const role = snap.exists() ? snap.data().role : null;
 
-    const allowed = allow?.length ? allow : (requiredRole ? [requiredRole] : null);
-    if (allowed && !allowed.includes(role)) return <Navigate to="/" replace />;
+        // si no se especifican roles, pediremos solo sesión
+        const ok = rolesAllowed.length === 0
+          ? !!user
+          : rolesAllowed.includes(role);
 
-    return children;
+        setState({ loading: false, allowed: ok });
+      } catch {
+        setState({ loading: false, allowed: false });
+      }
+    });
+    return () => unsub();
+  }, [rolesAllowed]);
+
+  if (state.loading) {
+    return (
+      <main className="min-h-[50vh] flex items-center justify-center text-wine">
+        Cargando…
+      </main>
+    );
+  }
+  if (!state.allowed) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
+  return children;
 }

@@ -51,7 +51,8 @@
     "empty": "Your cart is empty 🍰",
     "total": "Total",
     "whatsapp": "Send order via WhatsApp",
-    "clear": "Clear cart"
+    "clear": "Clear cart",
+    "checkout": "Proceed to checkout"
   },
 
   "header": {
@@ -158,6 +159,17 @@
     "hours": "8:30 AM – 9:00 PM",
     "ctaTitle": "Ready to treat yourself?",
     "ctaSubtitle": "Explore flavors, pick your slice and enjoy the sweet pleasure."
-  }
+  },
+
+  "nov": {
+  "title": "Seasonal & Special Releases",
+  "subtitle": "Enjoy our special editions and seasonal products.",
+  "filterActive": "Only active",
+  "allTags": "All tags",
+  "allSeasons": "All seasons",
+  "empty": "No news at the moment."
+}
+
+
 
 }
