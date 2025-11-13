@@ -293,10 +293,10 @@ export default function ProductsAdmin() {
             type="file"
             accept="image/*"
             className="block w-full text-sm text-wineDark
-                       file:mr-3 file:py-2 file:px-3
-                       file:rounded-md file:border-0
-                       file:bg-rose/20 file:text-wine
-                       hover:file:bg-rose/30"
+              file:mr-3 file:py-2 file:px-3
+              file:rounded-md file:border-0
+              file:bg-rose/20 file:text-wine
+              hover:file:bg-rose/30"
             onChange={(e) => {
               const f = e.target.files?.[0];
               setFile(f || null);

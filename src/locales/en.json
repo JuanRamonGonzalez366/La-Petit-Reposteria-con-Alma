@@ -114,7 +114,10 @@
     "cafeteriaButtonSmall": "Small",
     "cafeteriaButtonLarge": "Large",
     "cafeteriaSucursales":"Branchs with cafeteria service",
-    "cafeteriaSucursalesButton":"See on Google Maps"
+    "cafeteriaSucursalesButton":"See on Google Maps",
+    "cafeteriaBranch1": "Río Nilo Branch",
+    "cafeteriaBranch2": "Zapopan Branch",
+    "cafeteriaBranch3": "Minerva Branch"
   },
 
   "about": {

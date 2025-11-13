@@ -1,13 +1,16 @@
+// al inicio
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { db } from "../lib/firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useTranslation } from "react-i18next";
+import { pickLang } from "../utils/i18nContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function PedidosEspeciales() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.startsWith("en") ? "en" : "es";
 
   const [items, setItems] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -24,7 +27,7 @@ export default function PedidosEspeciales() {
     "Primera Comunion",
     "Confirmacion",
     "Fondant",
-    "Psteles de pisos"
+    "Psteles de pisos",
   ];
 
   // 🔹 Cargar productos desde Firestore (colección "pedidosEspeciales")
@@ -36,7 +39,9 @@ export default function PedidosEspeciales() {
       }));
 
       // Ordenar: destacados primero
-      const sorted = docs.sort((a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0));
+      const sorted = docs.sort(
+        (a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0)
+      );
 
       setItems(sorted);
       setFiltered(sorted);
@@ -92,7 +97,6 @@ export default function PedidosEspeciales() {
             {cat}
           </button>
         ))}
-        
       </div>
 
       {/* CTA WhatsApp general */}
@@ -116,61 +120,68 @@ export default function PedidosEspeciales() {
               {t("special.loading", "Cargando pasteles especiales...")}
             </p>
           ) : filtered.length > 0 ? (
-            filtered.map((p) => (
-              <motion.div
-                key={p.id}
-                layout
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
-              >
-                {/* Imagen */}
-                <div className="h-60 w-full overflow-hidden">
-                  <img
-                    src={p.img || p.imagen}
-                    alt={p.name || p.nombre}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+            filtered.map((item) => {
+              const name = pickLang(item.name, lang);
+              const desc = pickLang(item.desc, lang);
 
-                {/* Info */}
-                <div className="p-5 text-center flex flex-col justify-between h-full">
-                  <div>
-                    <h3 className="font-display text-xl text-wine mb-2">
-                      {p.name || p.nombre}
-                    </h3>
-                    <p className="text-sm text-wineDark/70">{p.desc || p.descripcion}</p>
-                    {p.category && (
-                      <p className="mt-2 text-xs text-wineDark/60 italic">
-                        {p.category}
-                      </p>
-                    )}
+              return (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                >
+                  {/* Imagen */}
+                  <div className="h-60 w-full overflow-hidden">
+                    <img
+                      src={item.img || item.imagen}
+                      alt={name || item.nombre}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
 
-                  {/* Precio (opcional) */}
-                  {p.price && (
-                    <p className="mt-3 font-semibold text-wineDark">
-                      ${p.price.toFixed(2)} MXN
-                    </p>
-                  )}
+                  {/* Info */}
+                  <div className="p-5 text-center flex flex-col justify-between h-full">
+                    <div>
+                      <h3 className="font-display text-xl text-wine mb-2">
+                        {name || item.nombre}
+                      </h3>
+                      <p className="text-sm text-wineDark/70">
+                        {desc || item.descripcion}
+                      </p>
+                      {item.category && (
+                        <p className="mt-2 text-xs text-wineDark/60 italic">
+                          {item.category}
+                        </p>
+                      )}
+                    </div>
 
-                  {/* Botón de WhatsApp individual */}
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Estoy%20interesado%20en%20el%20${encodeURIComponent(
-                      p.name || p.nombre
-                    )}.%20%F0%9F%8E%82`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4 bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition"
-                  >
-                    <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-                    {t("special.ctaProduct", "Consultar por este pastel")}
-                  </a>
-                </div>
-              </motion.div>
-            ))
+                    {/* Precio (opcional) */}
+                    {item.price && (
+                      <p className="mt-3 font-semibold text-wineDark">
+                        ${item.price.toFixed(2)} MXN
+                      </p>
+                    )}
+
+                    {/* Botón de WhatsApp individual */}
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Estoy%20interesado%20en%20el%20${encodeURIComponent(
+                        name || item.nombre
+                      )}.%20%F0%9F%8E%82`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
+                      {t("special.ctaProduct", "Consultar por este pastel")}
+                    </a>
+                  </div>
+                </motion.div>
+              );
+            })
           ) : (
             <p className="text-center text-wineDark/70 col-span-full">
               {t("special.noResults", "No hay productos en esta categoría todavía.")}
@@ -178,8 +189,6 @@ export default function PedidosEspeciales() {
           )}
         </AnimatePresence>
       </section>
-
-      
     </main>
   );
 }

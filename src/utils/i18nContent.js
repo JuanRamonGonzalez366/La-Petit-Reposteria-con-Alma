@@ -49,3 +49,21 @@ export function safeImg(url, placeholder = "https://via.placeholder.com/800x600?
   if (!url || typeof url !== "string" || url.trim() === "") return placeholder;
   return url;
 }
+
+// src/utils/i18nContent.js
+export const safeText = (v) => {
+  if (v == null) return "";
+  if (typeof v === "string") return v;
+  if (typeof v === "object") return v.es || v.en || "";
+  return String(v);
+};
+
+export const pickLang = (v, lang = "es") => {
+  if (v == null) return "";
+  if (typeof v === "string") return v;          // retro-compatibilidad
+  if (typeof v === "object") return v[lang] || v.es || v.en || "";
+  return String(v);
+};
+
+export const getES = (v) => (typeof v === "string" ? v : v?.es || "");
+export const getEN = (v) => (typeof v === "string" ? "" : v?.en || "");

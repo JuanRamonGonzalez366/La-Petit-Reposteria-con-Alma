@@ -115,7 +115,10 @@
     "cafeteriaButtonSmall": "Chico",
     "cafeteriaButtonLarge": "Grande",
     "cafeteriaSucursales":"Sucursales con servicio de cafetería",
-    "cafeteriaSucursalesButton":"Ver en Google Maps"
+    "cafeteriaSucursalesButton":"Ver en Google Maps",
+    "cafeteriaBranch1": "Sucursal Río Nilo",
+    "cafeteriaBranch2": "Sucursal Zapopan",
+    "cafeteriaBranch3": "Sucursal Minerva"
   },
 
   "about": {
