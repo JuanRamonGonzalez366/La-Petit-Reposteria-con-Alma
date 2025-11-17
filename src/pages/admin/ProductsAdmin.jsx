@@ -288,7 +288,7 @@ export default function ProductsAdmin() {
             ))}
           </select>
 
-          {/* Imagen (file input full width y sin overflow del texto) */}
+          {/* Imagen */}
           <input
             type="file"
             accept="image/*"
