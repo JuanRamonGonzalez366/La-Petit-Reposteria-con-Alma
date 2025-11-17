@@ -1,3 +1,4 @@
+// src/pages/admin/PedidosEspecialesAdmin.jsx
 import React, { useEffect, useState } from "react";
 import { db } from "../../lib/firebase";
 import {
@@ -11,6 +12,7 @@ import {
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { cld } from "../../utils/cloudinary";
+import { useTranslation } from "react-i18next";
 
 // Helpers i18n
 const safeText = (v) => {
@@ -61,6 +63,7 @@ const emptyForm = {
 };
 
 export default function PedidosEspecialesAdmin() {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [file, setFile] = useState(null);
@@ -69,15 +72,16 @@ export default function PedidosEspecialesAdmin() {
   const [editingId, setEditingId] = useState(null);
   const [activeLangTab, setActiveLangTab] = useState("es"); // ES | EN
 
+  // 🔹 Claves de categoría (se traducen con i18n, igual que en la página pública)
   const categories = [
-    "Infantiles",
-    "15 Años",
-    "Bodas",
-    "Bautizo",
-    "Primera Comunion",
-    "Confirmacion",
-    "Fondant",
-    "Psteles de pisos",
+    "catego1",
+    "catego2",
+    "catego3",
+    "catego4",
+    "catego5",
+    "catego6",
+    "catego7",
+    "catego8",
   ];
 
   // Escuchar Firestore
@@ -125,6 +129,7 @@ export default function PedidosEspecialesAdmin() {
         title: { es: form.titleEs.trim(), en: form.titleEn.trim() },
         desc: { es: form.descEs.trim(), en: form.descEn.trim() },
         name: form.titleEs.trim(),
+        // 🔹 Guardamos la clave de categoría (catego1, catego2, etc.)
         category: form.category.trim(),
         price: form.price ? Number(form.price) : null,
         img: imageUrl,
@@ -242,6 +247,7 @@ export default function PedidosEspecialesAdmin() {
             />
           )}
 
+          {/* Categoría (clave -> texto traducido) */}
           <select
             className="w-full border border-wine/20 rounded-lg px-3 py-2 text-sm text-wineDark focus:outline-none focus:ring-1 focus:ring-wine/50"
             value={form.category}
@@ -250,9 +256,9 @@ export default function PedidosEspecialesAdmin() {
             }
           >
             <option value="">Selecciona categoría</option>
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
+            {categories.map((catKey) => (
+              <option key={catKey} value={catKey}>
+                {t(`special.${catKey}`, catKey)}
               </option>
             ))}
           </select>
@@ -375,7 +381,11 @@ export default function PedidosEspecialesAdmin() {
                     )}
                   </div>
                   <div className="text-sm text-wineDark/70 break-words mt-1">
-                    {p.category} — {desc}
+                    {/* categoría traducida */}
+                    {p.category &&
+                      `${t(`special.${p.category}`, p.category)} — `}
+
+                    {desc}
                   </div>
                 </div>
 

@@ -76,7 +76,16 @@
   "title": "Special Orders",
   "subtitle": "Celebrate your most important moments with a unique custom cake made just for you. Browse by category and contact us on WhatsApp to place your special order.",
   "loading": "Loading special cakes...",
-  "cta": "Place your special order"
+  "cta": "Place your special order",
+  "catego0": "All",
+  "catego1": "Infants",
+  "catego2": "15 and older",
+  "catego3": "wedding",
+  "catego4": "Christening",
+  "catego5": "First Communion",
+  "catego6": "Confirmation",
+  "catego7": "Fondant",
+  "catego8": "Floor cakes"
 },
 
   "products": {

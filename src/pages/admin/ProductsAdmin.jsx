@@ -192,7 +192,6 @@ export default function ProductsAdmin() {
 
   return (
     <main className="bg-cream min-h-screen py-6">
-      {/* Igual que CafeteriaAdmin: contenedor centrado y card grande */}
       <div className="max-w-5xl mx-auto bg-cream p-4 sm:p-6 rounded-2xl shadow space-y-8">
         <h1 className="font-display text-3xl text-wine">Administrar Pastelería</h1>
 
@@ -295,8 +294,8 @@ export default function ProductsAdmin() {
             className="block w-full text-sm text-wineDark
               file:mr-3 file:py-2 file:px-3
               file:rounded-md file:border-0
-              file:bg-rose/20 file:text-wine
-              hover:file:bg-rose/30"
+              file:bg-red file:text-cream
+              hover:file:bg-red/80"
             onChange={(e) => {
               const f = e.target.files?.[0];
               setFile(f || null);

@@ -1,4 +1,4 @@
-// al inicio
+// src/pages/PedidosEspeciales.jsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { db } from "../lib/firebase";
@@ -14,20 +14,20 @@ export default function PedidosEspeciales() {
 
   const [items, setItems] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("Todos");
+  const [activeCategory, setActiveCategory] = useState("catego0");
   const [loading, setLoading] = useState(true);
 
-  // 🔹 Categorías principales
+  // 🔹 Categorías por clave (se traducen con i18n)
   const categories = [
-    "Todos",
-    "Infantiles",
-    "15 Años",
-    "Bodas",
-    "Bautizo",
-    "Primera Comunion",
-    "Confirmacion",
-    "Fondant",
-    "Psteles de pisos",
+    "catego0", // Todos
+    "catego1",
+    "catego2",
+    "catego3",
+    "catego4",
+    "catego5",
+    "catego6",
+    "catego7",
+    "catego8",
   ];
 
   // 🔹 Cargar productos desde Firestore (colección "pedidosEspeciales")
@@ -51,11 +51,19 @@ export default function PedidosEspeciales() {
     return () => unsub();
   }, []);
 
-  // 🔹 Filtrar por categoría
-  const filterByCategory = (cat) => {
-    setActiveCategory(cat);
-    if (cat === "Todos") setFiltered(items);
-    else setFiltered(items.filter((p) => p.category === cat));
+  // 🔹 Filtrar por categoría (usando la clave)
+  const filterByCategory = (catKey) => {
+    setActiveCategory(catKey);
+    if (catKey === "catego0") {
+      setFiltered(items);
+    } else {
+      setFiltered(
+        items.filter(
+          (p) =>
+            p.category === catKey || p.categoryKey === catKey // por si luego agregas categoryKey
+        )
+      );
+    }
   };
 
   // 🔹 Link de WhatsApp general (Pedidos Especiales)
@@ -84,17 +92,17 @@ export default function PedidosEspeciales() {
 
       {/* Filtros */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {categories.map((cat) => (
+        {categories.map((catKey) => (
           <button
-            key={cat}
-            onClick={() => filterByCategory(cat)}
+            key={catKey}
+            onClick={() => filterByCategory(catKey)}
             className={`px-4 py-2 rounded-full border transition font-medium ${
-              activeCategory === cat
+              activeCategory === catKey
                 ? "bg-red text-white border-red"
                 : "bg-marfil border-wine/30 text-wine hover:bg-rose/30"
             }`}
           >
-            {cat}
+            {t(`special.${catKey}`, catKey)}
           </button>
         ))}
       </div>
@@ -121,7 +129,7 @@ export default function PedidosEspeciales() {
             </p>
           ) : filtered.length > 0 ? (
             filtered.map((item) => {
-              const name = pickLang(item.name, lang);
+              const name = pickLang(item.title || item.name, lang);
               const desc = pickLang(item.desc, lang);
 
               return (
@@ -152,9 +160,11 @@ export default function PedidosEspeciales() {
                       <p className="text-sm text-wineDark/70">
                         {desc || item.descripcion}
                       </p>
+
+                      {/* Categoría traducida */}
                       {item.category && (
                         <p className="mt-2 text-xs text-wineDark/60 italic">
-                          {item.category}
+                          {t(`special.${item.category}`, item.category)}
                         </p>
                       )}
                     </div>
@@ -162,7 +172,7 @@ export default function PedidosEspeciales() {
                     {/* Precio (opcional) */}
                     {item.price && (
                       <p className="mt-3 font-semibold text-wineDark">
-                        ${item.price.toFixed(2)} MXN
+                        ${Number(item.price).toFixed(2)} MXN
                       </p>
                     )}
 
@@ -184,7 +194,10 @@ export default function PedidosEspeciales() {
             })
           ) : (
             <p className="text-center text-wineDark/70 col-span-full">
-              {t("special.noResults", "No hay productos en esta categoría todavía.")}
+              {t(
+                "special.noResults",
+                "No hay productos en esta categoría todavía."
+              )}
             </p>
           )}
         </AnimatePresence>

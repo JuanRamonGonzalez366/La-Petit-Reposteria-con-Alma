@@ -18,7 +18,7 @@ export default function CafeteriaAdmin() {
   });
 
   const categories = [
-    "Barra de espresso", "Frappastel", "Tés y Tisanas", "Otras bebidas y extras",
+    "Barra de espresso","Métodos","Frappastel", "Tés y Tisanas", "Otras bebidas y extras",
   ];
 
   useEffect(() => {

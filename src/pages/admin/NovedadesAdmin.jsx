@@ -261,7 +261,7 @@ export default function NovedadesAdmin() {
                 value={form.titleEs}
                 onChange={handleChange("titleEs")}
                 className="w-full border border-wine/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-wine/50"
-                placeholder={t("Ej. Nueva colección otoño")}
+                placeholder={t("Ej. Pan de muerto, buñuelos patrios, etc.")}
               />
             </div>
           ) : (
@@ -345,7 +345,7 @@ export default function NovedadesAdmin() {
               value={form.tags}
               onChange={handleChange("tags")}
               className="w-full border border-wine/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-wine/50"
-              placeholder={t("Ej. ropa, niños, temporada")}
+              placeholder={t("Ej. halloween, navidad, dia, de, los, muertos")}
             />
           </div>
 
