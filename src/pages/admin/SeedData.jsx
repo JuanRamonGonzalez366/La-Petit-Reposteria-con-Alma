@@ -90,6 +90,14 @@ export default function SeedData() {
     lowCostRadiusKm: 12,
     coords: { lat: 20.687827025899836, lng: -103.4196315558228 },
   },
+  {
+    id: "circunvalacion",
+    name: "Sucursal Circunvalación",
+    municipality: "Guadalajara",
+    freeRadiusKm: 5,
+    lowCostRadiusKm: 12,
+    coords: { lat: 20.69780497203399, lng: -103.3317526064381 },
+  },
 ];
 
 

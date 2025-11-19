@@ -7,6 +7,17 @@ export default function Sucursales() {
 
   const sucursales = [
     {
+      id: "circunvalacion",
+      name: "Circunvalación",
+      address: "Av. Cvln. División del Nte. 67, Independencia, 44379 Guadalajara, Jal.",
+      horario: "8:30 AM – 9:00 PM",
+      img: "https://res.cloudinary.com/dzjupasme/image/upload/v1763401009/ty6zcjerns8cekfc2mij.png",
+      map: "https://maps.app.goo.gl/WnZpenK116GT7Ctw9",
+      rebanada: true,
+      cafeteria: true,
+      rappi: true,
+    },
+    {
       id: "el-salto",
       name: "El Salto",
       address: "Libramiento Juanacatlán #40-C, El Salto, Jalisco 45680",
