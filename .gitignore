@@ -7,18 +7,40 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Environment files (MUY IMPORTANTE)
+.env
+.env.*
+.env.local
+.env.local.*
+
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+
+# Local dev
 *.local
 
-# Editor directories and files
+# Editor stuff
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase cache
+.firebase/
+.firebase/*
+
+# Cloud functions node_modules
+functions/node_modules/
+
+# Cloudinary caches (si los hubiera)
+.cld-cache/
+

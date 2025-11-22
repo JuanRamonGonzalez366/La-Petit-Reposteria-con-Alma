@@ -4,6 +4,8 @@ import logo from "../assets/logo recortado.png";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import i18n from "../i18n";
+import { db } from "../lib/firebase";
+import { doc, onSnapshot } from "firebase/firestore";
 
 export default function Header() {
   const { user, role, logout } = useAuth();
@@ -12,6 +14,29 @@ export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+
+
+
+
+
+
+    // 🔹 Traer nombre del usuario desde Firestore
+  useEffect(() => {
+    if (!user?.uid) {
+      setDisplayName("");
+      return;
+    }
+
+    const ref = doc(db, "users", user.uid);
+
+    const unsub = onSnapshot(ref, (snap) => {
+      const data = snap.data();
+      setDisplayName(data?.name || user.email || "");
+    });
+
+    return () => unsub();
+  }, [user?.uid]);
 
   // 🔹 Cargar idioma guardado
   useEffect(() => {
@@ -40,6 +65,8 @@ export default function Header() {
       }
       setLastScroll(current);
     };
+
+    
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -174,11 +201,12 @@ export default function Header() {
           {user ? (
             <>
               <span className="text-sm text-wineDark/80 truncate max-w-[120px]">
-                👤 {user.email}
+                👤 {displayName || user.email}
                 {role && role !== "user" && (
                   <span className="ml-1 text-xs text-wine/70">({role})</span>
                 )}
               </span>
+
               <button
                 onClick={logout}
                 className="bg-cream px-3 py-1 rounded hover:opacity-80 transition"
