@@ -119,6 +119,9 @@ export default function Header() {
           <NavLink to="/" className={linkClass}>
             {lang === "es" ? "Inicio" : "Home"}
           </NavLink>
+          <NavLink to="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb" className={linkClass}>
+            {lang === "es" ? "Nosotros" : "Our Team"}
+          </NavLink>
           <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass}>
             {lang === "es" ? "Productos" : "Products"}
           </NavLink>
@@ -249,6 +252,9 @@ export default function Header() {
         <nav className="flex flex-col gap-3 px-6 py-4 text-center font-medium">
           <NavLink to="/" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Inicio" : "Home"}
+          </NavLink>
+          <NavLink to="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb" className={linkClass} onClick={toggleMenu}>
+            {lang === "es" ? "Nosotros" : "Our Team"}
           </NavLink>
           <NavLink to="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className={linkClass} onClick={toggleMenu}>
             {lang === "es" ? "Productos" : "Products"}

@@ -81,16 +81,16 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   style={{ minHeight: "100%", minWidth: "100%" }}
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+                {/* <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
                   <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
                   <p className="mb-8 text-center">{t("home.bannerSubtitle1")}</p>
                   <a href="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
                     {t("home.bannerButton")}      
                   </a>
-                </div>
+                </div> */}
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <div className="relative w-full h-full">
                 <img
                   src="https://res.cloudinary.com/dzjupasme/image/upload/v1760316016/mjexq6vfusfdhopcvgqn.jpg"
@@ -123,7 +123,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
 
