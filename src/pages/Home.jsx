@@ -76,7 +76,7 @@ export default function Home() {
             <SwiperSlide>
               <div className="relative w-full h-full">
                 <img
-                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760316252/cr6b9q7zbppxskt8aiwl.jpg"
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703401/dsyx771aezgbchkgwgkk.jpg"
                   alt="Promoción 3"
                   className="w-full h-full object-cover"
                   style={{ minHeight: "100%", minWidth: "100%" }}
@@ -130,7 +130,7 @@ export default function Home() {
         {/* Productos Destacados */}
         <section className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="font-display text-3xl text-wine mb-8 text-center">{t("home.featuredTitle")}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[ 
               { img: tronco, name: t("home.troncoName"), desc: t("home.troncoDesc") },
               { img: ruso, name: t("home.rusoName"), desc: t("home.rusoDesc") },
@@ -149,7 +149,7 @@ export default function Home() {
 
         {/* Quiénes Somos */}
         <section className="bg-rose/10 py-16">
-          <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
+          <div className="text-center max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
             <div>
               <h2 className="font-display text-3xl text-wine mb-4">{t("home.aboutTitle")}</h2>
               <p className="text-wineDark/80 leading-relaxed">{t("home.aboutText")}</p>

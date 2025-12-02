@@ -49,14 +49,14 @@ export default function Nosotros() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="font-display text-4xl text-wine mb-4">
+            <h1 className="font-display text-4xl text-wine text-center mb-4">
               {t("about.title")}
             </h1>
-            <p className="text-wineDark/90 leading-relaxed">
+            <p className="text-wineDark/90 text-center leading-relaxed">
               {t("about.subtitle")}
             </p>
 
-            <div className="flex flex-wrap gap-2 mt-6">
+            {/* <div className="flex flex-wrap gap-2 mt-6">
               {categories.map((c) => (
                 <span
                   key={c}
@@ -65,7 +65,7 @@ export default function Nosotros() {
                   {c}
                 </span>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -74,9 +74,8 @@ export default function Nosotros() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="relative rounded-2xl overflow-hidden shadow-suave border border-rose/30"
           >
-            {/* 🔁 Reemplaza estas imágenes por tus URLs de Cloudinary */}
             <img
-              src="https://res.cloudinary.com/dzjupasme/image/upload/v1760916617/sid6foctu3kbmiaoscsa.png"
+              src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/alk2ba8fodekhj4xyknl.jpg"
               alt={t("about.heroAlt")}
               className="w-full h-full object-cover"
               loading="lazy"
@@ -85,8 +84,8 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* “Rebanada de tu antojo” */}
-      <section className="px-4 sm:px-6 lg:px-12 mt-16">
+      {/* Audio contando historia de la empresa */}
+      <section className="text-center items-center px-4 sm:px-6 lg:px-12 mt-16">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, x: -16 }}
@@ -98,15 +97,26 @@ export default function Nosotros() {
             <h2 className="font-display text-3xl text-wine mb-3">
               {t("about.sliceHeading")}
             </h2>
+
             <p className="text-wineDark/90">
               {t("about.sliceText")}
             </p>
-            <ul className="mt-4 space-y-2 text-wineDark/85 text-sm list-disc pl-5">
-              <li>{t("about.slicePoint1")}</li>
-              <li>{t("about.slicePoint2")}</li>
-              <li>{t("about.slicePoint3")}</li>
-            </ul>
+
+            {/* Seccion del audio */}
+            <div className="mt-4 w-full flex justify-center">
+              <audio
+                controls
+                className="w-full max-w-md rounded-xl border border-rose/30 shadow-sm"
+              >
+                <source 
+                  src="https://res.cloudinary.com/dzjupasme/video/upload/v1764711835/vmnm3ox6if30sac5dauc.wav" 
+                  type="audio/mpeg" 
+                />
+                {t("about.audioNotSupported")}
+              </audio>
+            </div>
           </motion.div>
+
 
           <motion.div
             initial={{ opacity: 0, x: 16 }}
@@ -115,23 +125,42 @@ export default function Nosotros() {
             transition={{ duration: 0.45 }}
             className="order-1 lg:order-2"
           >
-            <div className="grid grid-cols-2 gap-3">
+            {/* 🔧 Galería ajustada para respetar el tamaño real de las imágenes */}
+            <div className="grid grid-cols-2 gap-2 md:gap-4 lg:gap-3">
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1762739993/szznkmejyicgmass5vct.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/xbhe17djixoqcljq9rlw.jpg"
                 alt={t("about.sliceImg1Alt")}
-                className="rounded-xl border border-rose/20 shadow-sm object-cover h-48 w-full"
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
               />
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1762739994/oodymkpg9rsz4pkcxeec.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
                 alt={t("about.sliceImg2Alt")}
-                className="rounded-xl border border-rose/20 shadow-sm object-cover h-48 w-full"
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
               />
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1760666786/fpdnkz3ozs4lz4acqkhi.webp"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/px0ar51vanrv5qwexkvu.jpg"
                 alt={t("about.sliceImg3Alt")}
-                className="rounded-xl border border-rose/20 shadow-sm object-cover h-48 w-full col-span-2"
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto col-span-2"
+                loading="lazy"
+              />
+              <img
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/utknolcinrcqekba2uu3.jpg"
+                alt={t("about.sliceImg1Alt")}
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
+                loading="lazy"
+              />
+              <img
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg"
+                alt={t("about.sliceImg2Alt")}
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
+                loading="lazy"
+              />
+              <img
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/wcfv744dpg2qmjopapoz.jpg"
+                alt={t("about.sliceImg3Alt")}
+                className="rounded-xl border border-rose/20 shadow-sm w-full h-auto col-span-2"
                 loading="lazy"
               />
             </div>
@@ -164,7 +193,9 @@ export default function Nosotros() {
       {/* Sucursales y horarios (resumen) */}
       <section className="px-4 sm:px-6 lg:px-12 mt-16">
         <div className="bg-white border border-rose/30 rounded-2xl p-6 shadow-sm">
-          <h2 className="font-display text-2xl text-wine mb-3">{t("about.briefBranchesTitle")}</h2>
+          <h2 className="font-display text-2xl text-wine mb-3">
+            {t("about.briefBranchesTitle")}
+          </h2>
           <p className="text-wineDark/85">{t("about.briefBranchesText")}</p>
           <div className="mt-5 grid md:grid-cols-3 gap-4 text-sm">
             <div className="border border-rose/20 rounded-xl p-4">
@@ -192,8 +223,11 @@ export default function Nosotros() {
           <h3 className="font-display text-2xl mb-2">{t("about.ctaTitle")}</h3>
           <p className="opacity-90">{t("about.ctaSubtitle")}</p>
           <br />
-          <a href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-              {t("home.bannerButton")}      
+          <a
+            href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz"
+            className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            {t("home.bannerButton")}
           </a>
         </div>
       </section>

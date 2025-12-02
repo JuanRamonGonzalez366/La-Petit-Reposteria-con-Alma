@@ -1,9 +1,9 @@
 {
   "home": {
-    "bannerTitle": "Petit repotería con alma",
+    "bannerTitle": "Petit Repostería con Alma",
     "bannerSubtitle3": "Prueben nuestros productos de temporada como el exquisito pan de muerto",
     "bannerSubtitle2": "¡Disfruta de nuestra selección de pasteles frescos, hechos artesanalmente cada día, disponibles en una variedad de sabores y presentaciones para cada ocasión!",
-    "bannerSubtitle1": "Conocenos y aprende mas de nosotros la gran familia de pastelería de Petit Plaisir",
+    "bannerSubtitle1": "Conoce la historia de esta gran familia contada por la mismisima fundadora, dando clic aqui",
     "bannerButton": "Ver más",
 
     "featuredTitle": "Productos Destacados",
@@ -131,12 +131,12 @@
   },
 
   "about": {
-    "title": "Repostería con alma desde 1998",
-    "subtitle": "Casa de repostería con más de 20 años elaborando pasteles, galletas, panadería, postres y gelatinas, con recetas propias, ingredientes naturales y procesos tradicionales.",
+    "title": "Pasteleria Petit Presenta, La Historia de la Familia Petit, contada por Doña Alma fundadora de esta gran franquisia",
+    "subtitle": "La historia de esta pastelería nace mucho tiempo antes que el nombre de Petit. Todo esto realmente empezó cuando yo tenía 7 u 8 años y mi madre me mandaba todas las tardes a comprar pan y yo veía como los panaderos preparaban panes con un aroma especial. Que, para mí, erra como hacer magia era un espectáculo. Cuando regresaba a mi casa, yo jugaba con los mismos ingredientes que usaban los panaderos y hacia pastelitos, Este juego continuo por muchos años en mi vida y empecé a hacer mis propias recetas y procesos, hasta que sin darme cuenta nació en mí el amor por la REPOSTERÍA. Este juego se convirtió en algo más serio e importante, cuando nace mi primer hijo y cumple 1 año. Yo necesitaba un pastel para festejarlo. Algo que no pude hacer porque no sabía hacer esas decoraciones. Entonces lo compre en una pastelería de prestigio, buena, pero desafortunadamente a mi familia no le gusto. Partimos el pastel para festejarlo, pero nadie se lo comió. A los días tuve que tirarlo y en ese momento, me hice la promesa que al siguiente año yo iba a hacer un pastel especial para mi hijo. Y así fue, estudie, me prepare y le hice un pastel rico y bonito a mi hijo. A partir de este día, algunos conocidos y familiares empezaron a pedirme pasteles para sus eventos, que los horneaba y decoraba en la cocina de mi casa. El 19 de diciembre de 1999, en medio de una crisis económica familiar, tengo dos propósitos, el primero ayudar a la economía de la familia y el segundo; generar alegría a través de mi repostería. Tomo una decisión importante, abrir una pastelería en el centro de Tlaquepaque y ese día nace Petit. Una pastelería muy pequeña que yo misma atendía y preparaba los pasteles. De ahí viene el nombre de Petit, por pequeña. Junto con ella, nació el chefsito Pier, que nos acompaña en nuestra imagen. Con el paso de los años, la aceptación de nuestros clientes y con muchas personan que colaboran para hacer posible esta alegría, Petit ha crecido y nuestra imagen ha evolucionado a la par. Actualmente llegan las nuevas generaciones a Petit tanto de proyectos, como la construcción de amplia y moderna planta de producción y la renovación de nuestra imagen. Somos la misma historia, la misma familia, preparamos las mismas recetas con las misma calidad y sabor. Somos Petit… Repostería con Alma.",
     "heroAlt": "Pastelería artesanal Petit Plaisir",
 
-    "sliceHeading": "La rebanada de tu antojo",
-    "sliceText": "En Petit puedes elegir el tamaño de tu rebanada entre más de 20 sabores. Fresco del día, sin conservadores y con la calidad que nos distingue.",
+    "sliceHeading": "Quieres escuchar la historia de Petit de la voz de la fundadora?",
+    "sliceText": "A continuacion se presenta el audio donde Doña Alma explica la historia de la empresa, cuales fueron sus primeros pasos en el mundo de la resposteria, como nacio el gusto por esta y cómo se ha convertido en una famosa empresa pastelera.",
     "slicePoint1": "Más de 20 sabores para elegir.",
     "slicePoint2": "Elige el tamaño exacto de tu rebanada.",
     "slicePoint3": "Preparaciones frescas y del día.",
