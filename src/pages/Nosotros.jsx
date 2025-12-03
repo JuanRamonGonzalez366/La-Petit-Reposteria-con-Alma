@@ -53,7 +53,31 @@ export default function Nosotros() {
               {t("about.title")}
             </h1>
             <p className="text-wineDark/90 text-center leading-relaxed">
-              {t("about.subtitle")}
+              {t("about.subtitle1")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle2")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle3")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle4")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle5")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle6")}
+            </p>
+            <br />
+            <p className="text-wineDark/90 text-center leading-relaxed">
+              {t("about.subtitle7")}              
             </p>
 
             {/* <div className="flex flex-wrap gap-2 mt-6">
@@ -128,13 +152,13 @@ export default function Nosotros() {
             {/* 🔧 Galería ajustada para respetar el tamaño real de las imágenes */}
             <div className="grid grid-cols-2 gap-2 md:gap-4 lg:gap-3">
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/xbhe17djixoqcljq9rlw.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764797646/xbhe17djixoqcljq9rlw.jpg"
                 alt={t("about.sliceImg1Alt")}
                 className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
               />
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg"
                 alt={t("about.sliceImg2Alt")}
                 className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
@@ -152,7 +176,7 @@ export default function Nosotros() {
                 loading="lazy"
               />
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
                 alt={t("about.sliceImg2Alt")}
                 className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
@@ -191,7 +215,7 @@ export default function Nosotros() {
       </section>
 
       {/* Sucursales y horarios (resumen) */}
-      <section className="px-4 sm:px-6 lg:px-12 mt-16">
+      {/* <section className="px-4 sm:px-6 lg:px-12 mt-16">
         <div className="bg-white border border-rose/30 rounded-2xl p-6 shadow-sm">
           <h2 className="font-display text-2xl text-wine mb-3">
             {t("about.briefBranchesTitle")}
@@ -215,7 +239,7 @@ export default function Nosotros() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-12 mt-16">

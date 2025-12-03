@@ -14,13 +14,13 @@ export default function Dashboard() {
           <p className="text-sm text-center text-wineDark/70">Agrega y edita los productos del menú de pasteles.</p>
         </Link>
         {/*Pastekeria*/}
-        <Link
+        {/* <Link
           to="/WvSIxhg7Zi0x2P0+vwlvRVxU5qqY4p5T/A10OYD0ajivoZ58dIcjpjZvGb7+MlSK"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"
         >
           <h2 className="text-xl text-center font-semibold text-wine mb-2">☕ Cafetería</h2>
           <p className="text-sm text-center text-wineDark/70">Agrega y edita los productos del menú.</p>
-        </Link>
+        </Link> */}
         <Link
           to="/rbuvrD9G0kE6JYHvC39TuU0g8Lfj97IByG/45n6NfcPDShkIdeuc4Tv7CtY9zyTpnhCyxRImHyZLPDLXsHInpw"
           className="bg-white border border-roseBrand/30 rounded-xl p-6 shadow-soft hover:shadow-md transition"

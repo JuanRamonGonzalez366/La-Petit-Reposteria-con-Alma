@@ -97,7 +97,7 @@ const handleSubmit = async (e) => {
 }
 
 const areas = [
-    "Gerente de Tienda",
+    "Encargado de Tienda",
     "Auxiliar de Ventas",
     "Servicio a Domicilio",
     "Producción",

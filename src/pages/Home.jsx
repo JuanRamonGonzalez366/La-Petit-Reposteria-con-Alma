@@ -128,7 +128,7 @@ export default function Home() {
         </div>
 
         {/* Productos Destacados */}
-        <section className="max-w-6xl mx-auto px-4 py-16">
+        {/* <section className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="font-display text-3xl text-wine mb-8 text-center">{t("home.featuredTitle")}</h2>
           <div className="text-center grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[ 
@@ -145,10 +145,10 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Quiénes Somos */}
-        <section className="bg-rose/10 py-16">
+        {/* <section className="bg-rose/10 py-16">
           <div className="text-center max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
             <div>
               <h2 className="font-display text-3xl text-wine mb-4">{t("home.aboutTitle")}</h2>
@@ -158,10 +158,10 @@ export default function Home() {
               <img src={pasteleria} alt="Petit Plaisir" className="w-full h-[320px] object-cover" />
             </div>
           </div>
-        </section>
+        </section> */}
         
         {/* Promociones */}
-        <section className="max-w-6xl mx-auto px-4 py-16">
+        {/* <section className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="font-display text-3xl text-wine mb-8 text-center">
             {t("home.promoTitle")}
           </h2>
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
             </SwiperSlide>
           </Swiper>
-        </section>
+        </section> */}
 
         {/* CTA final */}
         <section className="bg-wine text-white py-16 text-center">
