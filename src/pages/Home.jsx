@@ -59,11 +59,11 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] px-4 sm:px-6 lg:px-12 pb-6">
+    <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
 
       <section className="bg-cream">
         {/* Banner tipo swiper que ocupa todo el ancho y alto del contenedor */}
-        <div className="w-full h-[420px] md:h-[500px] lg:h-[600px] relative">
+        <div className="w-full h-[700px] md:h-[800px] lg:h-[900px] relative">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={0}
