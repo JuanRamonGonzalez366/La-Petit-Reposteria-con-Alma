@@ -283,7 +283,7 @@ export default function Header() {
             {lang === "es" ? "Bolsa de Trabajo" : "Careers"}
           </NavLink>
           <NavLink
-            to="/sWB7AuVkuH9cwxeonb7YJW4Td0nim7ISf8xNllbl1zow2SJX6BFY7t9MO4jMlW8o"
+            to="/https://forms.office.com/pages/responsepage.aspx?id=dKSvQewt306VB6VCW_6heqPTCc0G1CBFvjSh4go4PBRUNUtOWU5SOVY4TE0yQVkzRjhZMEY5NFUwNC4u&origin=lprLink&route=shorturl"
             className={linkClass}
             onClick={toggleMenu}
           >
