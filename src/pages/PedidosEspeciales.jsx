@@ -68,7 +68,7 @@ export default function PedidosEspeciales() {
 
   // 🔹 Link de WhatsApp general (Pedidos Especiales)
   const whatsappGeneral =
-    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Quisiera%20realizar%20un%20pedido%20especial.%20%F0%9F%8E%82";
+    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Me%20gustaria%20hacer%20un%20pedido%20especial.%20¿Podrian%20apoyarme?";
 
   return (
     <main className="bg-cream min-h-screen px-4 sm:px-6 lg:px-12 pt-24 pb-16">

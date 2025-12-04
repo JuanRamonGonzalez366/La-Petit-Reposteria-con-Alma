@@ -115,7 +115,7 @@ export default function Sucursales() {
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] px-4 sm:px-6 lg:px-12 pb-6">
-<motion.div
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -135,53 +135,43 @@ export default function Sucursales() {
             key={s.id}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="bg-marfil rounded-2xl border border-rose/30 shadow-soft overflow-hidden hover:shadow-lg transition"
+            className="bg-marfil rounded-2xl border border-rose/30 shadow-soft hover:shadow-lg transition p-5 flex flex-col text-center"
           >
-            <div className="h-52 overflow-hidden">
-              <img
-                src={s.img}
-                alt={s.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <h3 className="font-display text-2xl text-wine mb-2">{s.name}</h3>
+            <p className="text-sm text-wineDark/80 mb-2">{s.address}</p>
+            <p className="text-sm text-wineDark/70 mb-3">{s.horario}</p>
 
-            <div className="p-5 flex flex-col text-center">
-              <h3 className="font-display text-2xl text-wine mb-2">{s.name}</h3>
-              <p className="text-sm text-wineDark/80 mb-2">{s.address}</p>
-              <p className="text-sm text-wineDark/70 mb-3">{s.horario}</p>
+            <a
+              href={s.map}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 bg-wine text-cream px-4 py-2 rounded-lg text-sm font-semibold hover:bg-wineDark transition"
+            >
+              {t("sucursales.sucursalesButton")}
+            </a>
 
-              <a
-                href={s.map}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 bg-wine text-cream px-4 py-2 rounded-lg text-sm font-semibold hover:bg-wineDark transition"
-              >
-                {t("sucursales.sucursalesButton")}
-              </a>
-
-              <div className="flex justify-center gap-3 mt-4">
-                {s.rebanada && (
-                  <img
-                    src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751185/mvw6nygo8ddkzg8ihbna.png"
-                    alt="Rebanada"
-                    className="h-10 w-10 object-contain"
-                  />
-                )}
-                {s.cafeteria && (
-                  <img
-                    src="https://res.cloudinary.com/dzjupasme/image/upload/v1760750658/xqav4uk0dkmxfnyymzdz.png"
-                    alt="Cafetería"
-                    className="h-10 w-10 object-contain"
-                  />
-                )}
-                {s.rappi && (
-                  <img
-                    src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751843/ap94iwehcefphojg7nnh.png"
-                    alt="Rappi"
-                    className="h-10 w-10 object-contain"
-                  />
-                )}
-              </div>
+            <div className="flex justify-center gap-3 mt-4">
+              {s.rebanada && (
+                <img
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751185/mvw6nygo8ddkzg8ihbna.png"
+                  alt="Rebanada"
+                  className="h-10 w-10 object-contain"
+                />
+              )}
+              {s.cafeteria && (
+                <img
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760750658/xqav4uk0dkmxfnyymzdz.png"
+                  alt="Cafetería"
+                  className="h-10 w-10 object-contain"
+                />
+              )}
+              {s.rappi && (
+                <img
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751843/ap94iwehcefphojg7nnh.png"
+                  alt="Rappi"
+                  className="h-10 w-10 object-contain"
+                />
+              )}
             </div>
           </motion.div>
         ))}

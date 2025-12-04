@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export default function Cafeteria() {
   const { t } = useTranslation();
 
-  // 🔹 Sucursales con cafetería (igual que antes)
+  // 🔹 Sucursales con cafetería
   const sucursalesCafeteria = [
     {
       id: "rio-nilo",
@@ -36,7 +36,6 @@ export default function Cafeteria() {
     },
   ];
 
-  // 👉 Cambia esta URL por la del menú en Cloudinary o donde lo subas
   const MENU_IMG_URL =
     "https://res.cloudinary.com/dzjupasme/image/upload/v1764802574/oka2ql13jj2re6ajruhm.jpg";
 
@@ -78,7 +77,7 @@ export default function Cafeteria() {
         </motion.div>
       </section>
 
-      {/* SUCURSALES CON CAFETERÍA (se mantiene) */}
+      {/* SUCURSALES CON CAFETERÍA SIN FOTO */}
       <section className="max-w-6xl mx-auto mt-8">
         <h2 className="font-display text-3xl text-center text-wineDark mb-10">
           {t("cafe.cafeteriaSucursales")}
@@ -90,34 +89,24 @@ export default function Cafeteria() {
               key={s.id}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="bg-marfil rounded-2xl shadow-soft overflow-hidden border border-rose/30 hover:shadow-lg"
+              className="bg-marfil rounded-2xl shadow-soft border border-rose/30 hover:shadow-lg p-5 flex flex-col justify-between"
             >
-              <div className="h-56 w-full overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.name}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                />
+              <div className="text-center">
+                <h3 className="font-display text-xl text-wineBrand mb-1">
+                  {s.name}
+                </h3>
+                <p className="text-sm text-wineDark/80">{s.address}</p>
+                <p className="text-sm text-wineDark/70 mt-1">{s.horario}</p>
               </div>
 
-              <div className="p-5 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-display text-xl text-wineBrand mb-1">
-                    {s.name}
-                  </h3>
-                  <p className="text-sm text-wineDark/80">{s.address}</p>
-                  <p className="text-sm text-wineDark/70 mt-1">{s.horario}</p>
-                </div>
-
-                <a
-                  href={s.map}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block text-center bg-red text-white px-5 py-2 rounded-full font-semibold hover:bg-red/80 transition"
-                >
-                  {t("cafe.cafeteriaSucursalesButton")}
-                </a>
-              </div>
+              <a
+                href={s.map}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-center bg-red text-white px-5 py-2 rounded-full font-semibold hover:bg-red/80 transition"
+              >
+                {t("cafe.cafeteriaSucursalesButton")}
+              </a>
             </motion.div>
           ))}
         </div>

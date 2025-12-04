@@ -173,7 +173,7 @@ export default function Products() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
-                  className="border border-red rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition relative bg-white"
+                  className="border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition relative bg-white"
                 >
                   {/* Imagen */}
                   <div className="relative">

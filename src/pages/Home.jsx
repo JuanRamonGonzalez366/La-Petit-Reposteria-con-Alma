@@ -14,9 +14,15 @@ import tiramisu from "../assets/tiramisu.webp";
 import pasteleria from "../assets/pasteleria.jpg";
 
 export default function Home() {
+  const BANNER_DESKTOP =
+  "https://res.cloudinary.com/dzjupasme/image/upload/v1764703401/dsyx771aezgbchkgwgkk.jpg";
+
+const BANNER_MOBILE =
+  "https://res.cloudinary.com/dzjupasme/image/upload/v1764703401/dsyx771aezgbchkgwgkk.jpg";
+
   const { t } = useTranslation();
   const whatsappGeneral =
-    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Quisiera%20realizar%20un%20pedido%20especial.%20%F0%9F%8E%82";
+    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Me%20gustaria%20hacer%20un%20pedido%20especial.%20¿Podrian%20apoyarme?";
 
   // --- Estado para comentarios ---
   const [form, setForm] = useState({ nombre: "", correo: "", mensaje: "" });
@@ -63,7 +69,7 @@ export default function Home() {
 
       <section className="bg-cream">
         {/* Banner tipo swiper que ocupa todo el ancho y alto del contenedor */}
-        <div className="w-full h-[800px] md:h-[1000px] lg:h-[1200px] relative">
+        <div className="w-full h-[420px] sm:h-[480px] md:h-[540px] lg:h-[620px] relative">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={0}
@@ -75,21 +81,40 @@ export default function Home() {
           >
             <SwiperSlide>
               <div className="relative w-full h-full">
+                {/* Imagen DESKTOP */}
                 <img
-                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703401/dsyx771aezgbchkgwgkk.jpg"
-                  alt="Promoción 3"
-                  className="w-full h-full object-cover"
-                  style={{ minHeight: "100%", minWidth: "100%" }}
+                  src={BANNER_DESKTOP}
+                  alt="Promoción Petit Plaisir"
+                  className="hidden md:block w-full h-full object-cover"
                 />
-                {/* <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
-                  <h3 className="font-display text-3xl mb-3">{t("home.bannerTitle")}</h3>
-                  <p className="mb-8 text-center">{t("home.bannerSubtitle1")}</p>
-                  <a href="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb" className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                    {t("home.bannerButton")}      
+
+                {/* Imagen MOBILE */}
+                <img
+                  src={BANNER_MOBILE}
+                  alt="Promoción Petit Plaisir"
+                  className="block md:hidden w-full h-full object-cover"
+                />
+
+                {/* Si luego quieres volver a usar overlay de texto, va aquí */}
+                {/* 
+                <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white px-4">
+                  <h3 className="font-display text-2xl sm:text-3xl mb-3 text-center">
+                    {t("home.bannerTitle")}
+                  </h3>
+                  <p className="mb-4 max-w-xl text-center text-sm sm:text-base">
+                    {t("home.bannerSubtitle1")}
+                  </p>
+                  <a
+                    href="/TAUa+jdGkbZvT48lElgzfd9JEIUg3McoxqVV+CmDtn4yj9gDpGS8hOUNOT2CIPcb"
+                    className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                  >
+                    {t("home.bannerButton")}
                   </a>
-                </div> */}
+                </div>
+                */}
               </div>
             </SwiperSlide>
+
             {/* <SwiperSlide>
               <div className="relative w-full h-full">
                 <img
