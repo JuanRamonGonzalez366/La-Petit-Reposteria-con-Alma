@@ -152,7 +152,7 @@ export default function Nosotros() {
             {/* 🔧 Galería ajustada para respetar el tamaño real de las imágenes */}
             <div className="grid grid-cols-2 gap-2 md:gap-4 lg:gap-3">
               <img
-                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764797646/xbhe17djixoqcljq9rlw.jpg"
+                src="https://res.cloudinary.com/dzjupasme/image/upload/v1764807166/tnejiwmrjuczm0tpwfup.jpg"
                 alt={t("about.sliceImg1Alt")}
                 className="rounded-xl border border-rose/20 shadow-sm w-full h-auto"
                 loading="lazy"
