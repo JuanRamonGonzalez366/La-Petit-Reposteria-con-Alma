@@ -15,7 +15,7 @@ export default function Login() {
     try {
       await login({ email, password });
     } catch (err) {
-      console.error("🔥 Error completo de Firebase:", err.code, err.message);
+      console.error("Error de Firebase:", err.code, err.message);
       if (err.code === "EMAIL_NOT_VERIFIED") {
         toast.info("Debes verificar tu correo antes de iniciar sesión.");
       } else if (err.code === "auth/user-not-found") {

@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";
-import logo from "../assets/logo recortado.png";
+import logo from "../assets/logo recortadomalo.png";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import i18n from "../i18n";
@@ -81,7 +81,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 text-wine shadow-md transition-transform duration-500 ease-in-out ${
+      className={` bg-rosepier fixed top-0 left-0 w-full z-50 text-wine shadow-md transition-transform duration-500 ease-in-out ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{
@@ -93,7 +93,7 @@ export default function Header() {
     >
       {/* Overlay translúcido */}
       {/*Acomodar de nuevo el fondo cuando encontemos una mejor alternativa bg-rose/20*/}
-      <div className="absolute inset-0 bg-rose backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-rosepier backdrop-blur-sm"></div>
 
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-0 h-20">
         {/* LOGO */}
@@ -184,7 +184,7 @@ export default function Header() {
             >
               {lang === "es" ? "Facturación" : "Billing"}
             </NavLink>
-
+            
             {role === "admin" && (
               <NavLink
                 to="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN"
