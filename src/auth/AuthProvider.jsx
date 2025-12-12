@@ -27,14 +27,14 @@ export default function AuthProvider({ children }) {
     try {
       const snap = await getDoc(doc(db, "users", uid));
       if (snap.exists()) {
-        console.log("✅ Documento Firestore encontrado:", snap.data());
+        console.log("Documento Firestore encontrado:", snap.data());
         return snap.data().role;
       } else {
-        console.warn("⚠️ No existe documento en Firestore para UID:", uid);
+        console.warn("No existe documento en Firestore para UID:", uid);
         return "user";
       }
     } catch (err) {
-      console.error("🔥 Error al obtener rol:", err);
+      console.error("Error al obtener rol:", err);
       return "user";
     }
   };
@@ -43,7 +43,7 @@ export default function AuthProvider({ children }) {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
       if (!u) {
-        console.log("🚫 Usuario no autenticado");
+        console.log("Usuario no autenticado");
         setUser(null);
         setRole(null);
         setLoading(false);
@@ -67,7 +67,7 @@ export default function AuthProvider({ children }) {
       }
 
       const r = await fetchRole(u.uid);
-      console.log("✅ Rol encontrado:", r);
+      console.log("Rol encontrado:", r);
       setRole(r || "user");
 
       // Guardar en localStorage
@@ -85,14 +85,14 @@ export default function AuthProvider({ children }) {
     await user.reload();
 
     const r = await fetchRole(user.uid);
-    console.log("🎯 Rol confirmado en login:", r);
+    console.log("Rol confirmado en login:", r);
 
     setUser(user);
     setRole(r || "user");
     localStorage.setItem("userData", JSON.stringify({ uid: user.uid, role: r }));
 
     if (r === "admin") {
-      navigate("/admin");
+      navigate("/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN");
     } else {
       navigate("/");
     }

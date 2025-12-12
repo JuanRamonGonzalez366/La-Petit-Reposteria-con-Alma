@@ -153,7 +153,7 @@ export default function Sucursales() {
             <div className="flex justify-center gap-3 mt-4">
               {s.rebanada && (
                 <img
-                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751185/mvw6nygo8ddkzg8ihbna.png"
+                  src="https://res.cloudinary.com/dzjupasme/image/upload/v1765560283/z3bonz0a3rfeaotmzsk7.png"
                   alt="Rebanada"
                   className="h-10 w-10 object-contain"
                 />

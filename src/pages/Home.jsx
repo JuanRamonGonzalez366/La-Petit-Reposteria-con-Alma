@@ -13,7 +13,7 @@ import pasteleria from "../assets/pasteleria.jpg";
 
 export default function Home() {
   const BANNER_DESKTOP =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765383955/xxptfzqlvm0c2yilqp4g.jpg"; // Imagen de escritorio
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765557188/g8ylvymmqjzwbilmovay.jpg"; // Imagen de escritorio
 
   const BANNER_MOBILE =
     "https://res.cloudinary.com/dzjupasme/image/upload/v1765382122/qnd64oinzfqfk0bb6cjy.jpg"; // Imagen móvil
@@ -64,24 +64,20 @@ export default function Home() {
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
-    <section className="bg-cream">
-      {/* Banner con imagen ajustada a diferentes tamaños */}
-      <div className="w-full h-[80vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] relative">
-        {/* Imagen Desktop */}
-        <img
-          src={BANNER_DESKTOP}
-          alt="Promoción Petit Plaisir"
-          className="hidden md:block w-full h-full object-cover object-center"
-        />
+    <div className="relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
+  <img
+    src={BANNER_DESKTOP}
+    alt="Promoción Petit Plaisir"
+    className="hidden md:block absolute inset-0 w-full h-full object-contain"
+  />
+  <img
+    src={BANNER_MOBILE}
+    alt="Promoción Petit Plaisir"
+    className="block md:hidden absolute inset-0 w-100 h-100 object-contain"
+  />
+</div>
 
-        {/* Imagen Mobile */}
-        <img
-          src={BANNER_MOBILE}
-          alt="Promoción Petit Plaisir"
-          className="mb-16 block md:hidden w-full h-auto object-contain object-center"
-        />
-      </div>
-    </section>
+
 
       {/* Productos Destacados */}
       {/* <section className="max-w-6xl mx-auto px-4 py-16">
@@ -137,24 +133,32 @@ export default function Home() {
       </section> */}
 
       {/* seccion rebanada de tu antojo */}
-      
-      <section className="bg-cream text-wine py-4 flex flex-col items-center justify-center text-center">
-        <h2 className="font-display text-3xl mb-4">{t("home.ctaRebanadaTittle")}</h2>
-        <img
-          src="https://res.cloudinary.com/dzjupasme/image/upload/v1765389447/rebanada_v2_e8d7cb.jpg"
-          alt="Menu Petit"
-          className="rounded-xl w-100 h-auto object-cover"
-        />
-        <p className="text-lg mt-6">{t("home.ctaRebanadaText")}</p>
-        <a 
-          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <section className="bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
+        <h2 className="font-display text-3xl mb-6">
+          {t("home.ctaRebanadaTittle")}
+        </h2>
+        {/* Contenedor con aire (evita sensación de recorte) */}
+        <div className="px-4 py-4">
+          <img
+            src="https://res.cloudinary.com/dzjupasme/image/upload/v1765554282/copy_of_xtik7mjfd3zamg4no67g_65f8b6.jpg"
+            alt="La rebanada de tu antojo"
+            className="w-full max-w-md h-auto mb-6"
+          />
+        </div>
+        <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
+          {t("home.ctaRebanadaText")}
+        </p>
+        <a
+          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
         >
           {t("home.ctaButton")}
         </a>
       </section>
+
+
 
       {/* Contacto */}
       <section className="bg-rose/10 py-16">

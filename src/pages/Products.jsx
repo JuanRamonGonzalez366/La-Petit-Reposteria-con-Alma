@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "../lib/firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,6 +15,14 @@ export default function Products() {
 
   const FAV_KEY = "petitplaisir:favorites";
 
+  // ✅ QR (cámbialo si usas otro)
+  const QR_MENU =
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765386730/qr_v3_c13329.jpg";
+
+  // ✅ PDF/menú (si quieres que el QR abra esto)
+  const MENU_PDF =
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf";
+
   const [items, setItems] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -25,7 +33,6 @@ export default function Products() {
 
   const { addToCart } = useCart();
 
-  // Claves de categorías ya existentes en tus traducciones
   const categories = [
     "productsAll",
     "productsChoco",
@@ -64,6 +71,7 @@ export default function Products() {
       setHydrated(true);
     }
   }, []);
+
   useEffect(() => {
     if (!hydrated) return;
     try {
@@ -79,18 +87,13 @@ export default function Products() {
     setShowFavs(false);
     if (catKey === "productsAll") return setFiltered(items);
 
-    // Etiqueta traducida que tú ya usas en UI
     const translatedLabel = t(`products.${catKey}`);
 
-    // Regla: si el doc nuevo tiene categoryKey, filtra por key;
-    // si es viejo, filtra por p.category (etiqueta visible).
     const next = items.filter((p) => {
-      if (p.categoryKey) {
-        return p.categoryKey === catKey;
-      }
-      // compat vieja: category es string (ES) que debe coincidir con la etiqueta traducida
+      if (p.categoryKey) return p.categoryKey === catKey;
       return p.category === translatedLabel;
     });
+
     setFiltered(next);
   };
 
@@ -108,17 +111,47 @@ export default function Products() {
 
   const titleOf = (p) => pickLang(p.title, lang);
   const descOf = (p) => pickLang(p.desc, lang);
-  // Mostrar siempre alguna etiqueta legible
   const categoryLabelOf = (p) => p.category || "";
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] px-4 sm:px-6 lg:px-12 pb-6">
-      <h1 className="font-display text-3xl text-wine text-center mb-10">
-        {t("products.productsTitle")}
-      </h1>
-      <p className="text-center text-wineDark/70 mb-8 max-w-2xl mx-auto">
-        {t("products.productsDescription")}
-      </p>
+      {/* ✅ Header con QR a la derecha (responsive) */}
+      <div className="max-w-6xl mx-auto mb-10">
+        <div className="grid items-center gap-6 md:grid-cols-[1fr_220px]">
+          {/* Texto */}
+          <div className="flex flex-col items-center">
+            <h1 className="font-display text-3xl text-wine text-center mb-4">
+              {t("products.productsTitle")}
+            </h1>
+            <p className="text-center text-wineDark/70 max-w-xl">
+              {t("products.productsDescription")}
+            </p>
+          </div>
+
+
+          {/* QR */}
+          <div className="flex justify-center md:justify-end">
+            <a
+              href={MENU_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              title="Abrir menú"
+            >
+              <img
+                src={QR_MENU}
+                alt="QR menú"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-xl border border-wine/20 shadow-sm group-hover:shadow-md transition"
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="text-xs text-wineDark/70 text-center mt-2">
+                Escanea para ver el menú
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Botones de filtro */}
       <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -140,7 +173,9 @@ export default function Products() {
         <button
           onClick={viewFavorites}
           className={`bg-cream px-4 py-2 rounded-full border transition font-medium flex items-center gap-2 ${
-            showFavs ? "bg-red text-white border-red" : "border-wine/30 text-wine hover:bg-rose"
+            showFavs
+              ? "bg-red text-white border-red"
+              : "border-wine/30 text-wine hover:bg-rose"
           }`}
         >
           <Heart size={18} className={showFavs ? "fill-white" : "fill-none text-red"} />
@@ -200,7 +235,9 @@ export default function Products() {
                       transition={{ duration: 0.3 }}
                       onClick={() =>
                         setFavorites((prev) =>
-                          prev.includes(p.id) ? prev.filter((fid) => fid !== p.id) : [...prev, p.id]
+                          prev.includes(p.id)
+                            ? prev.filter((fid) => fid !== p.id)
+                            : [...prev, p.id]
                         )
                       }
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm p-2 rounded-full hover:scale-110 transition"
@@ -233,6 +270,7 @@ export default function Products() {
 
                     <div className="mt-4 flex justify-between items-center gap-2">
                       <span className="text-xs text-wineDark/70">{catLabel}</span>
+
                       <button
                         onClick={() => setSelected(p)}
                         className="bg-red text-white px-3 py-1 rounded-lg hover:opacity-90 transition text-sm"
