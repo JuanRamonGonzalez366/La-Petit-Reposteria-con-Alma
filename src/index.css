@@ -6,6 +6,59 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+  MAISON NEUE
+   ========================= */
+
+/* Book → textos normales */
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold → títulos */
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+  AGENDA
+   ========================= */
+
+@font-face {
+  font-family: "Agenda";
+  src: url("./assets/fonts/Agenda-LightCondensed.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* =========================
+  ALKALINE (auxiliar)
+   ========================= */
+
+@font-face {
+  font-family: "Alkaline";
+  src: url("./assets/fonts/AlkalineTest-Regular-BF676e1b6ca889c.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alkaline";
+  src: url("./assets/fonts/AlkalineTest-Demi-BF676e1b6c71ac3.otf") format("opentype");
+  font-weight: 600; /* Demi suele ser 600 */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
     --toastify-color-success: #a13a66; /* Vino frambuesa */
     --toastify-color-error: #c8083d;   /* Rojo acento */
@@ -33,5 +86,10 @@
 .submenu-transition {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
+
+
+
+
 
   

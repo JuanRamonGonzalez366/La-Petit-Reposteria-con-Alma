@@ -14,6 +14,12 @@ module.exports = {
       fontFamily: {
         display: ["'Playfair Display'", "serif"],
         sans: ["'Poppins'", "sans-serif"],
+
+        // ✅ NUEVAS
+        maison: ['"Maison Neue"', "system-ui", "sans-serif"],
+        agenda: ['"Agenda"', "system-ui", "sans-serif"],      
+        alkaline: ['"Alkaline"', "system-ui", "sans-serif"], // ✅ nueva
+
       },
       boxShadow: {
         suave: "0 3px 10px rgba(76,25,56,0.15)",
@@ -27,5 +33,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};
