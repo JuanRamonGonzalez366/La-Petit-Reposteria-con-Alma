@@ -1,13 +1,13 @@
 // Subida consistente a Cloudinary para toda la app
 export async function uploadToCloudinary(file, { folder } = {}) {
   const CLOUD = import.meta.env.dzjupasme;
-  const PRESET = import.meta.env.ml_default; // 👈 MISMO nombre que ya usas en ProductsAdmin
+  const PRESET = import.meta.env.ml_default; 
 
   if (!CLOUD || !PRESET) {
     throw new Error("Faltan variables de entorno: VITE_CLOUDINARY_CLOUD / VITE_CLOUDINARY_PRESET");
   }
 
-  const url = `https://api.cloudinary.com/v1_1/${CLOUD}/image/upload`; // 👈 usa /image/upload
+  const url = `https://api.cloudinary.com/v1_1/${CLOUD}/image/upload`; 
   const fd = new FormData();
   fd.append("file", file);
   fd.append("upload_preset", PRESET);

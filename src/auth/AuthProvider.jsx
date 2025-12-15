@@ -10,31 +10,33 @@ import {
   setPersistence,
   browserLocalPersistence,
 } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 
 const AuthCtx = createContext();
 export const useAuth = () => useContext(AuthCtx);
+
+const USERDATA_KEY = "userData";
+const isDev = typeof import.meta !== "undefined" && import.meta.env && import.meta.env.DEV;
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   // === OBTENER ROL DESDE FIRESTORE ===
   const fetchRole = async (uid) => {
     try {
       const snap = await getDoc(doc(db, "users", uid));
       if (snap.exists()) {
-        console.log("Documento Firestore encontrado:", snap.data());
-        return snap.data().role;
+        const data = snap.data();
+        if (isDev) console.log("✅ Firestore role:", data?.role);
+        return data?.role || "user";
       } else {
-        console.warn("No existe documento en Firestore para UID:", uid);
+        if (isDev) console.warn("⚠️ No existe user doc para UID:", uid);
         return "user";
       }
     } catch (err) {
-      console.error("Error al obtener rol:", err);
+      if (isDev) console.error("❌ Error al obtener rol:", err);
       return "user";
     }
   };
@@ -42,74 +44,103 @@ export default function AuthProvider({ children }) {
   // === DETECTAR SESIÓN ACTIVA ===
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
-      if (!u) {
-        console.log("Usuario no autenticado");
-        setUser(null);
-        setRole(null);
-        setLoading(false);
-        localStorage.removeItem("userData");
-        return;
-      }
-
-      await u.reload();
-      setUser(u);
-
-      // Intentar leer rol desde localStorage para acelerar
-      const stored = localStorage.getItem("userData");
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (parsed.uid === u.uid) {
-          console.log("💾 Rol recuperado desde localStorage:", parsed.role);
-          setRole(parsed.role);
+      try {
+        if (!u) {
+          if (isDev) console.log("👤 Usuario no autenticado");
+          setUser(null);
+          setRole(null);
+          localStorage.removeItem(USERDATA_KEY);
           setLoading(false);
           return;
         }
+
+        await u.reload();
+        setUser(u);
+
+        // ✅ Recuperar rol rápido si existe en localStorage
+        const stored = localStorage.getItem(USERDATA_KEY);
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            if (parsed?.uid === u.uid && parsed?.role) {
+              if (isDev) console.log("💾 Rol desde localStorage:", parsed.role);
+              setRole(parsed.role);
+              setLoading(false);
+              return;
+            }
+          } catch {
+            localStorage.removeItem(USERDATA_KEY);
+          }
+        }
+
+        // ✅ Si no hay cache, buscar rol
+        const r = await fetchRole(u.uid);
+
+        // ✅ Regla: si NO es admin y NO está verificado, no dejamos rol ni cache
+        if (r !== "admin" && !u.emailVerified) {
+          setRole(null);
+          localStorage.removeItem(USERDATA_KEY);
+          setLoading(false);
+          return;
+        }
+
+        setRole(r || "user");
+        localStorage.setItem(USERDATA_KEY, JSON.stringify({ uid: u.uid, role: r || "user" }));
+        setLoading(false);
+      } catch (e) {
+        if (isDev) console.error("❌ Error en onAuthStateChanged:", e);
+        setUser(null);
+        setRole(null);
+        localStorage.removeItem(USERDATA_KEY);
+        setLoading(false);
       }
-
-      const r = await fetchRole(u.uid);
-      console.log("Rol encontrado:", r);
-      setRole(r || "user");
-
-      // Guardar en localStorage
-      localStorage.setItem("userData", JSON.stringify({ uid: u.uid, role: r }));
-
-      setLoading(false);
     });
+
     return () => unsub();
   }, []);
 
   // === LOGIN ===
   const login = async ({ email, password }) => {
     await setPersistence(auth, browserLocalPersistence);
-    const { user } = await signInWithEmailAndPassword(auth, email, password);
-    await user.reload();
 
-    const r = await fetchRole(user.uid);
-    console.log("Rol confirmado en login:", r);
+    const cred = await signInWithEmailAndPassword(auth, email, password);
+    const u = cred.user;
+    await u.reload();
 
-    setUser(user);
-    setRole(r || "user");
-    localStorage.setItem("userData", JSON.stringify({ uid: user.uid, role: r }));
+    // 🔎 Primero obtenemos rol
+    const r = await fetchRole(u.uid);
 
-    if (r === "admin") {
-      navigate("/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN");
-    } else {
-      navigate("/");
+    // ✅ Solo usuarios NO admin requieren verificación
+    if (r !== "admin" && !u.emailVerified) {
+      await signOut(auth);
+      const customErr = new Error("Email not verified");
+      customErr.code = "EMAIL_NOT_VERIFIED";
+      throw customErr;
     }
+
+    setUser(u);
+    setRole(r || "user");
+    localStorage.setItem(USERDATA_KEY, JSON.stringify({ uid: u.uid, role: r || "user" }));
+
+    // ✅ No navegamos aquí. Login.jsx decide a dónde ir.
+    return { user: u, role: r || "user" };
   };
 
   // === REGISTRO ===
   const register = async ({ email, password, name, phone }) => {
     await setPersistence(auth, browserLocalPersistence);
+
     const cred = await createUserWithEmailAndPassword(auth, email, password);
     await sendEmailVerification(cred.user);
+
     await setDoc(doc(db, "users", cred.user.uid), {
       email,
       name: name || "",
       phone: phone || "",
       role: "user",
-      createdAt: new Date(),
+      createdAt: serverTimestamp(),
     });
+
     return cred.user;
   };
 
@@ -118,8 +149,7 @@ export default function AuthProvider({ children }) {
     await signOut(auth);
     setUser(null);
     setRole(null);
-    localStorage.removeItem("userData");
-    navigate("/");
+    localStorage.removeItem(USERDATA_KEY);
   };
 
   const forgotPassword = (email) => sendPasswordResetEmail(auth, email);

@@ -122,7 +122,7 @@ export default function Checkout() {
       ];
 
       const text = encodeURIComponent(lines.join("\n"));
-      const whatsappNumber = "5213318501155"; // el mismo que usas en otras secciones
+      const whatsappNumber = "5213318501155";
 
       const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`;
       window.open(url, "_blank");
@@ -162,7 +162,6 @@ export default function Checkout() {
         "pending_payment"
       );
 
-      // Pasamos también orderId al backend (para ligarlo / actualizar luego vía webhook)
       const res = await createMPCheckout({
         ...base,
         orderId,
