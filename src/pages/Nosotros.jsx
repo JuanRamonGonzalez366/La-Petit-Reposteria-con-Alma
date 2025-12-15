@@ -65,7 +65,7 @@ export default function Nosotros() {
       {/* Vertical (1 de 3) */}
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg"
-        alt="imagen2"
+        alt="imagen1"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm row-span-2"
@@ -81,7 +81,7 @@ export default function Nosotros() {
       {/* Vertical (3 de 3) */}
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764807166/tnejiwmrjuczm0tpwfup.jpg"
-        alt="imagen2"
+        alt="imagen3"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm row-span-2"
@@ -89,22 +89,6 @@ export default function Nosotros() {
        {/* Horizontal */}
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703222/v4zh1vieymnv5krzq23o.jpg"
-        alt="imagen1"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/wwi99d9aizwfamwiybpo.jpg"
-        alt="imagen3"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/uvm8rub2rgzmd398o2bl.jpg"
         alt="imagen4"
         loading="lazy"
         decoding="async"
@@ -112,7 +96,7 @@ export default function Nosotros() {
       />
       {/* Horizontal */}
       <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/i2d2ybodsdi84gpha2rm.jpg"
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/wwi99d9aizwfamwiybpo.jpg"
         alt="imagen5"
         loading="lazy"
         decoding="async"
@@ -120,14 +104,15 @@ export default function Nosotros() {
       />
       {/* Horizontal */}
       <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/vxvp5oo4qmqivxjeghuy.jpg"
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/uvm8rub2rgzmd398o2bl.jpg"
         alt="imagen6"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
       />
+      {/* Horizontal */}
       <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/i2d2ybodsdi84gpha2rm.jpg"
         alt="imagen7"
         loading="lazy"
         decoding="async"
@@ -135,8 +120,23 @@ export default function Nosotros() {
       />
       {/* Horizontal */}
       <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/vxvp5oo4qmqivxjeghuy.jpg"
+        alt="imagen8"
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
+      />
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
+        alt="imagen9"
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
+      />
+      {/* Horizontal */}
+      <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/wcfv744dpg2qmjopapoz.jpg"
-        alt={t("about.sliceImg3Alt")}
+        alt="imagen10"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
@@ -145,7 +145,7 @@ export default function Nosotros() {
       {/* Horizontal */}
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/vazvfsxsygzsgqhumlog.jpg"
-        alt={t("about.sliceImg4Alt")}
+        alt="imagen11"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
@@ -154,15 +154,15 @@ export default function Nosotros() {
       {/* Horizontal */}
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/utknolcinrcqekba2uu3.jpg"
-        alt={t("about.sliceImg5Alt")}
+        alt="imagen12"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
       />
       {/* Horizontal */}
       <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1765834203/copy_of_px0ar51vanrv5qwexkvu_adf349.jpg"
-        alt={t("about.sliceImg3Alt")}
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/px0ar51vanrv5qwexkvu.jpg"
+        alt="imagen13"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
