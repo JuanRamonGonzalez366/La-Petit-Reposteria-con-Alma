@@ -140,7 +140,7 @@ export default function Home() {
         {/* Contenedor con aire (evita sensación de recorte) */}
         <div className="px-4 py-4">
           <img
-            src="https://res.cloudinary.com/dzjupasme/image/upload/v1765554282/copy_of_xtik7mjfd3zamg4no67g_65f8b6.jpg"
+            src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
             alt="La rebanada de tu antojo"
             className="w-full max-w-md h-auto mb-6"
           />
