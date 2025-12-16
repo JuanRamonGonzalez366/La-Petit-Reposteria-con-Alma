@@ -149,7 +149,7 @@ export default function Home() {
           {t("home.ctaRebanadaText")}
         </p>
         <a
-          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf"
+          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"

@@ -78,12 +78,12 @@ export default function Cafeteria() {
       </section>
 
       {/* SUCURSALES CON CAFETERÍA SIN FOTO */}
-      <section className="max-w-6xl mx-auto mt-8">
-        <h2 className="font-display text-3xl text-center text-wineDark mb-10">
+      <section className="item-center max-w-6xl mx-auto mt-8">
+        <h2 className="item-center font-display text-3xl text-center text-wineDark mb-10">
           {t("cafe.cafeteriaSucursales")}
         </h2>
 
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+       {/*  <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
           {sucursalesCafeteria.map((s) => (
             <motion.div
               key={s.id}
@@ -109,7 +109,15 @@ export default function Cafeteria() {
               </a>
             </motion.div>
           ))}
-        </div>
+        </div> */}
+      <div className="flex justify-center mt-8">
+        <a
+          href="/SD9wrfTl3r/mTdgppUT8fDJQL9UqI34oyF5kcfaYvNKjWscyJ5V1yiGGAx26KZB3"
+          className="inline-flex items-center justify-center bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+        >
+          {t("cafe.cafeteriaBranchButton")}
+        </a>
+      </div>
       </section>
     </main>
   );

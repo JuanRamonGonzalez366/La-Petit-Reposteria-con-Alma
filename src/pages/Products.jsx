@@ -17,11 +17,11 @@ export default function Products() {
 
   // ✅ QR (cámbialo si usas otro)
   const QR_MENU =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765386730/qr_v3_c13329.jpg";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765900404/l7mvxess3fosdgkmtjxq.png";
 
   // ✅ PDF/menú (si quieres que el QR abra esto)
   const MENU_PDF =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf";
 
   const [items, setItems] = useState([]);
   const [filtered, setFiltered] = useState([]);

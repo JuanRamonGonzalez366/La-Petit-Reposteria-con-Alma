@@ -7,6 +7,15 @@ export default function Sucursales() {
 
   const sucursales = [
     {
+      id: "san-juan-bosco",
+      name: "San Juan Bosco",
+      address: "C. Juan de Dios Robledo 403, Las Huertas, 44739 Guadalajara, Jal",
+      horario: "8:30 AM – 9:00 PM",
+      img: "",
+      map: "https://maps.app.goo.gl/gVxk8zHbCwQdow1u7",
+      rebanada: true,
+    },
+    {
       id: "circunvalacion",
       name: "Circunvalación",
       address: "Av. Cvln. División del Nte. 67, Independencia, 44379 Guadalajara, Jal.",
@@ -14,7 +23,6 @@ export default function Sucursales() {
       img: "https://res.cloudinary.com/dzjupasme/image/upload/v1763401009/ty6zcjerns8cekfc2mij.png",
       map: "https://maps.app.goo.gl/WnZpenK116GT7Ctw9",
       rebanada: true,
-      cafeteria: true,
       rappi: true,
     },
     {

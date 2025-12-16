@@ -81,12 +81,12 @@
   "loading": "Cargando pasteles especiales...",
   "cta": "Realiza tu pedido especial",
   "catego0": "Todos",
-  "catego1": "Infantiles",
+  "catego1": "Infantiles Dibujados",
   "catego2": "15 años",
   "catego3": "Bodas",
   "catego4": "Bautizos",
   "catego5": "Primera Comunion",
-  "catego6": "Confirmacion",
+  "catego6": "Infantiles con Oblea",
   "catego7": "Fondant",
   "catego8": "Pasteles de Pisos"
 },
@@ -125,15 +125,16 @@
     "cafeteriaCat4": "Otras bebidas y extras",
     "cafeteriaButtonSmall": "Chico",
     "cafeteriaButtonLarge": "Grande",
-    "cafeteriaSucursales":"Sucursales con servicio de cafetería",
+    "cafeteriaSucursales":"Consulta nuestras sucursales con servicio de cafetería y disfruta la experiencia completa.",
     "cafeteriaSucursalesButton":"Ver en Google Maps",
     "cafeteriaBranch1": "Sucursal Río Nilo",
     "cafeteriaBranch2": "Sucursal Zapopan",
-    "cafeteriaBranch3": "Sucursal Minerva"
+    "cafeteriaBranch3": "Sucursal Minerva",
+    "cafeteriaBranchButton": "Descubre nuestras sucursales"
   },
 
   "about": {
-    "title": "Lo que hoy es Petit, un día fue un sueño lleno de fe. La señora Alma te cuenta cómo Petit pasó de ser una ilusión familiar a convertirse en un hogar para los que aman la repostería con alma.",
+    "title": "Todo empezó con un sueño… hoy es un sabor que trasciende.",
     "subtitle1": "La historia de esta pastelería comenzó mucho antes de llamarse Petit. Todo inició cuando yo tenía apenas 7 u 8 años y mi mamá me enviaba cada tarde a comprar pan. Me encantaba quedarme mirando cómo los panaderos trabajaban: ese aroma, ese ambiente… para mí, era magia. Al volver a casa, jugaba a imitar lo que veía y creaba mis propios pastelitos. Ese juego, que comenzó por curiosidad, poco a poco se convirtió en una verdadera pasión: así nació en mí el amor por la repostería.",
     "subtitle2": "Con los años, esta afición tomó un nuevo sentido. Cuando mi primer hijo cumplió un año, quise celebrarlo con un pastel especial. Como no sabía hacer las decoraciones que imaginaba, terminé comprándolo en una pastelería reconocida. Era bonito, pero a mi familia no le gustó el sabor. Partimos el pastel, pero nadie lo comió. Días después lo tiré y, en ese momento, me hice una promesa: el siguiente cumpleaños sería diferente; yo misma haría un pastel rico y especial para mi hijo. Y lo cumplí. Estudié, practiqué y ese día preparé mi primer pastel verdaderamente hecho con amor.",
     "subtitle3": "Esa chispa comenzó a crecer. Familiares y amigos empezaron a pedirme pasteles para sus eventos, todos horneados y decorados desde la cocina de mi casa.",
@@ -143,7 +144,7 @@
     "subtitle7": "Somos Petit… Repostería con Alma.",
     "heroAlt": "Pastelería artesanal Petit Plaisir",
 
-    "sliceHeading":"¿Te gustaría escuchar dónde empezó la magia de Petit? ✨",
+    "sliceHeading":"¿Quieres conocer el origen de Petit?",
     "sliceText": "En este audio, Doña Alma (la voz que dio vida a nuestros sabores) te cuenta cómo una pequeña chispa de amor por la repostería se transformó en un sueño dulce que hoy acompaña miles de momentos especiales.Déjate llevar por su historia: Cómo nació su pasión, los primeros pasteles hechos con cariño, y el camino que convirtió a Petit en la pastelería que tantos llevan en el corazón. Presiona play y entra al origen de nuestra magia.", 
     "slicePoint1": "Más de 20 sabores para elegir.",
     "slicePoint2": "Elige el tamaño exacto de tu rebanada.",

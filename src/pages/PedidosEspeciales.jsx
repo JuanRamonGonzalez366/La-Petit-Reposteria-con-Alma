@@ -140,7 +140,7 @@ export default function PedidosEspeciales() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                  className="bg-cream border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
                 >
                   {/* Imagen */}
                   <div className="h-60 w-full overflow-hidden">
