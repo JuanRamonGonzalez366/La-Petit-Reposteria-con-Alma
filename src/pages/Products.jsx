@@ -17,7 +17,7 @@ export default function Products() {
 
   // ✅ QR (cámbialo si usas otro)
   const QR_MENU =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765900404/l7mvxess3fosdgkmtjxq.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1765921052/ox5roqywhdisaogvh97g.png";
 
   // ✅ PDF/menú (si quieres que el QR abra esto)
   const MENU_PDF =

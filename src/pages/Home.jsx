@@ -134,9 +134,9 @@ export default function Home() {
 
       {/* seccion rebanada de tu antojo */}
         <section className="bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
-        <h2 className="font-display text-3xl mb-6">
+        {/* <h2 className="font-display text-3xl mb-6">
           {t("home.ctaRebanadaTittle")}
-        </h2>
+        </h2> */}
         {/* Contenedor con aire (evita sensación de recorte) */}
         <div className="px-4 py-4">
           <img
@@ -157,7 +157,9 @@ export default function Home() {
           {t("home.ctaButton")}
         </a>
       </section>
-
+      <section>
+        <img src="https://res.cloudinary.com/dzjupasme/image/upload/v1765921412/w0bvzc9xjxvushm0qwxx.png" alt="rombos" className="w-550 h-350 object-cover" />
+      </section>
 
 
       {/* Contacto */}

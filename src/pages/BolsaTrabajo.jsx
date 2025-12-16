@@ -107,6 +107,8 @@ const areas = [
 ]
 
 const sucursales = [
+    "San Juan Bosco",
+    "Circunvalación",
     "Tlaquepaque",
     "Río Nilo",
     "Revolución",
