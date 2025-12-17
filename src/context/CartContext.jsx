@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const CartContext = createContext();
+const LS_KEY = "cart_v3";
 
-const LS_KEY = "cart_v2"; // nuevo key para evitar residuos
+const sameOptions = (a, b) => JSON.stringify(a || {}) === JSON.stringify(b || {});
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
@@ -18,12 +19,10 @@ export function CartProvider({ children }) {
     localStorage.setItem(LS_KEY, JSON.stringify(cart));
   }, [cart]);
 
-  // ─── helpers ──────────────────────────────────────────────────────────────
   const addToCart = (product) => {
     // product: { id, title, price, img, options? }
     setCart((prev) => {
-      const keyMatches = (a, b) => JSON.stringify(a || {}) === JSON.stringify(b || {});
-      const idx = prev.findIndex((it) => it.id === product.id && keyMatches(it.options, product.options));
+      const idx = prev.findIndex((it) => it.id === product.id && sameOptions(it.options, product.options));
       if (idx >= 0) {
         const clone = [...prev];
         clone[idx] = { ...clone[idx], qty: clone[idx].qty + (product.qty || 1) };
@@ -34,23 +33,29 @@ export function CartProvider({ children }) {
   };
 
   const removeFromCart = (id, options) =>
-    setCart((prev) => prev.filter((it) => !(it.id === id && JSON.stringify(it.options || {}) === JSON.stringify(options || {}))));
+    setCart((prev) => prev.filter((it) => !(it.id === id && sameOptions(it.options, options))));
 
   const setQuantity = (id, options, qty) =>
     setCart((prev) =>
       prev.map((it) =>
-        it.id === id && JSON.stringify(it.options || {}) === JSON.stringify(options || {})
+        it.id === id && sameOptions(it.options, options)
           ? { ...it, qty: Math.max(1, Math.min(99, Number(qty) || 1)) }
           : it
       )
     );
 
-  const increase = (id, options) => setQuantity(id, options, (cart.find((i) => i.id === id && JSON.stringify(i.options||{})===JSON.stringify(options||{}))?.qty || 1) + 1);
-  const decrease = (id, options) => setQuantity(id, options, (cart.find((i) => i.id === id && JSON.stringify(i.options||{})===JSON.stringify(options||{}))?.qty || 1) - 1);
+  const increase = (id, options) => {
+    const current = cart.find((i) => i.id === id && sameOptions(i.options, options))?.qty || 1;
+    setQuantity(id, options, current + 1);
+  };
+
+  const decrease = (id, options) => {
+    const current = cart.find((i) => i.id === id && sameOptions(i.options, options))?.qty || 1;
+    setQuantity(id, options, current - 1);
+  };
 
   const clearCart = () => setCart([]);
 
-  // Descuentos/Impuestos si los usas más adelante
   const discount = 0;
   const taxes = 0;
 
@@ -58,7 +63,10 @@ export function CartProvider({ children }) {
     () => cart.reduce((acc, i) => acc + Number(i.price || 0) * Number(i.qty || 0), 0),
     [cart]
   );
-  const total = subtotal - discount + taxes; // el envío lo sumas en el Drawer
+
+  const total = subtotal - discount + taxes;
+
+  const itemCount = useMemo(() => cart.reduce((acc, i) => acc + (Number(i.qty) || 0), 0), [cart]);
 
   return (
     <CartContext.Provider
@@ -74,6 +82,7 @@ export function CartProvider({ children }) {
         discount,
         taxes,
         total,
+        itemCount,
       }}
     >
       {children}

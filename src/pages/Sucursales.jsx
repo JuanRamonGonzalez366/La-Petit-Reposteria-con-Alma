@@ -10,7 +10,7 @@ export default function Sucursales() {
       id: "san-juan-bosco",
       name: "San Juan Bosco",
       address: "C. Juan de Dios Robledo 403, Las Huertas, 44739 Guadalajara, Jal",
-      horario: "8:30 AM – 9:00 PM",
+      /* horario: "8:30 AM – 9:00 PM", */
       img: "",
       map: "https://maps.app.goo.gl/gVxk8zHbCwQdow1u7",
       rebanada: true,

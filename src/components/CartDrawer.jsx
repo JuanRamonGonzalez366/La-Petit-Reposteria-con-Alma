@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { mxn } from "../utils/money";
 import ShippingPicker from "./ShippingPicker";
 import { useNavigate } from "react-router-dom";
+import { cld } from "../utils/cloudinary";
 
 export default function CartDrawer({ open, onClose }) {
   const {
@@ -146,11 +147,18 @@ export default function CartDrawer({ open, onClose }) {
                       className="flex items-center gap-3 border-b border-rose/30 pb-2"
                     >
                       <img
-                        src={item.img}
+                        src={cld(item.img, { w: 160, h: 160, ar: "1:1", fit: "fill", g: "auto" })}
                         alt={item.title}
-                        className="w-16 h-16 object-cover rounded-lg border border-rose/30"
+                        className="w-16 h-16 object-cover rounded-lg border border-rose/30 bg-cream"
                         loading="lazy"
                       />
+
+                      {item.options?.variantLabel && (
+                        <p className="text-xs text-wineDark/70">
+                          {item.options.variantLabel}
+                        </p>
+                      )}
+
                       <div className="flex-1 min-w-0">
                         <h3 className="font-medium text-wine truncate">
                           {item.title}

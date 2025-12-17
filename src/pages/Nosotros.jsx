@@ -25,7 +25,7 @@ export default function Nosotros() {
             transition={{ duration: 0.5 }}
           >
 
-            <h1 className="font-alkaline font-semibold text-xl text-wine mb-4">
+            <h1 className="font-agenda font-bold text-3xl text-wine mb-3">
               {t("about.title")}
             </h1>
 
@@ -182,7 +182,7 @@ export default function Nosotros() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
           >
-            <h2 className="font-alkaline font-semibold text-xl text-wine mb-3">
+            <h2 className="font-agenda font-bold text-3xl text-wine mb-3">
               {t("about.sliceHeading")}
             </h2>
 

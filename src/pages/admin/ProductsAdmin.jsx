@@ -57,22 +57,50 @@ const CATEGORIES = [
   { key: "productsPedidos", labelEs: "Solo por pedido" },
   { key: "productsGalleteria", labelEs: "Galletería" },
 ];
+
 const labelFromKey = (key) => CATEGORIES.find((c) => c.key === key)?.labelEs || "";
+
+// ===== Util: normalizar precios =====
+const normalizePrices = (prices) => {
+  if (!Array.isArray(prices)) return [];
+  return prices
+    .map((p) => ({
+      label: String(p?.label || "").trim(),
+      amount: Number(p?.amount),
+    }))
+    .filter((p) => p.label && Number.isFinite(p.amount) && p.amount > 0);
+};
+
+// Detecta priceUnit/priceKilo desde variantes (si existen)
+const inferLegacyPrices = (prices) => {
+  // Busca etiquetas tipo: Pieza, Unit, Pastel completo, etc.
+  const unitRegex = /(pieza|unit|completo|pastel)/i;
+  const kiloRegex = /(kilo|kg)/i;
+
+  const priceUnit = prices.find((p) => unitRegex.test(p.label))?.amount ?? null;
+  const priceKilo = prices.find((p) => kiloRegex.test(p.label))?.amount ?? null;
+
+  return {
+    priceUnit: Number.isFinite(priceUnit) ? priceUnit : null,
+    priceKilo: Number.isFinite(priceKilo) ? priceKilo : null,
+  };
+};
 
 // ===== Componente =====
 export default function ProductsAdmin() {
   const [items, setItems] = useState([]);
 
-  // Form bilingüe
+  // Form bilingüe + precios flexibles
   const [form, setForm] = useState({
     titleEs: "",
     titleEn: "",
     descEs: "",
     descEn: "",
-    priceUnit: "",
-    priceKilo: "",
     categoryKey: "",
     img: "",
+    prices: [
+      { label: "Pieza", amount: "" }, // default útil
+    ],
   });
 
   const [file, setFile] = useState(null);
@@ -92,20 +120,57 @@ export default function ProductsAdmin() {
     return () => unsub();
   }, []);
 
-  // Validación
+  // ===== Validación =====
   const validate = () => {
     if (!form.titleEs.trim()) {
       toast.warning("⚠️ El producto debe tener un título (ES).");
       return false;
     }
-    if (!form.priceUnit || isNaN(Number(form.priceUnit))) {
-      toast.warning("⚠️ Debes indicar un precio por pieza válido.");
+    if (!form.categoryKey) {
+      toast.warning("⚠️ Selecciona una categoría.");
       return false;
     }
+
+    const prices = normalizePrices(form.prices);
+    if (prices.length === 0) {
+      toast.warning("⚠️ Agrega al menos una variante de precio válida.");
+      return false;
+    }
+
+    // Evitar etiquetas repetidas
+    const labels = prices.map((p) => p.label.toLowerCase());
+    const unique = new Set(labels);
+    if (unique.size !== labels.length) {
+      toast.warning("⚠️ No repitas etiquetas de precio (ej. dos 'Rebanada').");
+      return false;
+    }
+
     return true;
   };
 
-  // Guardar
+  // ===== Acciones precios dinámicos =====
+  const addPriceRow = () => {
+    setForm((prev) => ({
+      ...prev,
+      prices: [...prev.prices, { label: "", amount: "" }],
+    }));
+  };
+
+  const removePriceRow = (idx) => {
+    setForm((prev) => ({
+      ...prev,
+      prices: prev.prices.filter((_, i) => i !== idx),
+    }));
+  };
+
+  const updatePriceRow = (idx, patch) => {
+    setForm((prev) => ({
+      ...prev,
+      prices: prev.prices.map((p, i) => (i === idx ? { ...p, ...patch } : p)),
+    }));
+  };
+
+  // ===== Guardar =====
   const save = async () => {
     try {
       if (!validate()) return;
@@ -117,14 +182,26 @@ export default function ProductsAdmin() {
         imageUrl = "https://res.cloudinary.com/dzjupasme/image/upload/v1/placeholder_petit.jpg";
       }
 
+      const pricesNormalized = normalizePrices(form.prices);
+
+      // Mantener compatibilidad:
+      // si hay prices[] -> inferimos priceUnit/priceKilo (opcional)
+      const legacy = inferLegacyPrices(pricesNormalized);
+
       const payload = {
         title: { es: form.titleEs.trim(), en: form.titleEn.trim() },
         desc: { es: form.descEs.trim(), en: form.descEn.trim() },
-        priceUnit: Number(form.priceUnit) || 0,
-        priceKilo: form.priceKilo ? Number(form.priceKilo) : null,
         categoryKey: form.categoryKey || "",
         category: labelFromKey(form.categoryKey),
         img: imageUrl,
+
+        // ✅ NUEVO
+        prices: pricesNormalized,
+
+        // ✅ LEGACY (para que nada se rompa en otras partes)
+        priceUnit: legacy.priceUnit, // puede quedar null si no existe etiqueta de unit
+        priceKilo: legacy.priceKilo, // puede quedar null
+
         updatedAt: serverTimestamp(),
         ...(editingId ? {} : { createdAt: serverTimestamp() }),
       };
@@ -146,17 +223,16 @@ export default function ProductsAdmin() {
     }
   };
 
-  // Reset
+  // ===== Reset =====
   const resetForm = () => {
     setForm({
       titleEs: "",
       titleEn: "",
       descEs: "",
       descEn: "",
-      priceUnit: "",
-      priceKilo: "",
       categoryKey: "",
       img: "",
+      prices: [{ label: "Pieza", amount: "" }],
     });
     setFile(null);
     setPreview(null);
@@ -164,7 +240,7 @@ export default function ProductsAdmin() {
     setActiveLangTab("es");
   };
 
-  // Eliminar
+  // ===== Eliminar =====
   const confirmDelete = (product) => {
     setProductToDelete(product);
     setConfirmOpen(true);
@@ -185,10 +261,7 @@ export default function ProductsAdmin() {
     }
   };
 
-  const headerTitle = useMemo(
-    () => (editingId ? "Editar producto" : "Nuevo producto"),
-    [editingId]
-  );
+  const headerTitle = useMemo(() => (editingId ? "Editar producto" : "Nuevo producto"), [editingId]);
 
   return (
     <main className="bg-cream min-h-screen py-6">
@@ -202,17 +275,15 @@ export default function ProductsAdmin() {
             <span className="font-display text-xl text-wine">{headerTitle}</span>
             <div className="ml-auto inline-flex rounded-lg overflow-hidden border border-wine/20">
               <button
-                className={`px-3 py-1 text-sm ${
-                  activeLangTab === "es" ? "bg-rose/30 font-semibold" : "bg-white"
-                }`}
+                type="button"
+                className={`px-3 py-1 text-sm ${activeLangTab === "es" ? "bg-rose/30 font-semibold" : "bg-white"}`}
                 onClick={() => setActiveLangTab("es")}
               >
                 ES
               </button>
               <button
-                className={`px-3 py-1 text-sm ${
-                  activeLangTab === "en" ? "bg-rose/30 font-semibold" : "bg-white"
-                }`}
+                type="button"
+                className={`px-3 py-1 text-sm ${activeLangTab === "en" ? "bg-rose/30 font-semibold" : "bg-white"}`}
                 onClick={() => setActiveLangTab("en")}
               >
                 EN
@@ -255,24 +326,6 @@ export default function ProductsAdmin() {
             </>
           )}
 
-          {/* Precios */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input
-              type="number"
-              className="border rounded-lg px-3 py-2 w-full"
-              placeholder="Precio por pieza"
-              value={form.priceUnit}
-              onChange={(e) => setForm({ ...form, priceUnit: e.target.value })}
-            />
-            <input
-              type="number"
-              className="border rounded-lg px-3 py-2 w-full"
-              placeholder="Precio por kilo (opcional)"
-              value={form.priceKilo}
-              onChange={(e) => setForm({ ...form, priceKilo: e.target.value })}
-            />
-          </div>
-
           {/* Categoría */}
           <select
             className="border rounded-lg px-3 py-2 w-full"
@@ -286,6 +339,54 @@ export default function ProductsAdmin() {
               </option>
             ))}
           </select>
+
+          {/* ✅ Variantes de precio (Opción B) */}
+          <div className="border border-rose/30 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <h3 className="font-semibold text-wine">Variantes de precio</h3>
+              <button
+                type="button"
+                onClick={addPriceRow}
+                className="ml-auto bg-red text-cream px-3 py-1 rounded-lg hover:opacity-90 transition"
+              >
+                + Agregar variante
+              </button>
+            </div>
+
+            <div className="grid gap-2">
+              {form.prices.map((row, idx) => (
+                <div key={idx} className="grid grid-cols-[1fr_140px_44px] gap-2 items-center">
+                  <input
+                    className="border rounded-lg px-3 py-2 w-full"
+                    placeholder='Ej. "Rebanada", "Caja 6", "300 g", "Pastel completo"'
+                    value={row.label}
+                    onChange={(e) => updatePriceRow(idx, { label: e.target.value })}
+                  />
+                  <input
+                    type="number"
+                    className="border rounded-lg px-3 py-2 w-full"
+                    placeholder="Precio"
+                    value={row.amount}
+                    onChange={(e) => updatePriceRow(idx, { amount: e.target.value })}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => removePriceRow(idx)}
+                    className="border border-red text-red rounded-lg h-[42px] hover:bg-red/10 transition"
+                    title="Eliminar variante"
+                    disabled={form.prices.length === 1}
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs text-wineDark/70 mt-2">
+              Tip: Si agregas una variante con etiqueta “Kilo” o “Kg”, el sistema podrá inferir <em>priceKilo</em>.
+              Si agregas “Pieza / Pastel / Completo”, podrá inferir <em>priceUnit</em>.
+            </p>
+          </div>
 
           {/* Imagen */}
           <input
@@ -302,11 +403,12 @@ export default function ProductsAdmin() {
               setPreview(f ? URL.createObjectURL(f) : null);
             }}
           />
+
           {(preview || form.img) && (
             <img
-              src={preview || cld(form.img, { w: 600, h: 400 })}
+              src={preview || cld(form.img, { w: 900, h: 675, ar: "4:3", fit: "fill", g: "auto" })}
               alt="preview"
-              className="w-full h-40 object-cover rounded-lg border"
+              className="w-full aspect-[4/3] object-cover rounded-lg border bg-cream"
             />
           )}
 
@@ -337,9 +439,13 @@ export default function ProductsAdmin() {
             {items.map((p) => {
               const titleEs = safeText(p.title);
               const descEs = safeText(p.desc);
-              const piece = p.priceUnit ? ` — Pieza: $${p.priceUnit}` : "";
-              const kilo = p.priceKilo ? ` · Kilo: $${p.priceKilo}` : "";
               const catLabel = p.category || labelFromKey(p.categoryKey) || "";
+
+              const prices = Array.isArray(p.prices) ? p.prices : [];
+              const pricesPreview =
+                prices.length > 0
+                  ? prices.slice(0, 3).map((x) => `${x.label}: $${x.amount}`).join(" · ")
+                  : `Pieza: $${p.priceUnit ?? "—"} · Kilo: ${p.priceKilo ? `$${p.priceKilo}` : "—"}`;
 
               return (
                 <div
@@ -347,27 +453,35 @@ export default function ProductsAdmin() {
                   className="bg-white border border-wine/20 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-wine break-words">
-                      {titleEs}
-                      <span className="text-wineDark/60">{piece}{kilo}</span>
-                    </h3>
+                    <h3 className="font-semibold text-wine break-words">{titleEs}</h3>
                     <p className="text-sm text-wineDark/70 break-words">{descEs}</p>
-                    <p className="text-xs text-wineDark/60">{catLabel}</p>
+                    <p className="text-xs text-wineDark/60 mt-1">{catLabel}</p>
+                    <p className="text-xs text-wineDark/70 mt-2">{pricesPreview}</p>
                   </div>
+
                   <div className="flex gap-2">
                     <button
                       className="px-3 py-1 rounded border border-rose hover:bg-rose/10"
                       onClick={() => {
+                        // editar: normaliza precios desde prices[] o legacy
+                        const normalizedFromDoc =
+                          Array.isArray(p.prices) && p.prices.length
+                            ? p.prices.map((x) => ({ label: x.label || "", amount: x.amount ?? "" }))
+                            : [
+                                { label: "Pieza", amount: p.priceUnit ?? "" },
+                                ...(p.priceKilo ? [{ label: "Kilo", amount: p.priceKilo }] : []),
+                              ];
+
                         setForm({
                           titleEs: getES(p.title),
                           titleEn: getEN(p.title),
                           descEs: getES(p.desc),
                           descEn: getEN(p.desc),
-                          priceUnit: p.priceUnit ?? "",
-                          priceKilo: p.priceKilo ?? "",
                           categoryKey: p.categoryKey || "",
                           img: p.img || "",
+                          prices: normalizedFromDoc.length ? normalizedFromDoc : [{ label: "Pieza", amount: "" }],
                         });
+
                         setEditingId(p.id);
                         setPreview(p.img || null);
                         setActiveLangTab("es");
@@ -376,6 +490,7 @@ export default function ProductsAdmin() {
                     >
                       Editar
                     </button>
+
                     <button
                       className="px-3 py-1 rounded border border-red text-red hover:bg-red/10"
                       onClick={() => confirmDelete(p)}
@@ -405,7 +520,7 @@ export default function ProductsAdmin() {
                   Cancelar
                 </button>
                 <button
-                  className="px-4 py-2 rounded-lg bg-red text-rose hover:opacity-90"
+                  className="px-4 py-2 rounded-lg bg-red text-cream hover:opacity-90"
                   onClick={handleDelete}
                 >
                   Eliminar
