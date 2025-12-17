@@ -7,14 +7,17 @@ import "./i18n";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "./context/CartContext";
-
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CartProvider> {/* ✅ Context global */}
+    <CartProvider>
       <BrowserRouter>
         <App />
-        {/* Contenedor global de notificaciones */}
+        {/* Analytics de vercel*/}
+        <Analytics />
+
+        {/* Notificaciones de toast */}
         <ToastContainer
           position="top-right"
           autoClose={2500}
@@ -27,4 +30,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </BrowserRouter>
     </CartProvider>
   </React.StrictMode>
-)
+);
