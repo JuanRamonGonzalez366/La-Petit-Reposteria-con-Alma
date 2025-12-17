@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import AuthProvider from './auth/AuthProvider'
 import ProtectedRoute from './auth/ProtectedRoute'
 import Header from './components/Header'
@@ -42,6 +43,7 @@ export default function App() {
   return (
     <AuthProvider>
       <>
+        <Analytics />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-1">
