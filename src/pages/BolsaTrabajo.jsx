@@ -123,17 +123,17 @@ const sucursales = [
 return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] px-4 sm:px-6 lg:px-12 pb-10">
     <section className="max-w-3xl mx-auto bg-rose/10 rounded-2xl shadow-md p-6 border border-rose/20">
-        <h1 className="font-display text-3xl text-wine mb-2 text-center">
+        <h1 className="font-agenda font-bold text-3xl text-wine mb-2 text-center">
         {t("jobs.title", "Bolsa de trabajo")}
         </h1>
-        <p className="text-center text-wineDark/80 mb-6">
+        <p className="font-agenda text-center text-wineDark/80 mb-6">
         {t(
             "jobs.subtitle",
             "Forma parte de la familia Petit Plaisir completando el siguiente formulario."
         )}
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="font-agenda space-y-4">
           {/* Nombre y fecha */}
         <div className="grid md:grid-cols-2 gap-4">
             <input
@@ -237,7 +237,7 @@ return (
         </div>
 
           {/* CV */}
-        <label className="font-semibold text-wine text-sm block mb-2">
+        <label className="font-agenda font-semibold text-wine text-sm block mb-2">
               Compartenos tu CV (Este debe ser un PDF y no tener un peso superior a 10MB) *
             </label>
         <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -260,7 +260,7 @@ return (
             disabled={sending}
             className={`w-full ${
             sending ? "bg-gray-400" : "bg-red"
-            } text-cream font-semibold py-2 rounded-lg hover:opacity-90 transition`}
+            } text-cream font-agenda font-semibold py-2 rounded-lg hover:opacity-90 transition`}
         >
             {sending ? "Enviando..." : "Enviar solicitud"}
         </button>

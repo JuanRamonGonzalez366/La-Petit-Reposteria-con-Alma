@@ -221,8 +221,8 @@ export default function Nosotros() {
               <div className="w-10 h-10 rounded-xl bg-rose/20 text-wine flex items-center justify-center mb-3">
                 <FontAwesomeIcon icon={f.icon} />
               </div>
-              <h3 className="text-wine font-semibold">{f.title}</h3>
-              <p className="text-sm text-wineDark/80 mt-1">{f.desc}</p>
+              <h3 className="text-wine font-agenda font-bold text-1xl mb-2">{f.title}</h3>
+              <p className="text-sm font-agenda text-wineDark/80 mt-1">{f.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -231,12 +231,12 @@ export default function Nosotros() {
       {/* CTA (igual) */}
       <section className="px-4 sm:px-6 lg:px-12 mt-16">
         <div className="bg-wine text-cream rounded-2xl p-6 text-center shadow-sm">
-          <h3 className="font-display text-2xl mb-2">{t("about.ctaTitle")}</h3>
-          <p className="opacity-90">{t("about.ctaSubtitle")}</p>
+          <h3 className="font-agenda font-bold text-2xl mb-2">{t("about.ctaTitle")}</h3>
+          <p className="font-agenda opacity-90">{t("about.ctaSubtitle")}</p>
           <br />
           <a
             href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz"
-            className="bg-red px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            className="bg-red px-6 py-3 rounded-lg font-agenda hover:opacity-90 transition"
           >
             {t("home.bannerButton")}
           </a>

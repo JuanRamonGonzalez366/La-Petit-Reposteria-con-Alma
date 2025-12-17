@@ -129,15 +129,15 @@ export default function Sucursales() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h1 className="font-display text-4xl text-wine mb-3">
+        <h1 className="font-agenda font-bold text-4xl text-wine mb-3">
           {t("sucursales.sucursalesTitle")}
         </h1>
-        <p className="text-wineDark/80 max-w-2xl mx-auto">
+        <p className="font-agenda text-wineDark/80 max-w-2xl mx-auto">
           {t("sucursales.sucursalesSubTitle")}
         </p>
       </motion.div>
 
-      <section className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="font-agenda max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {sucursales.map((s) => (
           <motion.div
             key={s.id}
@@ -145,7 +145,7 @@ export default function Sucursales() {
             transition={{ duration: 0.3 }}
             className="bg-marfil rounded-2xl border border-rose/30 shadow-soft hover:shadow-lg transition p-5 flex flex-col text-center"
           >
-            <h3 className="font-display text-2xl text-wine mb-2">{s.name}</h3>
+            <h3 className="font-agenda font-bold text-2xl text-wine mb-2">{s.name}</h3>
             <p className="text-sm text-wineDark/80 mb-2">{s.address}</p>
             <p className="text-sm text-wineDark/70 mb-3">{s.horario}</p>
 
@@ -153,7 +153,7 @@ export default function Sucursales() {
               href={s.map}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 bg-wine text-cream px-4 py-2 rounded-lg text-sm font-semibold hover:bg-wineDark transition"
+              className="mt-1 bg-wine text-cream px-4 py-2 rounded-lg text-sm font-agenda font-bold hover:bg-wineDark transition"
             >
               {t("sucursales.sucursalesButton")}
             </a>

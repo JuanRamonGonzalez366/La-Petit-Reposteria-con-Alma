@@ -22,12 +22,12 @@
 
     "ctaTitle": "Escanea y descubre nuestro menú digital",
     "ctaText": "Contáctanos y deja que el sabor de Petit acompañe tus momentos más especiales.",
-    "ctaButton": "Tu antojo está a un clic de distancia.",
+    "ctaButton": "Tu antojo comienza aquí.",
     "ctaRebanadaTittle": "La Rebanada de tu Antojo",
     "ctaRebanadaText": "En Petit disfruta la Rebanada de tu Antojo®: eliges el sabor y también el tamaño. Justo la porción que quieres, con el sabor de siempre.",
 
     "contactTitle": "Contáctanos",
-    "contactText": "Estamos listos para atenderte y endulzar tus momentos especiales. Llámanos, escríbenos o visítanos en nuestra sucursal.",
+    "contactText": "Estamos listos para atenderte y acompañar tus momentos especiales. Llámanos, escríbenos o visítanos en nuestra sucursal.",
     "contactWhatsapp": "Quejas y Sugerencias",
     "contactAddress":"Dirección",
     "contactSocial":"Siguenos en nuestras redes sociales",
@@ -134,7 +134,7 @@
   },
 
   "about": {
-    "title": "Todo empezó con un sueño,  con un sabor que trasciende.",
+    "title": "Todo empezó con un sueño y un sabor que trasciende.",
     "subtitle1": "La historia de esta pastelería comenzó mucho antes de llamarse Petit. Todo inició cuando yo tenía apenas 7 u 8 años y mi mamá me enviaba cada tarde a comprar pan. Me encantaba quedarme mirando cómo los panaderos trabajaban: ese aroma, ese ambiente… para mí, era magia. Al volver a casa, jugaba a imitar lo que veía y creaba mis propios pastelitos. Ese juego, que comenzó por curiosidad, poco a poco se convirtió en una verdadera pasión: así nació en mí el amor por la repostería.",
     "subtitle2": "Con los años, esta afición tomó un nuevo sentido. Cuando mi primer hijo cumplió un año, quise celebrarlo con un pastel especial. Como no sabía hacer las decoraciones que imaginaba, terminé comprándolo en una pastelería reconocida. Era bonito, pero a mi familia no le gustó el sabor. Partimos el pastel, pero nadie lo comió. Días después lo tiré y, en ese momento, me hice una promesa: el siguiente cumpleaños sería diferente; yo misma haría un pastel rico y especial para mi hijo. Y lo cumplí. Estudié, practiqué y ese día preparé mi primer pastel verdaderamente hecho con amor.",
     "subtitle3": "Esa chispa comenzó a crecer. Familiares y amigos empezaron a pedirme pasteles para sus eventos, todos horneados y decorados desde la cocina de mi casa.",
@@ -179,8 +179,8 @@
     "branch3Addr": "Calz. Revolución 1856, C.P. 44840",
 
     "hours": "8:30 AM – 9:00 PM",
-    "ctaTitle": "¿Listo para consentirte?",
-    "ctaSubtitle": "Explora sabores, elige tu rebanada y vive el dulce placer."
+    "ctaTitle": "Elige tu favorito y disfrútalo",
+    "ctaSubtitle": "Sabores únicos, pasteles pensados para ti."
   },
 
   "nov": {

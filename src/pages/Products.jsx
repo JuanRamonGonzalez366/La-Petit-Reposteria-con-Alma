@@ -131,10 +131,10 @@ export default function Products() {
       <div className="max-w-6xl mx-auto mb-10">
         <div className="grid items-center gap-6 md:grid-cols-[1fr_220px]">
           <div className="flex flex-col items-center">
-            <h1 className="font-display text-3xl text-wine text-center mb-4">
+            <h1 className="font-agend font-bold text-3xl text-wine text-center mb-4">
               {t("products.productsTitle")}
             </h1>
-            <p className="text-center text-wineDark/70 max-w-xl">
+            <p className="font-agenda text-center text-wineDark/70 max-w-xl">
               {t("products.productsDescription")}
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function Products() {
       </div>
 
       {/* Filtros */}
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
+      <div className="font-agenda flex flex-wrap justify-center gap-3 mb-8">
         {categories.map((catKey) => (
           <button
             key={catKey}
@@ -186,7 +186,7 @@ export default function Products() {
         </p>
       ) : (
         <AnimatePresence>
-          <motion.div layout className="grid flex-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style={{ minHeight: 0 }}>
+          <motion.div layout className="font-agenda grid flex-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style={{ minHeight: 0 }}>
             {filtered.map((p) => {
               const title = titleOf(p);
               const desc = descOf(p);

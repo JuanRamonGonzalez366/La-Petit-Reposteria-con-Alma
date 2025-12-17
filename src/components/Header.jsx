@@ -81,7 +81,7 @@ export default function Header() {
 
   return (
     <header
-      className={` bg-rosepier fixed top-0 left-0 w-full z-50 text-wine shadow-md transition-transform duration-500 ease-in-out ${
+      className={` font-agenda font-bold bg-rosepier fixed top-0 left-0 w-full z-50 text-wine shadow-md transition-transform duration-500 ease-in-out ${
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{
@@ -115,7 +115,7 @@ export default function Header() {
         </button>
 
         {/* Navegación principal (desktop) */}
-        <nav className="hidden md:flex gap-5 font-medium">
+        <nav className="font-agena font-bold hidden md:flex gap-5 font-medium">
           <NavLink to="/" className={linkClass}>
             {lang === "es" ? "Inicio" : "Home"}
           </NavLink>

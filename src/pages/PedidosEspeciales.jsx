@@ -79,10 +79,10 @@ export default function PedidosEspeciales() {
         transition={{ duration: 0.5 }}
         className="text-center mb-10"
       >
-        <h1 className="font-display text-4xl text-wine mb-4">
+        <h1 className="font-agenda font-bold text-4xl text-wine mb-4">
           {t("special.title", "Pedidos Especiales")}
         </h1>
-        <p className="text-wineDark/80 max-w-2xl mx-auto">
+        <p className="gont-agenda text-wineDark/80 max-w-2xl mx-auto">
           {t(
             "special.subtitle",
             "Celebra tus momentos más importantes con un pastel único, hecho especialmente para ti. Consulta nuestras categorías y contáctanos por WhatsApp para cotizar tu pedido."
@@ -91,7 +91,7 @@ export default function PedidosEspeciales() {
       </motion.div>
 
       {/* Filtros */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div className="font-agenda flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((catKey) => (
           <button
             key={catKey}
@@ -108,7 +108,7 @@ export default function PedidosEspeciales() {
       </div>
 
       {/* CTA WhatsApp general */}
-      <div className="text-center mt-8 mb-8">
+      <div className="font-agenda text-center mt-8 mb-8">
         <a
           href={whatsappGeneral}
           target="_blank"
@@ -121,10 +121,10 @@ export default function PedidosEspeciales() {
       </div>
 
       {/* Productos */}
-      <section className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="font-agenda max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence>
           {loading ? (
-            <p className="text-center text-wineDark/70 col-span-full">
+            <p className="font-agenda text-center text-wineDark/70 col-span-full">
               {t("special.loading", "Cargando pasteles especiales...")}
             </p>
           ) : filtered.length > 0 ? (
@@ -140,7 +140,7 @@ export default function PedidosEspeciales() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-cream border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                  className="font-agenda bg-cream border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
                 >
                   {/* Imagen */}
                   <div className="h-60 w-full overflow-hidden">
@@ -152,7 +152,7 @@ export default function PedidosEspeciales() {
                   </div>
 
                   {/* Info */}
-                  <div className="p-5 text-center flex flex-col justify-between h-full">
+                  <div className="font-agenda p-5 text-center flex flex-col justify-between h-full">
                     <div>
                       <h3 className="font-display text-xl text-wine mb-2">
                         {name || item.nombre}
