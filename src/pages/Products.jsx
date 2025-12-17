@@ -43,10 +43,11 @@ export default function Products() {
     "productsClasico",
     "productsGelatina",
     "productsAzucar",
+    "productsGalleteria",
     "productsPanaderia",
     "productsReposteria",
-    "productsVelas",
-    "productsPedidos",
+    /* "productsVelas",
+    "productsPedidos", */
   ];
 
   // Cargar productos desde Firestore

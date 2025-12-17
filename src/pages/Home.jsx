@@ -157,9 +157,20 @@ export default function Home() {
           {t("home.ctaButton")}
         </a>
       </section>
-      <section>
-        <img src="https://res.cloudinary.com/dzjupasme/image/upload/v1765921412/w0bvzc9xjxvushm0qwxx.png" alt="rombos" className="w-550 h-350 object-cover" />
+      <section aria-hidden className="w-full">
+        <div
+          className="
+            w-full
+            h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1765921412/w0bvzc9xjxvushm0qwxx.png')]
+            bg-no-repeat
+            bg-center
+            bg-contain
+          "
+        />
       </section>
+
+
 
 
       {/* Contacto */}

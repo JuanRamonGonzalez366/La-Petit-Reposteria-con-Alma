@@ -55,7 +55,7 @@ const CATEGORIES = [
   { key: "productsReposteria", labelEs: "Repostería" },
   { key: "productsVelas", labelEs: "Velas" },
   { key: "productsPedidos", labelEs: "Solo por pedido" },
-  { key: "productsNews", labelEs: "Novedades" },
+  { key: "productsGalleteria", labelEs: "Galletería" },
 ];
 const labelFromKey = (key) => CATEGORIES.find((c) => c.key === key)?.labelEs || "";
 
