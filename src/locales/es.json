@@ -1,15 +1,15 @@
 {
   "home": {
     "bannerTitle": "Petit Repostería con Alma",
-    "bannerSubtitle3": "Prueben nuestros productos de temporada como el exquisito pan de muerto",
+    "bannerSubtitle3": "Prueben nuestros productos de temporada como el exquisito pan de muerto.",
     "bannerSubtitle2": "¡Disfruta de nuestra selección de pasteles frescos, hechos artesanalmente cada día, disponibles en una variedad de sabores y presentaciones para cada ocasión!",
-    "bannerSubtitle1": "Conoce la historia de esta gran familia contada por la mismisima fundadora, dando clic aqui",
+    "bannerSubtitle1": "Conoce la historia de esta gran familia contada por la mismísima fundadora, dando clic aquí.",
     "bannerButton": "Ver más",
-
+    
     "featuredTitle": "Productos Destacados",
 
     "troncoName": "Pastel Tronco de Cereza",
-    "troncoDesc": "Rollo de bizcocho de chocolate relleno de cereza cubierto de ganache de chocolate.",
+    "troncoDesc": "Rollo de bizcocho de chocolate relleno de cereza, cubierto de ganache de chocolate.",
 
     "rusoName": "Pastel Ruso Blanco",
     "rusoDesc": "Bizcocho de vainilla bañado con licor de café, cubierto con almendras tostadas y decorado con salsa de moka.",
@@ -30,7 +30,7 @@
     "contactText": "Estamos listos para atenderte y acompañar tus momentos especiales. Llámanos, escríbenos o visítanos en nuestra sucursal.",
     "contactWhatsapp": "Quejas y Sugerencias",
     "contactAddress":"Dirección",
-    "contactSocial":"Siguenos en nuestras redes sociales",
+    "contactSocial":"Síguenos en nuestras redes sociales",
 
     "commentsTitle": "Deja tu comentario",
     "commentName": "Nombre",
@@ -41,10 +41,10 @@
     "commentsList": "Comentarios recientes",
 
     "promoTitle":"Novedades",
-    "promoName": "Dia de Muertos",
-    "promoText1": "Pan de muerto tan rico, que hasta la calaca lo disfruta",
-    "promoText2": "Porque los muertos también tienen buen paladar",
-    "promoText3": "No es solo pan… es recuerdo, es sabor, es homenaje",
+    "promoName": "Día de Muertos",
+    "promoText1": "Pan de muerto tan rico que hasta la calaca lo disfruta.",
+    "promoText2": "Porque los muertos también tienen buen paladar.",
+    "promoText3": "No es solo pan… es recuerdo, es sabor, es homenaje.",
     "promoButton": "Ver más"
 
   },
@@ -71,7 +71,7 @@
 
   "sucursales": {
     "sucursalesTitle":"Nuestras Sucursales",
-    "sucursalesSubTitle":"Encuentra tu Petit Reposteria con Alma más cercano y disfruta de nuestras delicias en cualquiera de nuestras sucursales con servicio de cafetería y Rappi.",
+    "sucursalesSubTitle":"Encuentra tu Petit Repostería con Alma más cercano y disfruta de nuestras delicias en cualquiera de nuestras sucursales con servicio de cafetería y Rappi.",
     "sucursalesButton":"Ver Ubicación"
   },
 
@@ -85,7 +85,7 @@
   "catego2": "15 años",
   "catego3": "Bodas",
   "catego4": "Bautizos",
-  "catego5": "Primera Comunion",
+  "catego5": "Primera Comunión",
   "catego6": "Infantiles con Oblea",
   "catego7": "Fondant",
   "catego8": "Pasteles de Pisos"
@@ -99,12 +99,12 @@
     "productsVainilla": "Vainilla",
     "productsQueso": "Queso",
     "productsTresLeches": "Tres Leches",
-    "productsCafe": "Cafe",
-    "productsClasico": "Clasico",
+    "productsCafe": "Café",
+    "productsClasico": "Clásico",
     "productsGelatina": "Gelatina",
-    "productsAzucar": "Sin Azucar",
-    "productsPanaderia": "Panaderia",
-    "productsReposteria": "Reposteria",
+    "productsAzucar": "Sin Azúcar",
+    "productsPanaderia": "Panadería",
+    "productsReposteria": "Repostería",
     "productsVelas": "Velas",
     "productsPedidos": "Solo por Pedido",
     "productsFav": "Mis Favoritos",
@@ -112,7 +112,7 @@
     "productsButton": "Ver Más",
     "productsPieza": "Pieza",
     "productsKilo": "Kilo",
-    "productsGalleteria":"Galleteria"
+    "productsGalleteria":"Galletería"
   },
 
   "cafe": {
@@ -121,7 +121,7 @@
     "cafeteriaSearch": "Cargando menú de cafetería...",
     "cafeteriaCat1": "Barra de espresso",
     "cafeteriaCat2": "Frappastel",
-    "cafeteriaCat3": "Tés y Tisanas",
+    "cafeteriaCat3": "Tés y tisanas",
     "cafeteriaCat4": "Otras bebidas y extras",
     "cafeteriaButtonSmall": "Chico",
     "cafeteriaButtonLarge": "Grande",
@@ -145,7 +145,7 @@
     "heroAlt": "Pastelería artesanal Petit Plaisir",
 
     "sliceHeading":"¿Quieres conocer el origen de Petit?",
-    "sliceText": "En este audio, Doña Alma (la voz que dio vida a nuestros sabores) te cuenta cómo una pequeña chispa de amor por la repostería se transformó en un sueño dulce que hoy acompaña miles de momentos especiales.Déjate llevar por su historia: Cómo nació su pasión, los primeros pasteles hechos con cariño, y el camino que convirtió a Petit en la pastelería que tantos llevan en el corazón. Presiona play y entra al origen de nuestra magia.", 
+    "sliceText": "En este audio, Doña Alma (la voz que dio vida a nuestros sabores) te cuenta cómo una pequeña chispa de amor por la repostería se transformó en un sueño dulce que hoy acompaña miles de momentos especiales. Déjate llevar por su historia: cómo nació su pasión, los primeros pasteles hechos con cariño, y el camino que convirtió a Petit en la pastelería que tantos llevan en el corazón. Presiona play y entra al origen de nuestra magia.", 
     "slicePoint1": "Más de 20 sabores para elegir.",
     "slicePoint2": "Elige el tamaño exacto de tu rebanada.",
     "slicePoint3": "Preparaciones frescas y del día.",
@@ -190,5 +190,29 @@
   "allTags": "Todas las etiquetas",
   "allSeasons": "Todas las temporadas",
   "empty": "No hay novedades disponibles por ahora."
+  },
+
+  "jobs": {
+    "title": "Bolsa de trabajo",
+    "subtitle": "Forma parte de la familia Petit Repostería con Alma completando el siguiente formulario.",
+    "name": "Nombre completo *",
+    "birthday": "Fecha de nacimiento *",
+    "phone": "Teléfono *",
+    "email": "Correo electrónico *",
+    "why": "¿Por qué te gustaría formar parte de la familia Petit? *",
+    "experience": "Cuéntanos brevemente sobre tu experiencia profesional *",
+    "area": "Área en la que te gustaría trabajar *",
+    "location": "¿Cuál de las sucursales te interesa? *",
+    "cv": "Compartenos tu CV (Este debe ser un PDF y no tener un peso superior a 10MB) *",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando...",
+    "privacy": "Tu información será tratada de forma confidencial y usada solo para fines de reclutamiento.",
+    "areas.store": "Encargado de Tienda",
+    "areas.sales": "Auxiliar de Ventas",
+    "areas.home": "Servicio a Domicilio",
+    "areas.production": "Producción",
+    "areas.almacen": "Almacén",
+    "areas.distribution": "Distribución",
+    "areas.management": "Administración"
   }
 }

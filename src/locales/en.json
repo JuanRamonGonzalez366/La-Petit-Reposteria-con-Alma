@@ -1,36 +1,36 @@
 {
   "home": {
-    "bannerTitle": "Petit Repostería con Alma",
-    "bannerSubtitle3": "Try our seasonal products like the exquisite bread of the dead",
-    "bannerSubtitle2": "Enjoy our freshly baked cakes, handmade every day, available in a variety of flavors and presentations for every occasion!",
-    "bannerSubtitle1": "Learn the story of this great family by the same founder, click here",
+    "bannerTitle": "Petit Pastry with Soul",
+    "bannerSubtitle3": "Try our seasonal products, like the exquisite Day of the Dead bread.",
+    "bannerSubtitle2": "Enjoy our selection of fresh cakes, handcrafted every day, available in a variety of flavors and presentations for every occasion!",
+    "bannerSubtitle1": "Discover the story of this wonderful family, told by the founder herself—click here.",
     "bannerButton": "See more",
-
+    
     "featuredTitle": "Featured Products",
 
     "troncoName": "Cherry Log Cake",
-    "troncoDesc": "Chocolate sponge roll filled with cherry and covered with rich chocolate ganache.",
+    "troncoDesc": "Chocolate sponge roll filled with cherry, covered in chocolate ganache.",
 
     "rusoName": "White Russian Cake",
-    "rusoDesc": "Vanilla sponge soaked in coffee liqueur, topped with toasted almonds and mocha sauce.",
+    "rusoDesc": "Vanilla sponge cake soaked in coffee liqueur, topped with toasted almonds and finished with mocha sauce.",
 
     "tiramisuName": "Tiramisu",
     "tiramisuDesc": "Inspired by the traditional Italian dessert from the Veneto region.",
 
     "aboutTitle": "Who We Are",
-    "aboutText": "At Petit Plaisir, we are a pastry house with over 20 years of experience creating cakes, cookies, bread, desserts, gelatins, and more. Everything we offer is made with our own recipes, natural ingredients, and the values that define us: dedication, effort, love, and respect in every creation.",
+    "aboutText": "At Petit Plaisir, we are a pastry house with over 20 years of experience crafting products such as cakes, cookies, baked goods, desserts, gelatins, and more. Everything we offer is made with our own recipes, natural ingredients, and the values that define us: dedication, effort, love, and respect in every creation.",
 
     "ctaTitle": "Scan and discover our digital menu",
-    "ctaText": "Contact us and let the magic of Petit accompany your special moments.",
-    "ctaButton": "Your craving is just a click away.",
-    "ctaRebanadaTittle": "The Rebanda of your craving",
-    "ctaRebanadaText": "At Petit, you can enjoy the Rebanda of your craving®: choose the flavor and also the size. Just the portion you want, with the flavor of eternity.",
+    "ctaText": "Contact us and let the flavor of Petit be part of your most special moments.",
+    "ctaButton": "Your craving starts here.",
+    "ctaRebanadaTittle": "The Slice of Your Craving",
+    "ctaRebanadaText": "At Petit, enjoy The Slice of Your Craving®: you choose the flavor and the size. Exactly the portion you want, with the flavor you love.",
 
-    "contactTitle": "Contact us",
-    "contactText": "We are ready to serve you and accompany your special moments. Call us, write us, or visit us in our store.",
+    "contactTitle": "Contact Us",
+    "contactText": "We’re ready to help you and be part of your special moments. Call us, message us, or visit us at our store.",
     "contactWhatsapp": "Complaints and Suggestions",
     "contactAddress":"Address",
-    "contactSocial":"follow us on our social networks",
+    "contactSocial":"Follow us on our social networks",
 
     "commentsTitle": "Leave a comment",
     "commentName": "Name",
@@ -40,12 +40,13 @@
     "sending": "Sending...",
     "commentsList": "Recent comments",
 
-    "promoTitle":"News",
+    "promoTitle":"What’s New",
     "promoName": "Day of the Dead",
-    "promoText1": "Bread of the dead so delicious, that even the calaca enjoys it",
-    "promoText2": "Because the dead also have a good palate",
-    "promoText3": "It's not just bread... It's memory, it's flavor, it's tribute",
+    "promoText1": "Day of the Dead bread so good even the skeleton enjoys it.",
+    "promoText2": "Because even the dead have great taste.",
+    "promoText3": "It’s not just bread… it’s memory, flavor, and tribute.",
     "promoButton": "See more"
+
   },
 
   "cart": {
@@ -60,106 +61,106 @@
   "header": {
     "home": "Home",
     "products": "Products",
-    "cafeteria": "Cafeteria",
-    "sucursales": "Branches",
-    "jobs": "Jobs",
+    "cafeteria": "Café",
+    "sucursales": "Locations",
+    "jobs": "Careers",
     "billing": "Billing",
-    "login": "Login",
-    "logout": "Logout"
+    "login": "Log in",
+    "logout": "Log out"
   },
 
   "sucursales": {
-    "sucursalesTitle":"Our Branches",
-    "sucursalesSubTitle":"Find your nearest Petit Reposteria con Alma and enjoy our delicacies in any of our branches with cafeteria and Rappi service.",
-    "sucursalesButton":"See Location"
+    "sucursalesTitle":"Our Locations",
+    "sucursalesSubTitle":"Find the nearest Petit Pastry with Soul and enjoy our treats at any of our locations, with café service and Rappi delivery.",
+    "sucursalesButton":"View Location"
   },
 
   "special": {
   "title": "Special Orders",
-  "subtitle": "Celebrate your most important moments with a unique custom cake made just for you. Browse by category and contact us on WhatsApp to place your special order.",
+  "subtitle": "Celebrate your most important moments with a unique cake made especially for you. Browse our categories and contact us on WhatsApp to request a quote.",
   "loading": "Loading special cakes...",
   "cta": "For more information, contact us",
   "catego0": "All",
-  "catego1": "Infants Drawn",
-  "catego2": "15 and older",
-  "catego3": "wedding",
-  "catego4": "Christening",
+  "catego1": "Illustrated Kids Cakes",
+  "catego2": "Quinceañera",
+  "catego3": "Weddings",
+  "catego4": "Baptisms",
   "catego5": "First Communion",
-  "catego6": "Infants with wafer",
+  "catego6": "Kids Cakes with Wafer Image",
   "catego7": "Fondant",
-  "catego8": "Floor cakes"
+  "catego8": "Tiered Cakes"
 },
 
   "products": {
     "productsTitle": "Our Products",
-    "productsNewsTitle": "News",
-    "productsAll": "Everyone",
+    "productsNewsTitle": "What’s New",
+    "productsAll": "All",
     "productsChoco": "Chocolate",
     "productsVainilla": "Vanilla",
     "productsQueso": "Cheese",
-    "productsTresLeches": "Three Milks",
+    "productsTresLeches": "Tres Leches",
     "productsCafe": "Coffee",
     "productsClasico": "Classic",
     "productsGelatina": "Gelatin",
-    "productsAzucar": "Without Sugar",
+    "productsAzucar": "Sugar-Free",
     "productsPanaderia": "Bakery",
     "productsReposteria": "Pastry",
     "productsVelas": "Candles",
-    "productsPedidos": "Only by Order",
+    "productsPedidos": "Made to Order",
     "productsFav": "My Favorites",
-    "productsDescription": "Discover our selection of fresh cakes, handmade every day, available in a variety of flavors and presentations for every occasion.",
+    "productsDescription": "Discover our selection of fresh cakes, handcrafted every day, available in a variety of flavors and presentations for every occasion.",
     "productsButton": "See More",
-    "productsPiece": "Piece",
+    "productsPieza": "Piece",
     "productsKilo": "Kilo",
-    "productsGalleteria":"Cookies and biscuits"
+    "productsGalleteria":"Cookies"
   },
-  
+
   "cafe": {
-    "cafeteriaTitle": "Pastry and coffee house",
-    "cafeteriaSubTitle": "Enjoy our artisanal coffee, desserts and unique drinks in our branches with a cafeteria. Check our menu and addresses here.",
-    "cafeteriaSearch": "Loading cafeteria menu...",
-    "cafeteriaCat1": "Espresso bar",
+    "cafeteriaTitle": "Pastry House and café",
+    "cafeteriaSubTitle": "Enjoy our artisanal coffee, desserts, and unique drinks at our café locations. Check our menu and addresses here.",
+    "cafeteriaSearch": "Loading café menu...",
+    "cafeteriaCat1": "Espresso Bar",
     "cafeteriaCat2": "Frappastel",
-    "cafeteriaCat3": "TTeas and Herbal Teas",
+    "cafeteriaCat3": "Teas and Tisanes",
     "cafeteriaCat4": "Other drinks and extras",
     "cafeteriaButtonSmall": "Small",
     "cafeteriaButtonLarge": "Large",
-    "cafeteriaSucursales":"Check our branches with cafeteria and enjoy the full experience.",
-    "cafeteriaSucursalesButton":"See on Google Maps",
-    "cafeteriaBranch1": "Río Nilo Branch",
-    "cafeteriaBranch2": "Zapopan Branch",
-    "cafeteriaBranch3": "Minerva Branch",
-    "cafeteriaBranchButton": "Discover our branches"
+    "cafeteriaSucursales":"Check our café locations and enjoy the full experience.",
+    "cafeteriaSucursalesButton":"View on Google Maps",
+    "cafeteriaBranch1": "Río Nilo Location",
+    "cafeteriaBranch2": "Zapopan Location",
+    "cafeteriaBranch3": "Minerva Location",
+    "cafeteriaBranchButton": "Discover our locations"
   },
 
   "about": {
-    "title": "Everything started with a dream… today is a taste that transcends.",
-    "subtitle1": "The history of this bakery began long before it was called Petit. It all started when I was just 7 or 8 years old and my mom sent me to buy bread every afternoon. I loved watching the bakers work: that aroma, that atmosphere... for me, it was magic. When I got home, I would play at imitating what I saw and create my own little cakes. That game, which began out of curiosity, gradually became a real passion: that's how my love of baking was born.",
-    "subtitle2": "Over the years, this hobby took on a new meaning. When my first child turned one, I wanted to celebrate with a special cake. Since I didn't know how to make the decorations I had in mind, I ended up buying it from a well-known bakery. It was pretty, but my family didn't like the taste. We cut the cake, but no one ate it. A few days later, I threw it away, and at that moment, I made a promise to myself: the next birthday would be different; I would make a delicious and special cake for my son myself. And I kept my promise. I studied, practiced, and on that day I made my first cake truly made with love.",
-    "subtitle3": "That spark began to grow. Family and friends started asking me for cakes for their events, all baked and decorated from my kitchen at home.",
-    "subtitle4": "On December 19, 1999, in the midst of a family economic crisis, I made two decisions: to support the household economy and to share joy through my desserts. That's how I opened my first bakery in downtown Tlaquepaque. It was a tiny place that I ran myself, and that's where its name came from: Petit. That day also saw the birth of Pier, our little chef, who has been with us every step of the way.",
-    "subtitle5": "Over time, thanks to the trust of our customers and the efforts of many people who have joined the project, Petit has grown. Today we are still the same family and the same essence, but with new generations, new projects, and a modern production facility. Our image has been revamped, but our heart has not changed.",
-    "subtitle6": "We continue to prepare the same recipes, with the same quality, the same flavor, and above all, the same soul.",
-    "subtitle7": "We are Petit... Pastries with Soul.",
-    "heroAlt": "Petit Plaisir artisan pastry",
+    "title": "It all began with a dream and a flavor that transcends.",
+    "subtitle1": "The story of this pastry shop began long before it was called Petit. It all started when I was just 7 or 8 years old and my mother sent me every afternoon to buy bread. I loved standing there, watching the bakers at work—that aroma, that atmosphere… to me, it was magic. When I returned home, I would play at imitating what I had seen and create my own little pastries. That game, which began out of curiosity, gradually turned into a true passion: that is how my love for pastry was born.",
+    "subtitle2": "Over the years, this passion took on a new meaning. When my first child turned one, I wanted to celebrate with a special cake. Since I didn’t know how to make the decorations I imagined, I ended up buying one from a well-known bakery. It looked beautiful, but my family didn’t like the flavor. We cut the cake, but no one ate it. Days later, I threw it away, and at that moment I made myself a promise: the next birthday would be different; I would make a delicious and special cake for my son myself. And I kept that promise. I studied, practiced, and that day I prepared my very first cake truly made with love.",
+    "subtitle3": "That spark began to grow. Family and friends started asking me to make cakes for their events, all baked and decorated in my home kitchen.",
+    "subtitle4": "On December 19, 1999, in the middle of a family financial crisis, I made two decisions: to support our household economy and to share joy through my desserts. That is how I opened my first pastry shop in downtown Tlaquepaque. It was a tiny place that I ran myself, and that’s where its name came from: Petit. That same day, Pier—our little chef—was also born, and he has been with us through every stage of this story.",
+    "subtitle5": "Over time, thanks to the trust of our customers and the effort of many people who have joined this project, Petit has grown. Today we remain the same family and the same essence, but with new generations, new projects, and a modern production facility. Our image has been renewed, but our heart has not changed.",
+    "subtitle6": "We continue preparing the same recipes, with the same quality, the same flavor, and above all, the same soul.",
+    "subtitle7": "We are Petit… Pastry with Soul.",
+    "heroAlt": "Petit Plaisir artisanal pastry shop",
 
-    "sliceHeading": "Do you want to know the origin of Petit?",
-    "sliceText": "In this audio, Doña Alma (the voice that gave life to our flavors) tells us how a little love for the bakery transformed into a sweet dream that now adorns many special moments. Let yourself be carried by its history: How it began, the first pastels made with love, and the path that turned Petit into a bakery that so many take in their hearts. Press play and enter the origin of our magic.",
-    "slicePoint1": "20+ flavors to choose from.",
-    "slicePoint2": "Select the exact slice size.",
-    "slicePoint3": "Fresh and made for the day.",
-    "sliceImg1Alt": "Cupcakes and fresh pastry",
-    "sliceImg2Alt": "Artisan cheesecake",
+    "sliceHeading":"Would you like to discover the origin of Petit?",
+    "sliceText": "In this audio, Doña Alma (the voice that gave life to our flavors) tells you how a small spark of love for pastry turned into a sweet dream that now accompanies thousands of special moments. Let yourself be carried by her story: how her passion was born, the first cakes made with care, and the journey that turned Petit into the pastry shop so many people carry in their hearts. Press play and step into the origin of our magic.", 
+    "slicePoint1": "More than 20 flavors to choose from.",
+    "slicePoint2": "Choose the exact size of your slice.",
+    "slicePoint3": "Fresh, daily preparations.",
+    "sliceImg1Alt": "Cupcakes and fresh pastries",
+    "sliceImg2Alt": "Artisanal cheesecake",
     "sliceImg3Alt": "Chocolate cake",
 
     "traditionTitle": "Tradition",
-    "traditionDesc": "House recipes, traditional methods and care in every detail.",
-    "cafeTitle": "Coffee Shop",
-    "cafeDesc": "Hot & cold drinks to pair your dessert (available in selected branches).",
-    "sliceTitle": "The slice of your taste",
-    "sliceDesc": "Choose size, flavor and the moment. Here, each slice is tailored to your taste.",
-    "branchesTitle": "Branches",
-    "branchesDesc": "Find your nearest Petit Repostería con Alma and discover a taste that transcends. All our branches deliver to your door via Rappi, and in some you can enjoy the full experience with our café service.",
+    "traditionDesc": "Signature recipes, traditional processes, and dedication in every detail.",
+    "cafeTitle": "Café",
+    "cafeDesc": "Hot and cold drinks to pair with your dessert (available at selected locations).",
+    "sliceTitle": "The slice of your craving",
+    "sliceDesc": "Choose the size, the flavor, and the moment. Here, every slice adapts to your craving.",
+    "branchesTitle": "Locations",
+    "branchesDesc": "Find the nearest Petit Pastry with Soul and discover a flavor that transcends. All our locations deliver to your door through Rappi, and at some you can enjoy the full experience with our café service.",
 
     "catCakes": "Cakes",
     "catCheesecakes": "Cheesecakes",
@@ -168,29 +169,50 @@
     "catGelatins": "Gelatins",
     "catSpecialOrders": "Special orders",
 
-    "briefBranchesTitle": "Branches",
-    "briefBranchesText": "Find your nearest Petit Repostería con Alma and discover a taste that transcends. All our branches deliver to your door via Rappi, and in some you can enjoy the full experience with our café service.",
-    "branch1Name": "Main · Tlaquepaque Centro",
-    "branch1Addr": "Francisco I. Madero No. 163, 45693",
+    "briefBranchesTitle": "Locations",
+    "briefBranchesText": "Find the nearest Petit Pastry with Soul and discover a flavor that transcends. All our locations deliver to your door through Rappi, and at some you can enjoy the full experience with our café service.",
+    "branch1Name": "Flagship · Tlaquepaque Downtown",
+    "branch1Addr": "Francisco I. Madero No. 163, ZIP 45693",
     "branch2Name": "Río Nilo · Jardines de la Paz",
     "branch2Addr": "Av. Río Nilo #2916",
     "branch3Name": "Revolución · Universitaria",
-    "branch3Addr": "Calz. Revolución 1856, 44840",
+    "branch3Addr": "Calz. Revolución 1856, ZIP 44840",
 
     "hours": "8:30 AM – 9:00 PM",
-    "ctaTitle": "Ready to treat yourself?",
-    "ctaSubtitle": "Explore flavors, pick your slice and enjoy the sweet pleasure."
+    "ctaTitle": "Choose your favorite and enjoy it",
+    "ctaSubtitle": "Unique flavors, cakes made just for you."
   },
 
   "nov": {
-  "title": "Seasonal & Special Releases",
+  "title": "News & Seasons",
   "subtitle": "Enjoy our special editions and seasonal products.",
-  "filterActive": "Only active",
+  "filterActive": "Active only",
   "allTags": "All tags",
   "allSeasons": "All seasons",
-  "empty": "No news at the moment."
-}
+  "empty": "There are no updates available right now."
+  },
 
-
-
+  "jobs": {
+    "title": "Jobs",
+    "subtitle": "Join the Petit Pastry family by completing the following form.",
+    "name": "Full name *",
+    "birthday": "Birthday *",
+    "phone": "Phone *",
+    "email": "Email *",
+    "why": "Why do you want to join the Petit family? *",
+    "experience": "Tell us briefly about your professional experience *", 
+    "area": "Area in which you would like to work *",
+    "location": "Which of the branches interests you? *",
+    "cv": "Share your CV (This should be a PDF and should not exceed 10MB) *",
+    "submit": "Submit request",
+    "sending": "Sending...",
+    "privacy": "Your information will be treated confidentially and used only for recruitment purposes.",
+    "areas.store": "Store Manager",
+    "areas.sales": "Sales Assistant",
+    "areas.home": "Home Service",
+    "areas.production": "Production",
+    "areas.almacen": "Warehouse",
+    "areas.distribution": "Distribution", 
+    "areas.management": "Management"
+  }
 }

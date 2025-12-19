@@ -97,13 +97,13 @@ const handleSubmit = async (e) => {
 }
 
 const areas = [
-    "Encargado de Tienda",
-    "Auxiliar de Ventas",
-    "Servicio a Domicilio",
-    "Producción",
-    "Almacén",
-    "Distribución",
-    "Administración",
+    t("jobs.areas.store", "Encargado de Tienda"),
+    t("jobs.areas.sales", "Auxiliar de Ventas"),
+    t("jobs.areas.home", "Servicio a Domicilio"),
+    t("jobs.areas.production", "Producción"),
+    t("jobs.areas.almacen", "Almacén"),
+    t("jobs.areas.distribution", "Distribución"),
+    t("jobs.areas.management", "Administración"), 
 ]
 
 const sucursales = [
@@ -140,7 +140,7 @@ return (
             name="nombre"
             value={form.nombre}
             onChange={handleChange}
-              placeholder="Nombre completo *"
+              placeholder={t("jobs.name", "Nombre completo *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
             />
             <input
@@ -148,7 +148,7 @@ return (
             type="date"
             value={form.fechaNacimiento}
             onChange={handleChange}
-              placeholder="Fecha de nacimiento *"
+              placeholder={t("jobs.birthday", "Fecha de nacimiento *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
             />
         </div>
@@ -159,7 +159,7 @@ return (
             name="telefono"
             value={form.telefono}
             onChange={handleChange}
-              placeholder="Teléfono *"
+              placeholder={t("jobs.phone", "Teléfono *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
             />
             <input
@@ -167,7 +167,7 @@ return (
             type="email"
             value={form.correo}
             onChange={handleChange}
-            placeholder="Correo electrónico *"
+            placeholder={t("jobs.email", "Correo electrónico *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
             />
         </div>
@@ -178,7 +178,7 @@ return (
             value={form.motivo}
             onChange={handleChange}
             rows="3"
-            placeholder="¿Por qué te gustaría formar parte de la familia Petit? *"
+            placeholder={t("jobs.why", "¿Por qué te gustaría formar parte de la familia Petit? *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
         ></textarea>
 
@@ -188,14 +188,14 @@ return (
             value={form.experiencia}
             onChange={handleChange}
             rows="3"
-            placeholder="Cuéntanos brevemente sobre tu experiencia profesional *"
+            placeholder={t("jobs.experience", "Cuéntanos brevemente sobre tu experiencia profesional *")}
             className="border border-wine/20 rounded-lg px-4 py-2 focus:ring-2 focus:ring-rose w-full"
         ></textarea>
 
           {/* Área de interés */}
         <div>
             <label className="font-semibold text-wine text-sm block mb-2">
-              Área en la que te gustaría trabajar *
+              {t("jobs.area", "Área en la que te gustaría trabajar *")}
             </label>
             <div className="grid sm:grid-cols-2 gap-2">
             {areas.map((a) => (
@@ -217,7 +217,7 @@ return (
           {/* Sucursal */}
         <div>
             <label className="font-semibold text-wine text-sm block mb-2">
-              ¿Cuál de las sucursales te interesa? *
+              {t("jobs.location", "¿Cuál de las sucursales te interesa? *")}
             </label>
             <div className="grid sm:grid-cols-2 gap-2">
             {sucursales.map((s) => (
@@ -238,7 +238,7 @@ return (
 
           {/* CV */}
         <label className="font-agenda font-semibold text-wine text-sm block mb-2">
-              Compartenos tu CV (Este debe ser un PDF y no tener un peso superior a 10MB) *
+              {t("jobs.cv", "Compartenos tu CV (Este debe ser un PDF y no tener un peso superior a 10MB) *")}
             </label>
         <div className="flex flex-col sm:flex-row items-center gap-3">
             
@@ -262,12 +262,12 @@ return (
             sending ? "bg-gray-400" : "bg-red"
             } text-cream font-agenda font-semibold py-2 rounded-lg hover:opacity-90 transition`}
         >
-            {sending ? "Enviando..." : "Enviar solicitud"}
+            {sending ? t("jobs.sending", "Enviando...") : t("jobs.submit", "Enviar solicitud")}
         </button>
         </form>
 
         <p className="text-xs text-wineDark/50 mt-4 text-center">
-        Tu información será tratada de forma confidencial y usada solo para fines de reclutamiento.
+        {t("jobs.privacy", "Tu información será tratada de forma confidencial y usada solo para fines de reclutamiento.")}
         </p>
     </section>
     </main>
