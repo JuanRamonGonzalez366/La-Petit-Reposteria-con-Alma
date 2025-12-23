@@ -134,16 +134,43 @@
   },
 
   "about": {
-    "title": "Todo empezó con un sueño y un sabor que trasciende.",
-    "subtitle1": "La historia de esta pastelería comenzó mucho antes de llamarse Petit. Todo inició cuando yo tenía apenas 7 u 8 años y mi mamá me enviaba cada tarde a comprar pan. Me encantaba quedarme mirando cómo los panaderos trabajaban: ese aroma, ese ambiente… para mí, era magia. Al volver a casa, jugaba a imitar lo que veía y creaba mis propios pastelitos. Ese juego, que comenzó por curiosidad, poco a poco se convirtió en una verdadera pasión: así nació en mí el amor por la repostería.",
-    "subtitle2": "Con los años, esta afición tomó un nuevo sentido. Cuando mi primer hijo cumplió un año, quise celebrarlo con un pastel especial. Como no sabía hacer las decoraciones que imaginaba, terminé comprándolo en una pastelería reconocida. Era bonito, pero a mi familia no le gustó el sabor. Partimos el pastel, pero nadie lo comió. Días después lo tiré y, en ese momento, me hice una promesa: el siguiente cumpleaños sería diferente; yo misma haría un pastel rico y especial para mi hijo. Y lo cumplí. Estudié, practiqué y ese día preparé mi primer pastel verdaderamente hecho con amor.",
-    "subtitle3": "Esa chispa comenzó a crecer. Familiares y amigos empezaron a pedirme pasteles para sus eventos, todos horneados y decorados desde la cocina de mi casa.",
-    "subtitle4": "El 19 de diciembre de 1999, en medio de una crisis económica familiar, tomé dos decisiones: apoyar la economía del hogar y compartir alegría a través de mis postres. Fue así como abrí mi primera pastelería en el centro de Tlaquepaque. Era un local pequeñito que yo misma atendía, y de ahí surgió su nombre: Petit. Ese día también nació Pier, nuestro pequeño chefsito, que nos acompaña en cada etapa de esta historia.",
-    "subtitle5": "Con el tiempo, gracias a la confianza de nuestros clientes y al esfuerzo de muchas personas que se han sumado al proyecto, Petit ha crecido. Hoy seguimos siendo la misma familia y la misma esencia, pero con nuevas generaciones, nuevos proyectos y una planta de producción moderna. Nuestra imagen se ha renovado, pero nuestro corazón no ha cambiado.",
-    "subtitle6": "Seguimos preparando las mismas recetas, con la misma calidad, el mismo sabor y, sobre todo, la misma alma.",
-    "subtitle7": "Somos Petit… Repostería con Alma.",
-    "heroAlt": "Pastelería artesanal Petit Plaisir",
+    "img1":"Primer pastel de boda en el comedor de la casa de la señora Alma 1999",
+    "img2":"Primeras entregas de pastel para boda 1997",
+    "img3":"Pedidos especiales antes de petit",
+    "img4":"Pedidos especiales antes de peti cocina señora Alma",
+    "img5":"Área de producción primera petit",
+    "img6":"Petit en su primera remodelacion 2002",
+    "img7":"Primer pastel dedicado especial de la señora Alma 1992",
+    "img8":"Primera sucursal 1999",
+    "title": "Historia",
 
+    "textbold1":"Los Inicios",
+    "subtitle1": "Desde pequeña, Alma ayudaba a sus padres en una tienda de abarrotes, donde también se dedicaba a preparar pasteles para vender a los clientes. Utilizaba un pequeño horno tostador y utensilios básicos de cocina, lo que le permitió adquirir experiencia en la repostería desde temprana edad.",
+    "subtitle2": "Con el tiempo, formó una familia junto a Rubén y sus dos hijos. Con su exigente gusto por la cocina, no se conformaba con los pasteles y postres que ofrecía el mercado local. Un día, decidió elaborar por ella misma el pastel de su hijo mayor para su cumpleaños No.2, A partir de ese momento sus conocidas comenzaron a pedirle pasteles para sus celebraciones.",
+    "subtitle3": "Para mejorar y ofrecer más opciones, tomó varios cursos básicos de repostería. Todos los pasteles los elaboraba en un pequeño espacio en la parte trasera de su cocina, trabajando por encargo y a través de recomendaciones de conocidos",
+
+    "textbold2":"El Emprendimiento",
+    "subtitle4": "En 1999, Alma decidió dar el paso y abrir su propia pastelería. Aunque su familia tenía algunas dudas sobre el éxito del negocio, su padre la apoyó al ofrecerle una pequeña finca de adobes viejos junto a su casa. Se acondicionó el espacio y construyeron un local de 35 m², financiado con los ahorros y limitaciones en su gasto semanal.",
+    "subtitle5": "El gran día llegó en diciembre de 1999, cuando abrieron las puertas de Pastelería Petit en el corazón de Tlaquepaque, Alma había preparado diez pasteles de diferentes sabores durante dos días. Para su sorpresa, en solo dos días vendieron todos, lo que les permitió adquirir las materias primas y utensilios necesarios para continuar su emprendimiento.",
+    "subtitle6": "Seguimos preparando las mismas recetas, con la misma calidad, el mismo sabor y, sobre todo, la misma alma.",
+    
+    "textbold3": "Crecimiento y Éxito",
+    "subtitle7": "Durante las noches siguientes, trabajaba sola, horneando pasteles para vender durante el día. Tres años después, se inauguró la primera sucursal en un local que Rubén instintivamente ubicó en la ruta hacia la escuela de sus hijos, en una zona con muchas escuelas. La intuición de Rubén resultó acertada, y la nueva sucursal tuvo un gran éxito",
+    "subtitle8": "Con el tiempo, la marca comenzó a consolidarse. Para diferenciarse en el mercado, registraron el nombre Pastelerías Petit GDL y mejoraron su imagen y logotipo. En 2005, se inauguró la tercera sucursal.",
+    
+    "textbold4": "Innovación y Renovación",
+    "subtitle9": "Con el paso de los años y gracias al boca a boca, las sucursales fueron aumentando. La variedad de productos también creció, adaptándose a las nuevas tendencias. En 2025, la familia decidió actualizar la marca, y en noviembre de 20125, presentaron la nueva imagen de PETIT",
+
+    "textbold5": "Repostería con alma",
+    "subtitle10": "Esta evolución no solo renovó la presentación de la marca, sino que fortaleció la experiencia en cada punto de venta, reflejando lo que siempre ha distinguido a Petit: una repostería hecha con dedicación, tradición y corazón. Cada espacio fue pensado para transmitir cercanía, calidez y el amor que se pone en cada creación.",
+
+    "textbold6": "Compromiso con la comunidad",
+    "subtitle11": "Petit no solo se dedica a elaborar productos de alta calidad; también cree en trascender a través de las personas. Como una empresa de repostería con alma, mantiene un firme compromiso con la comunidad local, impulsando el bienestar y el desarrollo social, especialmente de la infancia, a quien la familia Petit reconoce como la base del cambio y del futuro de nuestra sociedad.",
+    
+    "textbold7": "De cara al futuro",
+    "subtitle12": "Hoy, Petit es una empresa mexicana y familiar que honra su historia mientras mira hacia adelante. Con planes de expansión y la creación de nuevos productos, la familia continúa trabajando para llevar momentos dulces y memorables a cada hogar, preservando siempre la esencia que los define: una repostería con alma, hecha para acompañar la vida, las celebraciones y los recuerdos.",
+
+    "heroAlt": "Pastelería artesanal Petit Plaisir",
     "sliceHeading":"¿Quieres conocer el origen de Petit?",
     "sliceText": "En este audio, Doña Alma (la voz que dio vida a nuestros sabores) te cuenta cómo una pequeña chispa de amor por la repostería se transformó en un sueño dulce que hoy acompaña miles de momentos especiales. Déjate llevar por su historia: cómo nació su pasión, los primeros pasteles hechos con cariño, y el camino que convirtió a Petit en la pastelería que tantos llevan en el corazón. Presiona play y entra al origen de nuestra magia.", 
     "slicePoint1": "Más de 20 sabores para elegir.",

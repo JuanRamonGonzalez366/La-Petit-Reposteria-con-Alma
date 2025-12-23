@@ -14,164 +14,178 @@ export default function Nosotros() {
     { icon: faStore, title: t("about.branchesTitle"), desc: t("about.branchesDesc") },
   ];
 
+  const gallery = [
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg",
+      alt: "imagen1",
+      caption: t("about.img1"),
+      className: "row-span-2",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1765833947/k6f1uwvtqo7ne0joiv5j.jpg",
+      alt: "imagen2",
+      caption: t("about.img2"),
+      className: "row-span-2",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764807166/tnejiwmrjuczm0tpwfup.jpg",
+      alt: "imagen3",
+      caption: t("about.img4"),
+      className: "row-span-2",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703222/v4zh1vieymnv5krzq23o.jpg",
+      alt: "imagen4",
+      caption: t("about.img5"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/wwi99d9aizwfamwiybpo.jpg",
+      alt: "imagen5",
+      caption: t("about.img3"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/uvm8rub2rgzmd398o2bl.jpg",
+      alt: "imagen6",
+      caption: t("about.img5"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/i2d2ybodsdi84gpha2rm.jpg",
+      alt: "imagen7",
+      caption: t("about.img8"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/vxvp5oo4qmqivxjeghuy.jpg",
+      alt: "imagen8",
+      caption: t("about.img6"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg",
+      alt: "imagen9",
+      caption: t("about.img6"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/wcfv744dpg2qmjopapoz.jpg",
+      alt: "imagen10",
+      caption: t("about.img6"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/vazvfsxsygzsgqhumlog.jpg",
+      alt: "imagen11",
+      caption: t("about.img6"),
+      className: "",
+    },
+    {
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/px0ar51vanrv5qwexkvu.jpg",
+      alt: "imagen13",
+      caption: t("about.img5"),
+      className: "",
+    },
+  ];
+
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[96px] pb-16">
       {/* 1) Historia al inicio y centrado */}
       <section className="px-4 sm:px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto ">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-
-            <h1 className="font-agenda font-bold text-3xl text-wine mb-3">
+            <h1 className="font-agenda font-bold text-3xl text-wine text-center mb-3">
               {t("about.title")}
             </h1>
 
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle1")}</p>
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold1")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle1")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle2")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle2")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle3")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle3")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle4")}</p>
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold2")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle4")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle5")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle5")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle6")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle6")}</p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed">{t("about.subtitle7")}</p>
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold3")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle7")}</p>
+            <br />
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle8")}</p>
+            <br />
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold4")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle9")}</p>
+            <br />
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold5")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle10")}</p>
+            <br />
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold6")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle11")}</p>
+            <br />
+
+            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">{t("about.textbold7")}</p>
+            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">{t("about.subtitle12")}</p>
           </motion.div>
         </div>
       </section>
 
+      {/* 2) Galería con pie de página (captions) */}
+      <section className="px-4 sm:px-6 lg:px-12 mt-16">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45 }}
+            className="
+              grid gap-4
+              grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
+              auto-rows-[160px] sm:auto-rows-[180px] lg:auto-rows-[190px]
+            "
+          >
+            {gallery.map((img) => (
+              <figure
+                key={img.src}
+                className={`relative w-full h-full overflow-hidden rounded-xl border border-rose/20 shadow-sm ${img.className}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
 
-      {/* 2) Galería (15 imágenes) */}
-<section className="px-4 sm:px-6 lg:px-12 mt-16">
-  <div className="max-w-5xl mx-auto">
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.45 }}
-      className="
-        grid gap-4
-        grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
-        auto-rows-[160px] sm:auto-rows-[180px] lg:auto-rows-[190px]
-      "
-    >
-
-      {/* Vertical (1 de 3) */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/nctf4p9gfd2wrkojg9tn.jpg"
-        alt="imagen1"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm row-span-2"
-      />
-      {/* Vertical (2 de 3) */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1765833947/k6f1uwvtqo7ne0joiv5j.jpg"
-        alt="imagen2"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm row-span-2"
-      />
-      {/* Vertical (3 de 3) */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764807166/tnejiwmrjuczm0tpwfup.jpg"
-        alt="imagen3"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm row-span-2"
-      />
-       {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703222/v4zh1vieymnv5krzq23o.jpg"
-        alt="imagen4"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/wwi99d9aizwfamwiybpo.jpg"
-        alt="imagen5"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/uvm8rub2rgzmd398o2bl.jpg"
-        alt="imagen6"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/i2d2ybodsdi84gpha2rm.jpg"
-        alt="imagen7"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/vxvp5oo4qmqivxjeghuy.jpg"
-        alt="imagen8"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg"
-        alt="imagen9"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/wcfv744dpg2qmjopapoz.jpg"
-        alt="imagen10"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/vazvfsxsygzsgqhumlog.jpg"
-        alt="imagen11"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/utknolcinrcqekba2uu3.jpg"
-        alt="imagen12"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      {/* Horizontal */}
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/px0ar51vanrv5qwexkvu.jpg"
-        alt="imagen13"
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover rounded-xl border border-rose/20 shadow-sm"
-      />
-      
-    </motion.div>
-  </div>
-</section>
-
+                {/* ✅ Pie de página (overlay abajo) */}
+                <figcaption className="
+                  absolute inset-x-0 bottom-0 text-center
+                  px-3 py-2
+                  text-cream text-xs sm:text-sm font-agenda
+                  drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]
+                  bg-gradient-to-t from-wine/80 via-wine/40 to-transparent
+                "
+                >
+                  {img.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* 3) Texto + Audio debajo de las imágenes */}
       <section className="px-4 sm:px-6 lg:px-12 mt-10">

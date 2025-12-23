@@ -63,19 +63,22 @@ export default function Home() {
   };
 
   return (
+    
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
     <div className="relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
   <img
     src={BANNER_DESKTOP}
     alt="Promoción Petit Plaisir"
-    className="hidden md:block absolute inset-0 w-full h-full object-contain"
+    className="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
   />
   <img
     src={BANNER_MOBILE}
     alt="Promoción Petit Plaisir"
-    className="block md:hidden absolute inset-0 w-100 h-100 object-contain"
+    className="block md:hidden absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
   />
 </div>
+
+
 
 
 
@@ -161,8 +164,8 @@ export default function Home() {
         <div
           className="
             w-full
-            h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1765921412/w0bvzc9xjxvushm0qwxx.png')]
+            h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1766510929/pzgevwameenoosuuy5cz.png')]
             bg-no-repeat
             bg-center
             bg-contain
