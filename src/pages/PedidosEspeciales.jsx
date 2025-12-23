@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { pickLang } from "../utils/i18nContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { X } from "lucide-react";
 
 export default function PedidosEspeciales() {
   const { t, i18n } = useTranslation();
@@ -16,6 +17,9 @@ export default function PedidosEspeciales() {
   const [filtered, setFiltered] = useState([]);
   const [activeCategory, setActiveCategory] = useState("catego0");
   const [loading, setLoading] = useState(true);
+
+  // ✅ Modal “Ver más”
+  const [selected, setSelected] = useState(null);
 
   // 🔹 Categorías por clave (se traducen con i18n)
   const categories = [
@@ -39,9 +43,7 @@ export default function PedidosEspeciales() {
       }));
 
       // Ordenar: destacados primero
-      const sorted = docs.sort(
-        (a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0)
-      );
+      const sorted = docs.sort((a, b) => (b.destacado ? 1 : 0) - (a.destacado ? 1 : 0));
 
       setItems(sorted);
       setFiltered(sorted);
@@ -57,18 +59,22 @@ export default function PedidosEspeciales() {
     if (catKey === "catego0") {
       setFiltered(items);
     } else {
-      setFiltered(
-        items.filter(
-          (p) =>
-            p.category === catKey || p.categoryKey === catKey // por si luego agregas categoryKey
-        )
-      );
+      setFiltered(items.filter((p) => p.category === catKey || p.categoryKey === catKey));
     }
   };
 
   // 🔹 Link de WhatsApp general (Pedidos Especiales)
   const whatsappGeneral =
     "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Me%20gustaria%20hacer%20un%20pedido%20especial.%20¿Podrian%20apoyarme?";
+
+  // ✅ Cerrar modal con ESC
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    if (selected) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selected]);
 
   return (
     <main className="bg-cream min-h-screen px-4 sm:px-6 lg:px-12 pt-24 pb-16">
@@ -82,7 +88,7 @@ export default function PedidosEspeciales() {
         <h1 className="font-agenda font-bold text-4xl text-wine mb-4">
           {t("special.title", "Pedidos Especiales")}
         </h1>
-        <p className="gont-agenda text-wineDark/80 max-w-2xl mx-auto">
+        <p className="font-agenda text-wineDark/80 max-w-2xl mx-auto">
           {t(
             "special.subtitle",
             "Celebra tus momentos más importantes con un pastel único, hecho especialmente para ti. Consulta nuestras categorías y contáctanos por WhatsApp para cotizar tu pedido."
@@ -131,6 +137,7 @@ export default function PedidosEspeciales() {
             filtered.map((item) => {
               const name = pickLang(item.title || item.name, lang);
               const desc = pickLang(item.desc, lang);
+              const imgSrc = item.img || item.imagen;
 
               return (
                 <motion.div
@@ -142,14 +149,26 @@ export default function PedidosEspeciales() {
                   transition={{ duration: 0.3 }}
                   className="font-agenda bg-cream border border-rose/30 rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
                 >
-                  {/* Imagen */}
-                  <div className="h-60 w-full overflow-hidden">
+                  {/* Imagen (clic abre modal) */}
+                  <button
+                    type="button"
+                    onClick={() => setSelected(item)}
+                    className="h-60 w-full overflow-hidden relative group text-left"
+                    title={t("special.viewMore", "Ver más")}
+                  >
                     <img
-                      src={item.img || item.imagen}
+                      src={imgSrc}
                       alt={name || item.nombre}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
                     />
-                  </div>
+                    {/* overlay sutil para indicar clic */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
+                    <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm text-wine text-xs px-3 py-1 rounded-full shadow">
+                      {t("special.viewMore", "Ver más")}
+                    </div>
+                  </button>
 
                   {/* Info */}
                   <div className="font-agenda p-5 text-center flex flex-col justify-between h-full">
@@ -157,7 +176,7 @@ export default function PedidosEspeciales() {
                       <h3 className="font-display text-xl text-wine mb-2">
                         {name || item.nombre}
                       </h3>
-                      <p className="text-sm text-wineDark/70">
+                      <p className="text-sm text-wineDark/70 line-clamp-3">
                         {desc || item.descripcion}
                       </p>
 
@@ -176,7 +195,7 @@ export default function PedidosEspeciales() {
                       </p>
                     )}
 
-                    {/* Botón de WhatsApp individual */}
+                    {/* Botón WhatsApp */}
                     <a
                       href={`https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Estoy%20interesado%20en%20el%20${encodeURIComponent(
                         name || item.nombre
@@ -194,14 +213,95 @@ export default function PedidosEspeciales() {
             })
           ) : (
             <p className="text-center text-wineDark/70 col-span-full">
-              {t(
-                "special.noResults",
-                "No hay productos en esta categoría todavía."
-              )}
+              {t("special.noResults", "No hay productos en esta categoría todavía.")}
             </p>
           )}
         </AnimatePresence>
       </section>
+
+      {/* ✅ Modal tipo Products */}
+      <AnimatePresence>
+        {selected && (
+          <SpecialModal
+            item={selected}
+            lang={lang}
+            t={t}
+            onClose={() => setSelected(null)}
+          />
+        )}
+      </AnimatePresence>
     </main>
+  );
+}
+
+function SpecialModal({ item, lang, t, onClose }) {
+  const name = pickLang(item.title || item.name, lang) || item.nombre || "Producto";
+  const desc = pickLang(item.desc, lang) || item.descripcion || "";
+  const imgSrc = item.img || item.imagen;
+
+  return (
+    <motion.div
+      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div
+        className="bg-white rounded-2xl max-w-md w-full p-6 relative overflow-hidden shadow-xl"
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} className="absolute top-3 right-3 text-wine hover:text-red">
+          <X size={22} />
+        </button>
+
+        <img
+          src={imgSrc}
+          alt={name}
+          className="w-full aspect-[4/3] object-cover rounded-lg mb-4 bg-cream"
+          loading="eager"
+          decoding="async"
+        />
+
+        <h2 className="text-2xl font-display text-wine mb-2 text-center">{name}</h2>
+
+        {item.category && (
+          <p className="text-xs text-wineDark/60 italic text-center mb-2">
+            {t(`special.${item.category}`, item.category)}
+          </p>
+        )}
+
+        <p className="text-wineDark/80 text-sm mb-4 text-justify">{desc}</p>
+
+        {item.price && (
+          <p className="text-center font-semibold text-wine mb-4">
+            ${Number(item.price).toFixed(2)} MXN
+          </p>
+        )}
+
+        <a
+          href={`https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Estoy%20interesado%20en%20el%20${encodeURIComponent(
+            name
+          )}.%20%F0%9F%8E%82`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-flex items-center justify-center gap-2 bg-green-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-green-700 transition"
+        >
+          <FontAwesomeIcon icon={faWhatsapp} />
+          {t("special.ctaProduct", "Consultar por este pastel")}
+        </a>
+
+        <button
+          onClick={onClose}
+          className="w-full mt-3 bg-red text-cream px-5 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+        >
+          {t("special.close", "Cerrar")}
+        </button>
+      </motion.div>
+    </motion.div>
   );
 }
