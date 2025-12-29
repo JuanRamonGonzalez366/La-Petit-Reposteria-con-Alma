@@ -1,8 +1,7 @@
 const BASE = import.meta.env.VITE_API_BASE || "";
 
 export async function createMPCheckout(payload) {
-  if (!BASE) throw new Error("VITE_API_BASE no configurado");
-  const res = await fetch(`${BASE}/create-checkout/mp`, {
+  const res = await fetch(`/api/mp/create-checkout`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -10,3 +9,8 @@ export async function createMPCheckout(payload) {
   if (!res.ok) throw new Error("mp_failed");
   return res.json();
 }
+
+
+
+
+

@@ -33,6 +33,9 @@ const Novedades = lazy(() => import('./pages/Novedades'));
 const NovedadesAdmin = lazy(() => import('./pages/admin/NovedadesAdmin'));
 /* const SeedI18nProducts = lazy(() => import('./pages/admin/SeedI18nProducts')); */
 const OrdersAdmin = lazy(() => import('./pages/admin/OrdersAdmin'));
+const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess"));
+const CheckoutPending = lazy(() => import("./pages/CheckoutPending"));
+const CheckoutCancel = lazy(() => import("./pages/CheckoutCancel"));
 
 
 
@@ -60,6 +63,9 @@ export default function App() {
                 <Route path="/rUGzraozwH/Rl9yhSPMmJk+AYvq90MXIVMIJC9SP8QOlRSlGkait3xizUiWgY3Ff" element={<Privacidad/>} />
                 <Route path="/ttfe/q/gwQysFs3gp3skmr7JaaQbw9Ehet1NTVeXeqROMFPrk1nu/A80K86WwSvM" element={<Novedades />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/checkout/success" element={<CheckoutSuccess />} />
+                <Route path="/checkout/pending" element={<CheckoutPending />} />
+                <Route path="/checkout/cancel" element={<CheckoutCancel />} />
                 <Route
                   path="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN"
                   element={
