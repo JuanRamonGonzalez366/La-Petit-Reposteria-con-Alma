@@ -1,5 +1,3 @@
-const BASE = import.meta.env.VITE_API_BASE || "";
-
 // src/api/payments.js
 export async function createMPCheckout(payload) {
   const res = await fetch(`/api/mp/create-checkout`, {
@@ -15,8 +13,3 @@ export async function createMPCheckout(payload) {
 
   return res.json();
 }
-
-
-
-
-

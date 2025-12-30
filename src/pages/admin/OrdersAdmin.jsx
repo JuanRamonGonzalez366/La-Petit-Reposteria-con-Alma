@@ -14,11 +14,14 @@ import { toast } from "react-toastify";
 const STATUS_OPTIONS = [
     "pending_payment",
     "pending_store_payment",
+    "paid",
+    "payment_failed",
     "preparando",
     "en_ruta",
     "entregado",
     "cancelado",
 ];
+
 
 export default function OrdersAdmin() {
     const [orders, setOrders] = useState([]);
