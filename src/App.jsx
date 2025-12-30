@@ -66,6 +66,7 @@ export default function App() {
                 <Route path="/checkout/success" element={<CheckoutSuccess />} />
                 <Route path="/checkout/pending" element={<CheckoutPending />} />
                 <Route path="/checkout/cancel" element={<CheckoutCancel />} />
+
                 <Route
                   path="/1fPaYyxWaapylzV/Gipj4gVqPJKP4I3QS54tSatEwL9qiUdzePZJBJAdxC8ZFupN"
                   element={
