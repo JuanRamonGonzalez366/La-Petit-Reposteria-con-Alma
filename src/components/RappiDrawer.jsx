@@ -2,8 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { RAPPI_BRANCHES } from "../data/rappiBranches";
+import { useTranslation } from "react-i18next";
+
+const RAPPI_LOGO_URL =
+  "https://res.cloudinary.com/dzjupasme/image/upload/c_fill,w_500,h_500/v1760751843/ap94iwehcefphojg7nnh.png";
 
 export default function RappiDrawer({ open, onClose }) {
+  const { t } = useTranslation();
   const drawerRef = useRef(null);
   const lastFocusedRef = useRef(null);
 
@@ -25,6 +30,25 @@ export default function RappiDrawer({ open, onClose }) {
     };
   }, [open, onClose]);
 
+  const copyToClipboard = async (text) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      // fallback viejo
+      const el = document.createElement("textarea");
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    } catch (e) {
+      // Si falla, no rompemos UI
+      console.error("Copy failed:", e);
+    }
+  };
+
   return (
     <AnimatePresence>
       {open && (
@@ -37,7 +61,7 @@ export default function RappiDrawer({ open, onClose }) {
           onClick={onClose}
           aria-modal="true"
           role="dialog"
-          aria-label="Opciones de Rappi"
+          aria-label={t("rappi.ariaLabel")}
         >
           <motion.div
             ref={drawerRef}
@@ -49,14 +73,26 @@ export default function RappiDrawer({ open, onClose }) {
             className="bg-cream w-full max-w-sm h-full shadow-xl flex flex-col outline-none"
           >
             {/* Header */}
-            <header className="p-4 border-b border-rose flex justify-between items-center sticky top-0 bg-cream">
-              <div>
-                <h2 className="text-lg font-semibold text-wine">
-                  Pedir por Rappi
-                </h2>
-                <p className="text-xs text-wineDark/70 mt-0.5">
-                  Elige tu sucursal y abre el menú en Rappi.
-                </p>
+            <header className="p-4 border-b border-rose flex justify-between items-start sticky top-0 bg-cream">
+              <div className="flex gap-3 items-start">
+                <div className="h-10 w-10 rounded-xl bg-white border border-rose/30 shadow-sm flex items-center justify-center overflow-hidden">
+                  <img
+                    src={RAPPI_LOGO_URL}
+                    alt="Rappi"
+                    className="h-7 w-7 object-contain"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                </div>
+
+                <div>
+                  <h2 className="text-lg font-semibold text-wine">
+                    {t("rappi.rappiTitle")}
+                  </h2>
+                  <p className="text-xs text-wineDark/70 mt-0.5">
+                    {t("rappi.chooseBranch")}
+                  </p>
+                </div>
               </div>
 
               <button
@@ -66,6 +102,25 @@ export default function RappiDrawer({ open, onClose }) {
                 ✕
               </button>
             </header>
+
+            {/* Promo message */}
+            <section className=" text-center p-4 border-b border-rose/60 bg-cream">
+              <div className="bg-white rounded-xl border border-rose/30 p-4 shadow-sm">
+                <p className="text-sm font-semibold text-wine">
+                  {t("rappi.promo.title")}
+                </p>
+                <p className="text-sm text-wineDark/80 mt-2 leading-relaxed">
+                  {t("rappi.promo.line1")}
+                  <br />
+                  {t("rappi.promo.line2")}
+                  <br />
+                  {t("rappi.promo.line3")}
+                </p>
+                <p className="text-xs text-wineDark/70 mt-3">
+                  {t("rappi.promo.priceNote")}
+                </p>
+              </div>
+            </section>
 
             {/* Content */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3">
@@ -86,16 +141,14 @@ export default function RappiDrawer({ open, onClose }) {
                       rel="noreferrer"
                       className="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-[#F44611] text-white text-sm font-medium hover:opacity-90 transition"
                     >
-                      Abrir en Rappi
+                      {t("rappi.openInRappi")}
                     </a>
 
                     <button
-                      onClick={() => {
-                        navigator.clipboard?.writeText(b.url);
-                      }}
+                      onClick={() => copyToClipboard(b.url)}
                       className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-wine/30 text-wine text-sm hover:bg-rose/10 transition"
                     >
-                      Copiar link
+                      {t("rappi.copyLink")}
                     </button>
                   </div>
                 </div>
@@ -104,9 +157,7 @@ export default function RappiDrawer({ open, onClose }) {
 
             {/* Footer */}
             <footer className="p-4 border-t border-rose bg-cream">
-              <p className="text-xs text-wineDark/70">
-                * Rappi gestiona disponibilidad, tiempos y costos de envío.
-              </p>
+              <p className="text-xs text-wineDark/70">{t("rappi.footer")}</p>
             </footer>
           </motion.div>
         </motion.div>

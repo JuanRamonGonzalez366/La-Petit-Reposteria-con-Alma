@@ -242,5 +242,66 @@
     "areas.almacen": "Almacén",
     "areas.distribution": "Distribución",
     "areas.management": "Administración"
+  },
+
+  "rappi": {
+    "ariaLabel": "Opciones de Rappi",
+    "rappiTitle": "Pide en Rappi",
+    "chooseBranch": "Elige tu sucursal y abre el menú en Rappi.",
+    "openInRappi": "Abrir en Rappi",
+    "copyLink": "Copiar link",
+    "footer": "* Rappi gestiona disponibilidad, tiempos y costos de envío.",
+    "promo": {
+      "title": "El sabor que trasciende… ahora llega hasta tu puerta.",
+      "line1": "Tus momentos especiales ahora están aún más cerca.",
+      "line2": "Encuentra Pastelerías Petit en Rappi y disfruta nuestros pasteles y repostería sin salir de casa.",
+      "line3": "",
+      "priceNote": "Disponible en Rappi al mismo precio que en tienda."
+    }
+  },
+
+  "checkout": {
+    "title": "Centro de pago y direcciones",
+    "shipping": { "title": "Envío" },
+    "rappiCheckout": {
+      "title": "¿Prefieres envío por Rappi?",
+      "subtitle": "Si quieres que Rappi gestione el envío, abre tu sucursal y haz el pedido directo en la app.",
+      "button": "Ver sucursales en Rappi"
+    },
+
+    "summary": {
+      "title": "Resumen",
+      "empty": "Tu carrito está vacío.",
+      "subtotal": "Subtotal",
+      "shipping": "Envío",
+      "express": "Express",
+      "total": "Total"
+    },
+
+    "actions": {
+      "rappi": "Pedir por Rappi (ver sucursales)",
+      "reserveStore": "Apartar y pagar en sucursal",
+      "processing": "Procesando…",
+      "redirecting": "Redirigiendo…",
+      "payMP": "Pagar en línea con Mercado Pago"
+    },
+
+    "hints": {
+      "loginRequired": "* Debes iniciar sesión para registrar tu pedido."
+    },
+
+    "errors": {
+      "loginRequiredToRegister": "Debes iniciar sesión para registrar tu pedido.",
+      "loginRequiredToReserve": "Debes iniciar sesión para apartar tu pedido.",
+      "loginRequiredToPay": "Debes iniciar sesión para pagar en línea.",
+      "needAddressAndShippingForMP": "Agrega una dirección y calcula el envío para usar Mercado Pago.",
+      "reserveFailed": "No se pudo registrar el pedido para pago en sucursal.",
+      "mpFailed": "No se pudo iniciar el pago con Mercado Pago."
+    },
+
+    "whatsapp": {
+      "reserveHeader": "Hola! Me gustaría apartar este pedido para pagar en sucursal:",
+      "orderNumber": "Número de pedido"
+    }
   }
 }

@@ -1,5 +1,5 @@
 // src/pages/Checkout.jsx
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import AddressForm from "../components/AddressForm";
 import ShippingPicker from "../components/ShippingPicker";
 import { useCart } from "../context/CartContext";
@@ -11,7 +11,11 @@ import { useAuth } from "../auth/AuthProvider";
 import { db } from "../lib/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
+// 🌍 i18n
+import { useTranslation } from "react-i18next";
+
 export default function Checkout() {
+  const { t, i18n } = useTranslation();
   const { cart, subtotal } = useCart();
   const { user } = useAuth();
 
@@ -19,6 +23,17 @@ export default function Checkout() {
   const [shipping, setShipping] = useState(null); // { amount, distanceKm, branchId, branchName, express, expressFee, ... }
   const [loadingPay, setLoadingPay] = useState(false);
   const [error, setError] = useState("");
+
+  // ✅ Cargar idioma guardado (si tu app ya lo hace global, puedes borrar este useEffect)
+  useEffect(() => {
+    const saved = localStorage.getItem("lang");
+    if (saved && saved !== i18n.language) i18n.changeLanguage(saved);
+  }, [i18n]);
+
+  const changeLang = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lang", lng);
+  };
 
   const grandTotal = useMemo(() => {
     if (!shipping) return subtotal;
@@ -70,7 +85,7 @@ export default function Checkout() {
   // 🔹 Crear documento en /orders
   const createOrder = async (paymentMethod, status) => {
     if (!user) {
-      throw new Error("Debes iniciar sesión para registrar tu pedido.");
+      throw new Error(t("checkout.errors.loginRequiredToRegister"));
     }
 
     const base = payloadBase();
@@ -98,7 +113,7 @@ export default function Checkout() {
       setError("");
 
       if (!user) {
-        setError("Debes iniciar sesión para apartar tu pedido.");
+        setError(t("checkout.errors.loginRequiredToReserve"));
         setLoadingPay(false);
         return;
       }
@@ -107,7 +122,7 @@ export default function Checkout() {
 
       // Mensaje para WhatsApp
       const lines = [
-        "Hola! Me gustaría apartar este pedido para pagar en sucursal:",
+        t("checkout.whatsapp.reserveHeader"),
         "",
         ...base.items.map(
           (i) =>
@@ -116,10 +131,10 @@ export default function Checkout() {
             )}`
         ),
         "",
-        `Subtotal: ${mxn(base.totals.subtotal)}`,
-        `Total: ${mxn(base.totals.total)}`,
+        `${t("checkout.summary.subtotal")}: ${mxn(base.totals.subtotal)}`,
+        `${t("checkout.summary.total")}: ${mxn(base.totals.total)}`,
         "",
-        `Número de pedido: ${orderId}`,
+        `${t("checkout.whatsapp.orderNumber")}: ${orderId}`,
       ];
 
       const text = encodeURIComponent(lines.join("\n"));
@@ -128,7 +143,7 @@ export default function Checkout() {
       window.open(url, "_blank");
     } catch (e) {
       console.error(e);
-      setError("No se pudo registrar el pedido para pago en sucursal.");
+      setError(t("checkout.errors.reserveFailed"));
     } finally {
       setLoadingPay(false);
     }
@@ -143,13 +158,13 @@ export default function Checkout() {
       setError("");
 
       if (!user) {
-        setError("Debes iniciar sesión para pagar en línea.");
+        setError(t("checkout.errors.loginRequiredToPay"));
         setLoadingPay(false);
         return;
       }
 
       if (!address || !shipping) {
-        setError("Agrega una dirección y calcula el envío para usar Mercado Pago.");
+        setError(t("checkout.errors.needAddressAndShippingForMP"));
         setLoadingPay(false);
         return;
       }
@@ -168,14 +183,21 @@ export default function Checkout() {
       }
     } catch (e) {
       console.error(e);
-      setError("No se pudo iniciar el pago con Mercado Pago.");
+      setError(t("checkout.errors.mpFailed"));
       setLoadingPay(false);
     }
   };
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[96px] px-4 sm:px-6 lg:px-12 pb-10">
-      <h1 className="font-display text-3xl text-wine mb-6">Centro de pago y direcciones</h1>
+      {/* ✅ Header + cambio de idioma */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+        <h1 className="font-display text-3xl text-wine">
+          {t("checkout.title")}
+        </h1>
+
+      
+      </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Columna izquierda: Dirección + Envío */}
@@ -183,21 +205,25 @@ export default function Checkout() {
           <AddressForm onSelected={setAddress} />
 
           <div className="bg-white rounded-xl border border-rose/30 p-4 shadow-sm">
-            <h3 className="text-wine text-lg font-semibold mb-3">Envío</h3>
+            <h3 className="text-wine text-lg font-semibold mb-3">
+              {t("checkout.shipping.title")}
+            </h3>
             <ShippingPicker onChange={setShipping} />
           </div>
 
-          {/* ✅ NUEVO: bloque informativo de Rappi */}
+          {/* ✅ Bloque Rappi */}
           <div className="bg-white rounded-xl border border-rose/30 p-4 shadow-sm">
-            <h3 className="text-wine text-lg font-semibold mb-2">¿Prefieres envío por Rappi?</h3>
+            <h3 className="text-wine text-lg font-semibold mb-2">
+              {t("checkout.rappiCheckout.title")}
+            </h3>
             <p className="text-sm text-wineDark/70">
-              Si quieres que Rappi gestione el envío, abre tu sucursal y haz el pedido directo en la app.
+              {t("checkout.rappiCheckout.subtitle")}
             </p>
             <button
               onClick={openRappiDrawer}
               className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-[#F44611] text-white text-sm font-medium hover:opacity-90 transition"
             >
-              Ver sucursales en Rappi
+              {t("checkout.rappiCheckout.button")}
             </button>
           </div>
         </div>
@@ -205,10 +231,12 @@ export default function Checkout() {
         {/* Columna derecha: Resumen y pagos */}
         <div className="space-y-4">
           <div className="bg-white rounded-xl border border-rose/30 p-4 shadow-sm">
-            <h3 className="text-wine text-lg font-semibold mb-3">Resumen</h3>
+            <h3 className="text-wine text-lg font-semibold mb-3">
+              {t("checkout.summary.title")}
+            </h3>
 
             {cart.length === 0 ? (
-              <p className="text-wineDark/70">Tu carrito está vacío.</p>
+              <p className="text-wineDark/70">{t("checkout.summary.empty")}</p>
             ) : (
               <>
                 <ul className="divide-y divide-rose/20 max-h-72 overflow-y-auto pr-2">
@@ -235,36 +263,41 @@ export default function Checkout() {
 
                 <div className="mt-4 space-y-1 text-sm text-wineDark/80">
                   <div className="flex justify-between">
-                    <span>Subtotal</span>
+                    <span>{t("checkout.summary.subtotal")}</span>
                     <span>{mxn(subtotal)}</span>
                   </div>
+
                   {shipping?.amount ? (
                     <div className="flex justify-between">
-                      <span>Envío</span>
+                      <span>{t("checkout.summary.shipping")}</span>
                       <span>{mxn(shipping.amount)}</span>
                     </div>
                   ) : null}
+
                   {shipping?.express ? (
                     <div className="flex justify-between">
-                      <span>Express</span>
+                      <span>{t("checkout.summary.express")}</span>
                       <span>{mxn(shipping.expressFee || 0)}</span>
                     </div>
                   ) : null}
+
                   <div className="flex justify-between font-semibold text-wine mt-2">
-                    <span>Total</span>
+                    <span>{t("checkout.summary.total")}</span>
                     <span>{mxn(grandTotal)}</span>
                   </div>
                 </div>
 
-                {error && <p className="text-red text-sm mt-3 whitespace-pre-line">{error}</p>}
+                {error && (
+                  <p className="text-red text-sm mt-3 whitespace-pre-line">{error}</p>
+                )}
 
                 <div className="mt-4 grid gap-3">
-                  {/* ✅ NUEVO: opción Rappi en checkout */}
+                  {/* Rappi */}
                   <button
                     onClick={openRappiDrawer}
                     className="w-full bg-[#F44611] text-white py-2 rounded-lg hover:opacity-90 transition"
                   >
-                    Pedir por Rappi (ver sucursales)
+                    {t("checkout.actions.rappi")}
                   </button>
 
                   {/* Apartar y pagar en sucursal */}
@@ -273,34 +306,26 @@ export default function Checkout() {
                     onClick={reserveInStore}
                     className="w-full bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition disabled:opacity-50"
                   >
-                    {loadingPay ? "Procesando…" : "Apartar y pagar en sucursal"}
+                    {loadingPay ? t("checkout.actions.processing") : t("checkout.actions.reserveStore")}
                   </button>
 
-                  {/* Pago en línea con Mercado Pago */}
-                  {/* <button
+                  {/* Mercado Pago (si lo reactivas) */}
+                  {/*
+                  <button
                     disabled={!canPayOnline}
                     onClick={payMP}
                     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:opacity-90 transition disabled:opacity-50"
                   >
-                    {loadingPay ? "Redirigiendo…" : "Pagar en línea con Mercado Pago"}
-                  </button> */}
+                    {loadingPay ? t("checkout.actions.redirecting") : t("checkout.actions.payMP")}
+                  </button>
+                  */}
                 </div>
 
                 {!user && (
                   <p className="text-xs text-wineDark/60 mt-2">
-                    * Debes iniciar sesión para registrar tu pedido.
-                  </p>
-                )}{/* 
-                {!address && (
-                  <p className="text-xs text-wineDark/60">
-                    * Agrega/selecciona una dirección para habilitar el pago en línea.
+                    {t("checkout.hints.loginRequired")}
                   </p>
                 )}
-                {!shipping && (
-                  <p className="text-xs text-wineDark/60">
-                    * Calcula el envío con tu ubicación para habilitar Mercado Pago.
-                  </p>
-                )} */}
               </>
             )}
           </div>

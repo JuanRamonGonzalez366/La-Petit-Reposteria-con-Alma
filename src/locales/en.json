@@ -243,5 +243,60 @@
     "areas.almacen": "Warehouse",
     "areas.distribution": "Distribution", 
     "areas.management": "Management"
+  },
+  "rappi": {
+    "ariaLabel": "Rappi options",
+    "rappiTitle": "Order on Rappi",
+    "chooseBranch": "Choose your branch and open the menu on Rappi.",
+    "openInRappi": "Open in Rappi",
+    "copyLink": "Copy link",
+    "footer": "* Rappi manages availability, delivery times and delivery fees.",
+    "promo": {
+      "title": "A flavor that goes beyond… now delivered to your door.",
+      "line1": "Your special moments are now even closer.",
+      "line2": "Find Pastelerías Petit on Rappi and enjoy our cakes and pastries without leaving home.",
+      "line3": "",
+      "priceNote": "Available on Rappi at the same price as in-store."
+    }
+  },
+
+  "checkout": {
+    "title": "Checkout & addresses",
+    "shipping": { "title": "Shipping" },
+    "rappiCheckout": {
+      "title": "Prefer delivery with Rappi?",
+      "subtitle": "If you want Rappi to handle delivery, choose your branch and order directly in the app.",
+      "button": "See branches on Rappi"
+    },
+    "summary": {
+      "title": "Summary",
+      "empty": "Your cart is empty.",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "express": "Express",
+      "total": "Total"
+    },
+    "actions": {
+      "rappi": "Order with Rappi (see branches)",
+      "reserveStore": "Reserve and pay in store",
+      "processing": "Processing…",
+      "redirecting": "Redirecting…",
+      "payMP": "Pay online with Mercado Pago"
+    },
+    "hints": {
+      "loginRequired": "* You must sign in to place your order."
+    },
+    "errors": {
+      "loginRequiredToRegister": "You must sign in to register your order.",
+      "loginRequiredToReserve": "You must sign in to reserve your order.",
+      "loginRequiredToPay": "You must sign in to pay online.",
+      "needAddressAndShippingForMP": "Add an address and calculate shipping to use Mercado Pago.",
+      "reserveFailed": "Could not register the order for in-store payment.",
+      "mpFailed": "Could not start Mercado Pago checkout."
+    },
+    "whatsapp": {
+      "reserveHeader": "Hi! I'd like to reserve this order and pay in store:",
+      "orderNumber": "Order number"
+    }
   }
 }
