@@ -5,7 +5,7 @@ import { RAPPI_BRANCHES } from "../data/rappiBranches";
 import { useTranslation } from "react-i18next";
 
 const RAPPI_LOGO_URL =
-  "https://res.cloudinary.com/dzjupasme/image/upload/c_fill,w_500,h_500/v1760751843/ap94iwehcefphojg7nnh.png";
+  "https://res.cloudinary.com/dzjupasme/image/upload/v1760751843/ap94iwehcefphojg7nnh.png";
 
 export default function RappiDrawer({ open, onClose }) {
   const { t } = useTranslation();
@@ -79,7 +79,7 @@ export default function RappiDrawer({ open, onClose }) {
                   <img
                     src={RAPPI_LOGO_URL}
                     alt="Rappi"
-                    className="h-7 w-7 object-contain"
+                    className="h-10 w-10 rounded-2xl"
                     loading="lazy"
                     draggable="false"
                   />
@@ -116,7 +116,7 @@ export default function RappiDrawer({ open, onClose }) {
                   <br />
                   {t("rappi.promo.line3")}
                 </p>
-                <p className="text-xs text-wineDark/70 mt-3">
+                <p className="text-xs font-bold text-wine mt-3">
                   {t("rappi.promo.priceNote")}
                 </p>
               </div>

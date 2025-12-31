@@ -195,6 +195,27 @@ export default function Nosotros() {
               {t("about.subtitle11")}
             </p>
             <br />
+            <br />
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
+              {t("about.textbold7")}
+            </p>
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              {t("about.subtitle12")}
+            </p>
+            <br />
+            <br />  
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
+              {t("about.textbold8")}
+            </p>
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              {t("about.subtitle13")}
+            </p>
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              {t("about.subtitle14")}
+            </p>
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              {t("about.subtitle15")}
+            </p>
           </div>
 
           {/* ✅ Cierre: texto + PIER_IMG a la derecha (igual que arriba) */}
@@ -202,10 +223,10 @@ export default function Nosotros() {
             {/* izquierda */}
             <div className="max-w-3xl">
               <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
-                {t("about.textbold7")}
+                {t("about.textbold9")}
               </p>
               <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
-                {t("about.subtitle12")}
+                {t("about.subtitle16")}
               </p>
             </div>
 

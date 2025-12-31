@@ -9,7 +9,7 @@ export default function RappiButton({ onClick }) {
       className="
         fixed bottom-6 right-24 z-50
         h-14 w-14 rounded-full
-        bg-white
+        bg-[#F44611]  
         border border-gray-200
         shadow-lg
         flex items-center justify-center
@@ -21,7 +21,7 @@ export default function RappiButton({ onClick }) {
       "
     >
       <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/c_fill,w_500,h_500/v1760751843/ap94iwehcefphojg7nnh.png"
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1767206967/pwszugcik7wm0zflvvom.webp"
         alt="Rappi"
         className="h-8 w-8 object-contain"
         draggable="false"
