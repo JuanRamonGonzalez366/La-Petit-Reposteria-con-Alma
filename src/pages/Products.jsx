@@ -134,7 +134,7 @@ export default function Products() {
             <h1 className="font-agend font-bold text-3xl text-wine text-center mb-4">
               {t("products.productsTitle")}
             </h1>
-            <p className="font-agenda text-center text-wineDark/70 max-w-xl">
+            <p className="font-maison neue text-center text-wineDark/70 max-w-xl">
               {t("products.productsDescription")}
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function Products() {
       </div>
 
       {/* Filtros */}
-      <div className="font-agenda flex flex-wrap justify-center gap-3 mb-8">
+      <div className="font-maison neue flex flex-wrap justify-center gap-3 mb-8">
         {categories.map((catKey) => (
           <button
             key={catKey}
@@ -186,7 +186,7 @@ export default function Products() {
         </p>
       ) : (
         <AnimatePresence>
-          <motion.div layout className="font-agenda grid flex-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style={{ minHeight: 0 }}>
+          <motion.div layout className="font-maison neue grid flex-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style={{ minHeight: 0 }}>
             {filtered.map((p) => {
               const title = titleOf(p);
               const desc = descOf(p);

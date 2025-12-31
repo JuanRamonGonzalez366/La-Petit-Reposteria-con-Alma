@@ -136,7 +136,7 @@ export default function Home() {
       </section> */}
 
       {/* seccion rebanada de tu antojo */}
-        <section className="font-agenda bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
+        <section className="font-maison neue bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
         {/* <h2 className="font-display text-3xl mb-6">
           {t("home.ctaRebanadaTittle")}
         </h2> */}
@@ -177,16 +177,16 @@ export default function Home() {
 
 
       {/* Contacto */}
-      <section className="font-agenda bg-rose/10 py-16">
+      <section className="font-maison neue bg-rose/10 py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
           {/* Columna 1: Información */}
           <div>
-            <h2 className="font-agenda font-bold text-3xl text-wine mb-4">{t("home.contactTitle")}</h2>
+            <h2 className="font-maison neue font-bold text-3xl text-wine mb-4">{t("home.contactTitle")}</h2>
             <p className="text-wineDark/80 mb-6">
               {t("home.contactText")}
             </p>
 
-            <ul className="font-agenda space-y-3 text-wineDark">
+            <ul className="font-maison neue space-y-3 text-wineDark">
               <li><strong>Tel:</strong> 3639 7058</li>
               <li><strong>Cel:</strong> 33-3639-7058</li>
               <li><strong>Email:</strong> contacto@petitplaisir.mx</li>
@@ -238,8 +238,8 @@ export default function Home() {
           </div>
 
           {/* Columna 2: Formulario */}
-          <section className="font-agenda max-w-lg mx-auto bg-rose/10 rounded-2xl shadow-lg p-6 mt-10 mb-10">
-            <h2 className="text-2xl font-agenda font-bold text-wine mb-4 text-center">
+          <section className="font-maison neue max-w-lg mx-auto bg-rose/10 rounded-2xl shadow-lg p-6 mt-10 mb-10">
+            <h2 className="text-2xl font-maison neue font-bold text-wine mb-4 text-center">
               {t("home.commentsTitle", "Deja tu comentario")}
             </h2>
 

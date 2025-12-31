@@ -48,10 +48,10 @@ export default function Cafeteria() {
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <h1 className="font-agenda font-bold text-4xl text-wine mb-4">
+        <h1 className="font-maison neue font-bold text-4xl text-wine mb-4">
           {t("cafe.cafeteriaTitle")}
         </h1>
-        <p className="font-agenda text-wineDark/80 max-w-2xl mx-auto">
+        <p className="font-maison neue text-wineDark/80 max-w-2xl mx-auto">
           {t("cafe.cafeteriaSubTitle")}
         </p>
       </motion.div>
@@ -79,7 +79,7 @@ export default function Cafeteria() {
 
       {/* SUCURSALES CON CAFETERÍA SIN FOTO */}
       <section className="item-center max-w-6xl mx-auto mt-8">
-        <h2 className="item-center font-agenda font-bold text-3xl text-center text-wineDark mb-10">
+        <h2 className="item-center font-maison neue font-bold text-3xl text-center text-wineDark mb-10">
           {t("cafe.cafeteriaSucursales")}
         </h2>
 
@@ -113,7 +113,7 @@ export default function Cafeteria() {
       <div className="flex justify-center mt-8">
         <a
           href="/SD9wrfTl3r/mTdgppUT8fDJQL9UqI34oyF5kcfaYvNKjWscyJ5V1yiGGAx26KZB3"
-          className="inline-flex items-center justify-center bg-red text-white px-8 py-3 rounded-xl font-agenda hover:opacity-90 transition"
+          className="inline-flex items-center justify-center bg-red text-white px-8 py-3 rounded-xl font-maison neue hover:opacity-90 transition"
         >
           {t("cafe.cafeteriaBranchButton")}
         </a>

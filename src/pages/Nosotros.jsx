@@ -115,14 +115,14 @@ export default function Nosotros() {
             {/* Columna izquierda */}
             <div className="max-w-3xl">
               {/* ✅ Título SIEMPRE centrado */}
-              <h1 className="font-agenda font-bold text-3xl text-wine text-center mb-3">
+              <h1 className="font-maison neue font-bold text-3xl text-wine text-center mb-3">
                 {t("about.title")}
               </h1>
 
-              <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+              <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
                 {t("about.textbold1")}
               </p>
-              <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
                 {t("about.subtitle1")}
               </p>
             </div>
@@ -135,63 +135,63 @@ export default function Nosotros() {
 
           {/* ✅ Resto del texto (sin imagen) */}
           <div className="max-w-3xl mt-4">
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle2")}
             </p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle3")}
             </p>
             <br />
 
-            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
               {t("about.textbold2")}
             </p>
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle4")}
             </p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle5")}
             </p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle6")}
             </p>
             <br />
 
-            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
               {t("about.textbold3")}
             </p>
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle7")}
             </p>
             <br />
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle8")}
             </p>
             <br />
 
-            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
               {t("about.textbold4")}
             </p>
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle9")}
             </p>
             <br />
 
-            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
               {t("about.textbold5")}
             </p>
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle10")}
             </p>
             <br />
 
-            <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+            <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
               {t("about.textbold6")}
             </p>
-            <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+            <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
               {t("about.subtitle11")}
             </p>
             <br />
@@ -201,10 +201,10 @@ export default function Nosotros() {
           <div className="mt-2 grid items-start gap-6 md:grid-cols-[1fr_220px]">
             {/* izquierda */}
             <div className="max-w-3xl">
-              <p className="font-agenda font-bold text-3x1 leading-7 text-wine leading-relaxed">
+              <p className="font-maison neue font-bold text-3x1 leading-7 text-wine leading-relaxed">
                 {t("about.textbold7")}
               </p>
-              <p className="font-agenda text-sm leading-7 text-wineDark leading-relaxed text-justify">
+              <p className="font-maison neue text-sm leading-7 text-wineDark leading-relaxed text-justify">
                 {t("about.subtitle12")}
               </p>
             </div>
@@ -247,7 +247,7 @@ export default function Nosotros() {
                   className="
                     absolute inset-x-0 bottom-0 text-center
                     px-3 py-2
-                    text-cream text-xs sm:text-sm font-agenda
+                    text-cream text-xs sm:text-sm font-maison neue
                     drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]
                     bg-gradient-to-t from-wine/80 via-wine/40 to-transparent
                   "
@@ -269,8 +269,8 @@ export default function Nosotros() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
           >
-            <h2 className="font-agenda font-bold text-3xl text-wine mb-3">{t("about.sliceHeading")}</h2>
-            <p className="font-agenda text-sm leading-7 text-wineDark">{t("about.sliceText")}</p>
+            <h2 className="font-maison neue font-bold text-3xl text-wine mb-3">{t("about.sliceHeading")}</h2>
+            <p className="font-maison neue text-sm leading-7 text-wineDark">{t("about.sliceText")}</p>
 
             <div className="mt-4 w-full flex justify-center">
               <audio controls className="w-full max-w-md rounded-xl border border-rose/30 shadow-sm">
@@ -300,8 +300,8 @@ export default function Nosotros() {
               <div className="w-10 h-10 rounded-xl bg-rose/20 text-wine flex items-center justify-center mb-3">
                 <FontAwesomeIcon icon={f.icon} />
               </div>
-              <h3 className="text-wine font-agenda font-bold text-1xl mb-2">{f.title}</h3>
-              <p className="text-sm font-agenda text-wineDark/80 mt-1">{f.desc}</p>
+              <h3 className="text-wine font-maison neue font-bold text-1xl mb-2">{f.title}</h3>
+              <p className="text-sm font-maison neue text-wineDark/80 mt-1">{f.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -310,12 +310,12 @@ export default function Nosotros() {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-12 mt-16">
         <div className="bg-wine text-cream rounded-2xl p-6 text-center shadow-sm">
-          <h3 className="font-agenda font-bold text-2xl mb-2">{t("about.ctaTitle")}</h3>
-          <p className="font-agenda opacity-90">{t("about.ctaSubtitle")}</p>
+          <h3 className="font-maison neue font-bold text-2xl mb-2">{t("about.ctaTitle")}</h3>
+          <p className="font-maison neue opacity-90">{t("about.ctaSubtitle")}</p>
           <br />
           <a
             href="/UmEFSY7AZFKVrotZ6mtdTWU5vthcO4fPeRgHPykBVUVuXFBOxELqnMJqYTHYkZvz"
-            className="bg-red px-6 py-3 rounded-lg font-agenda hover:opacity-90 transition"
+            className="bg-red px-6 py-3 rounded-lg font-maison neue hover:opacity-90 transition"
           >
             {t("home.bannerButton")}
           </a>

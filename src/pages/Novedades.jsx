@@ -105,10 +105,10 @@ export default function Novedades() {
 
   return (
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[96px] px-4 sm:px-6 lg:px-12 pb-10">
-      <h1 className="font-agenda font-bold text-4xl text-wine mb-6 text-center">
+      <h1 className="font-maison neue font-bold text-4xl text-wine mb-6 text-center">
         {t("nov.title", "Novedades & Temporadas")}
       </h1>
-      <p className="font-agenda text-wineDark/80 mb-8 text-center">
+      <p className="font-maison neue text-wineDark/80 mb-8 text-center">
         {t("nov.subtitle", "Ediciones especiales y productos por temporada.")}
       </p>
 
@@ -157,7 +157,7 @@ export default function Novedades() {
         </p>
       ) : (
         <AnimatePresence>
-          <div className="font-agenda grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="font-maison neue grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item) => {
               const title = pickLang(item.title, lang) || "";
               const desc = pickLang(item.desc, lang) || "";
