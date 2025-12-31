@@ -12,7 +12,7 @@ export default function Nosotros() {
     "https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1766505868/kzcjbkpzvcrv7sdosaya.png";
 
   const PIER_IMG =
-    "https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/b_rgb:F4E6D4/f_png/v1766514807/dg1aqihximbdfyjh3l79.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/c_crop,w_650,h_800/v1767149183/dygjbhogjoungfwdbiha.png";
 
   const STORY_IMG_ALT = "";
   const STORY_IMG_LINK = ""; // opcional
@@ -49,26 +49,11 @@ export default function Nosotros() {
       caption: t("about.img1"),
       className: "row-span-2",
     },
-    
-    
     {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703222/v4zh1vieymnv5krzq23o.jpg",
-      alt: "imagen4",
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1767153429/kqvoucflsw3bhjdnnhao.jpg",
+      alt: "imagen1",
       caption: t("about.img5"),
-      className: "",
-    },
-    
-    {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/uvm8rub2rgzmd398o2bl.jpg",
-      alt: "imagen6",
-      caption: t("about.img5"),
-      className: "",
-    },
-    {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/px0ar51vanrv5qwexkvu.jpg",
-      alt: "imagen13",
-      caption: t("about.img5"),
-      className: "",
+      className: "row-span-2",
     },
     {
       src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703220/i2d2ybodsdi84gpha2rm.jpg",
@@ -77,29 +62,18 @@ export default function Nosotros() {
       className: "",
     },
     {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/vxvp5oo4qmqivxjeghuy.jpg",
-      alt: "imagen8",
+      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1767153604/uiv4rrurommydwdwhwtu.jpg",
+      alt: "imagen1",
       caption: t("about.img6"),
-      className: "",
+      className: "row-span-2",
     },
     {
       src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703219/nmjlw4dijem019km1jm8.jpg",
       alt: "imagen9",
-      caption: t("about.img6"),
+      caption: t("about.img9"),
       className: "",
     },
-    {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/wcfv744dpg2qmjopapoz.jpg",
-      alt: "imagen10",
-      caption: t("about.img6"),
-      className: "",
-    },
-    {
-      src: "https://res.cloudinary.com/dzjupasme/image/upload/v1764703218/vazvfsxsygzsgqhumlog.jpg",
-      alt: "imagen11",
-      caption: t("about.img6"),
-      className: "",
-    },
+    
   ];
 
   const StorySideImage = ({ src }) => {
