@@ -16,7 +16,7 @@ export default function Home() {
     "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767889249/p3pp6m3one45lmtx0lc1.jpg"; // Imagen de escritorio
 
   const BANNER_MOBILE =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765382122/qnd64oinzfqfk0bb6cjy.jpg"; // Imagen móvil
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1767893064/kszvsuhzxlbjfn7ekzza.png"; // Imagen móvil
 
   const { t } = useTranslation();
   const whatsappGeneral =
@@ -175,7 +175,7 @@ export default function Home() {
         </a>
       </section>
       <section aria-hidden className=" bg-cream items-center w-full">
-        <div className="relative w-full h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
+        <div className="relative w-full h-12 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
           <div
             className="
               absolute inset-0
@@ -186,12 +186,7 @@ export default function Home() {
             "
           />
         </div>
-
       </section>
-
-
-
-
       {/* Contacto */}
       <section className="font-maison neue bg-cream py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
