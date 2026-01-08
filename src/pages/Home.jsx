@@ -13,7 +13,7 @@ import pasteleria from "../assets/pasteleria.jpg";
 
 export default function Home() {
   const BANNER_DESKTOP =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1765557188/g8ylvymmqjzwbilmovay.jpg"; // Imagen de escritorio
+    "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767889249/p3pp6m3one45lmtx0lc1.jpg"; // Imagen de escritorio
 
   const BANNER_MOBILE =
     "https://res.cloudinary.com/dzjupasme/image/upload/v1765382122/qnd64oinzfqfk0bb6cjy.jpg"; // Imagen móvil
@@ -69,12 +69,10 @@ export default function Home() {
         <div
           className="
             absolute inset-0
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/b_rgb:F4E6D4/v1767882752/sqbbw3kig8xx4mminiwn.png')]
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png')]
             bg-repeat-x
             bg-center
             bg-contain
-            opacity-100
-            mix-blend-multiply
           "
         />
       </div>
@@ -181,12 +179,10 @@ export default function Home() {
           <div
             className="
               absolute inset-0
-              bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/b_rgb:F4E6D4/v1767882752/sqbbw3kig8xx4mminiwn.png')]
+              bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png')]
               bg-repeat-x
               bg-center
               bg-contain
-              opacity-100
-              mix-blend-multiply
             "
           />
         </div>
@@ -197,7 +193,7 @@ export default function Home() {
 
 
       {/* Contacto */}
-      <section className="font-maison neue bg-rose/10 py-16">
+      <section className="font-maison neue bg-cream py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
           {/* Columna 1: Información */}
           <div>
