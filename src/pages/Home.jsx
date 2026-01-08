@@ -8,21 +8,18 @@ import { toast } from "react-toastify";
 
 export default function Home() {
   const BANNER_DESKTOP =
-    "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767889249/p3pp6m3one45lmtx0lc1.jpg"; // Imagen de escritorio
+    "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767902535/xhsojdjr9wtrnqlohopx.jpg";
 
   const BANNER_MOBILE =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1767894282/llruhi3rlz8eezns4tth.jpg"; // Imagen móvil
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1767894282/llruhi3rlz8eezns4tth.jpg";
 
   const { t } = useTranslation();
-  const whatsappGeneral =
-    "https://api.whatsapp.com/send?phone=5213318501155&text=Hola!%20Me%20gustaria%20hacer%20un%20pedido%20especial.%20¿Podrian%20apoyarme?";
 
-  // --- Estado para comentarios ---
+  // --- Estado comentarios ---
   const [form, setForm] = useState({ nombre: "", correo: "", mensaje: "" });
   const [sending, setSending] = useState(false);
   const [comentarios, setComentarios] = useState([]);
 
-  // --- Cargar comentarios existentes ---
   useEffect(() => {
     const q = query(collection(db, "comentarios"), orderBy("fecha", "desc"));
     const unsub = onSnapshot(q, (snap) => {
@@ -31,7 +28,6 @@ export default function Home() {
     return () => unsub();
   }, []);
 
-  // --- Enviar comentario ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.nombre || !form.correo || !form.mensaje) {
@@ -49,8 +45,7 @@ export default function Home() {
       });
       toast.success("✅ Comentario enviado correctamente");
       setForm({ nombre: "", correo: "", mensaje: "" });
-    } catch (err) {
-      console.error("Error al enviar comentario:", err);
+    } catch {
       toast.error("❌ Ocurrió un error al enviar tu mensaje");
     } finally {
       setSending(false);
@@ -58,66 +53,57 @@ export default function Home() {
   };
 
   return (
-    
-    <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
-      {/* FRANJA SUPERIOR */}
-    <div className="bg-crema relative w-full overflow-hidden leading-none">
-      <img
-        src="https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png"
-        alt=""
-        className="
-          block
-          w-full
-          h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
-          object-cover
-          object-center
-          select-none
-          pointer-events-none
-        "
-      />
-    </div>
+    <>
+  <section
+  className="
+    relative w-full
+    mt-20                     /* 👈 empuja el hero debajo del header */
+    h-[90vh] md:h-[90vh] lg:h-[115vh]
+    overflow-hidden bg-cream
+  "
+>
+
+    <img
+      src={BANNER_DESKTOP}
+      alt="Promoción Petit Plaisir"
+      className="hidden md:block w-full h-full object-cover object-[center_top]"
+    />
+
+    <img
+      src={BANNER_MOBILE}
+      alt="Promoción Petit Plaisir"
+      className="block md:hidden w-full h-full object-cover object-[center_top]"
+    />
+  </section>
 
 
+      {/* ================= CONTENIDO ================= */}
+      <main className="bg-cream pt-10 pb-6">
+        {/* CTA Rebanada */}
+        <section className="font-maison neue bg-rosepier text-wine py-10 flex flex-col items-center text-center">
+          <div className="px-4 py-4">
+            <img
+              src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
+              alt="La rebanada de tu antojo"
+              className="w-full max-w-md h-auto mb-6"
+            />
+          </div>
 
-    <div className="bg-cream relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
-  <img
-    src={BANNER_DESKTOP}
-    alt="Promoción Petit Plaisir"
-    className="bg-cream hidden md:block absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
-  />
-  <img
-    src={BANNER_MOBILE}
-    alt="Promoción Petit Plaisir"
-    className="block md:hidden absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
-  />
-</div>
+          <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
+            {t("home.ctaRebanadaText")}
+          </p>
 
-      {/* seccion rebanada de tu antojo */}
-        <section className="font-maison neue bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
-        {/* <h2 className="font-display text-3xl mb-6">
-          {t("home.ctaRebanadaTittle")}
-        </h2> */}
-        {/* Contenedor con aire (evita sensación de recorte) */}
-        <div className="px-4 py-4">
-          <img
-            src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
-            alt="La rebanada de tu antojo"
-            className="w-full max-w-md h-auto mb-6"
-          />
-        </div>
-        <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
-          {t("home.ctaRebanadaText")}
-        </p>
-        <a
-          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
-        >
-          {t("home.ctaButton")}
-        </a>
-      </section>
-      <section aria-hidden className=" bg-cream items-center w-full">
+          <a
+            href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+          >
+            {t("home.ctaButton")}
+          </a>
+        </section>
+
+        {/* Separador rombos inferior */}
         <div className="relative w-full h-12 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
           <div
             className="
@@ -129,135 +115,107 @@ export default function Home() {
             "
           />
         </div>
-      </section>
-      {/* Contacto */}
-      <section className="font-maison neue bg-cream py-16">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
-          {/* Columna 1: Información */}
-          <div>
-            <h2 className="font-maison neue font-bold text-3xl text-wine mb-4">{t("home.contactTitle")}</h2>
-            <p className="text-wineDark/80 mb-6">
-              {t("home.contactText")}
-            </p>
 
-            <ul className="font-maison neue space-y-3 text-wineDark">
-              <li><strong>Tel:</strong> 3639 7058</li>
-              <li><strong>Cel:</strong> 33-3639-7058</li>
-              <li><strong>Email:</strong> contacto@petitplaisir.mx</li>
-              <li><strong>{t("home.contactAddress")}:</strong> Francisco I. Madero No. 163, Tlaquepaque Centro, C.P. 45693</li>
-              <li>
-                <a
-                  href="https://api.whatsapp.com/send?phone=5213314719680&text=Hola,%20%20tengo%20la%20siguiente%20queja%20y/o%20sugerencia%20que%20hacer%20con%20un%20%20representante%20de%20la%20empresa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-green-700 transition"
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5" />
-                  {t("home.contactWhatsapp")}        
-                </a>
-              </li>
-              <li><strong>{t("home.contactSocial")}</strong></li>
-              <a
-                href="https://www.facebook.com/pasteleriaspetit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-blue-700 transition"
-              >
-                <FontAwesomeIcon icon={faFacebook} className="w-5 h-5" />
-                Facebook
-              </a>
-              <a
-                href="https://www.instagram.com/pasteleriaspetit/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-pink-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-pink-700 transition"
-              >
-                <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
-                Instagram
-              </a>
-            </ul>
+        {/* Contacto */}
+        <section className="font-maison neue bg-cream py-16">
+          <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+            {/* Info */}
+            <div>
+              <h2 className="font-bold text-3xl text-wine mb-4">
+                {t("home.contactTitle")}
+              </h2>
 
-            <div className="mt-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3733.6385601897414!2d-103.3077914!3d20.6435843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b3b4d9b4a1b5%3A0xf53b22f7bb1309d7!2sPasteler%C3%ADas%20Petit%20Tlaquepaque!5e0!3m2!1ses!2smx!4v1759285195076!5m2!1ses!2smx"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-xl border border-wine/20"
-              ></iframe>
+              <p className="text-wineDark/80 mb-6">
+                {t("home.contactText")}
+              </p>
+
+              <ul className="space-y-3 text-wineDark">
+                <li><strong>Tel:</strong> 3639 7058</li>
+                <li><strong>Cel:</strong> 33-3639-7058</li>
+                <li><strong>Email:</strong> contacto@petitplaisir.mx</li>
+                <li>
+                  <strong>{t("home.contactAddress")}:</strong> Francisco I. Madero No. 163, Tlaquepaque Centro
+                </li>
+
+                <li>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5213314719680"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-green-700 transition"
+                  >
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                    {t("home.contactWhatsapp")}
+                  </a>
+                </li>
+
+                <li className="flex gap-4">
+                  <a
+                    href="https://www.facebook.com/pasteleriaspetit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-blue-700 transition"
+                  >
+                    <FontAwesomeIcon icon={faFacebook} />
+                    Facebook
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/pasteleriaspetit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-pink-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-pink-700 transition"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                    Instagram
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          {/* Columna 2: Formulario */}
-          <section className="font-maison neue max-w-lg mx-auto bg-rose/10 rounded-2xl shadow-lg p-6 mt-10 mb-10">
-            <h2 className="text-2xl font-maison neue font-bold text-wine mb-4 text-center">
-              {t("home.commentsTitle", "Deja tu comentario")}
-            </h2>
 
             {/* Formulario */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder={t("home.commentName", "Nombre")}
-                className="w-full border border-wine/20 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose"
-                value={form.nombre}
-                onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-              />
-              <input
-                type="email"
-                placeholder={t("home.commentEmail", "Correo electrónico")}
-                className="w-full border border-wine/20 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose"
-                value={form.correo}
-                onChange={(e) => setForm({ ...form, correo: e.target.value })}
-              />
-              <textarea
-                placeholder={t("home.commentMessage", "Mensaje")}
-                rows="4"
-                className="w-full border border-wine/20 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose"
-                value={form.mensaje}
-                onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
-              ></textarea>
-              <button
-                type="submit"
-                disabled={sending}
-                className={`w-full ${
-                  sending ? "bg-gray-400" : "bg-red"
-                } text-cream font-semibold py-2 rounded-lg hover:opacity-90 transition`}
-              >
-                {sending
-                  ? t("home.sending", "Enviando...")
-                  : t("home.sendMessage", "Enviar mensaje")}
-              </button>
-            </form>
+            <section className="max-w-lg mx-auto bg-rose/10 rounded-2xl shadow-lg p-6">
+              <h2 className="text-2xl font-bold text-wine mb-4 text-center">
+                {t("home.commentsTitle")}
+              </h2>
 
-            {/* Listado de comentarios */}
-            {comentarios.length > 0 && (
-              <div className="mt-8 space-y-4">
-                <h3 className="text-xl font-display text-wine text-center mb-3">
-                  {t("home.commentsList", "Comentarios recientes")}
-                </h3>
-                {comentarios.map((c) => (
-                  <div
-                    key={c.id}
-                    className="bg-cream p-4 rounded-xl shadow border border-rose/20"
-                  >
-                    <p className="font-semibold text-wine">{c.nombre}</p>
-                    <p className="text-sm text-wineDark/80">{c.mensaje}</p>
-                    <p className="text-xs text-wineDark/50 mt-1">
-                      {c.fecha?.toDate
-                        ? new Date(c.fecha.toDate()).toLocaleString()
-                        : ""}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </section>
-        </div>
-      </section>
-    </main>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  placeholder={t("home.commentName")}
+                  className="w-full border rounded-lg px-4 py-2"
+                  value={form.nombre}
+                  onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+                />
+
+                <input
+                  type="email"
+                  placeholder={t("home.commentEmail")}
+                  className="w-full border rounded-lg px-4 py-2"
+                  value={form.correo}
+                  onChange={(e) => setForm({ ...form, correo: e.target.value })}
+                />
+
+                <textarea
+                  rows="4"
+                  placeholder={t("home.commentMessage")}
+                  className="w-full border rounded-lg px-4 py-2"
+                  value={form.mensaje}
+                  onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
+                />
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="w-full bg-red text-white font-semibold py-2 rounded-lg hover:opacity-90"
+                >
+                  {sending ? "Enviando..." : "Enviar mensaje"}
+                </button>
+              </form>
+            </section>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
