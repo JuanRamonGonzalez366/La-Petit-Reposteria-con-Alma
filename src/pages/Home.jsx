@@ -16,7 +16,7 @@ export default function Home() {
     "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767889249/p3pp6m3one45lmtx0lc1.jpg"; // Imagen de escritorio
 
   const BANNER_MOBILE =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1767893064/kszvsuhzxlbjfn7ekzza.png"; // Imagen móvil
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1767894282/llruhi3rlz8eezns4tth.jpg"; // Imagen móvil
 
   const { t } = useTranslation();
   const whatsappGeneral =
