@@ -1,4 +1,3 @@
-// src/pages/checkout/Success.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { doc, onSnapshot } from "firebase/firestore";
@@ -85,7 +84,7 @@ export default function CheckoutSuccess() {
 
           {orderId ? (
             <Link
-              to="/checkout"
+              to="/VJ7iPLoC0nlfxKTVNEm6kXQRY8whYyc5FylrCG1sbrTNBEAHpV7Lw3ZKImMoosrW"
               className="border border-wine/30 text-wine px-4 py-2 rounded-lg hover:bg-rose/10 transition"
             >
               Volver al checkout

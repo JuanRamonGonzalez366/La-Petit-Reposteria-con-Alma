@@ -110,11 +110,11 @@ export default function App() {
                   element={<Novedades />}
                 />
 
-                {/* ✅ Checkout */}
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/checkout/success" element={<CheckoutSuccess />} />
-                <Route path="/checkout/pending" element={<CheckoutPending />} />
-                <Route path="/checkout/cancel" element={<CheckoutCancel />} />
+                {/* Checkout */}
+                <Route path="/VJ7iPLoC0nlfxKTVNEm6kXQRY8whYyc5FylrCG1sbrTNBEAHpV7Lw3ZKImMoosrW" element={<Checkout />} />
+                <Route path="/0NcCoYMCZ9bmJqits3+o5Z+emkUHfVRJaiUvORJZP8TzXO6cQy5nDxfTwRcWZjhn" element={<CheckoutSuccess />} />
+                <Route path="/eW+S7H8Amt+oNl+RBNgW8ON218Y499nUkFUp9mtJYvwKcyOgmQJkRJ7HqEZ3VGH" element={<CheckoutPending />} />
+                <Route path="/HjYqq8/EN5361YMLgUtnh/9DIImr+9P4viv80ztopWy05SUi2hUiBEkmMWGU5FJB" element={<CheckoutCancel />} />
 
                 {/* Admin */}
                 <Route
@@ -174,7 +174,7 @@ export default function App() {
                   }
                 />
                 <Route
-                  path="/admin/seed"
+                  path="/HbsbotNucBKduoJPAD5pOMSdRZjfbumJhIxMpxJ/TpIzropUy7H63/D4fUg8qSj2"
                   element={
                     <ProtectedRoute requiredRole={["admin"]}>
                       <SeedData />
@@ -203,11 +203,11 @@ export default function App() {
           <Footer />
         </div>
 
-        {/* ✅ Botones flotantes */}
+        {/* Botones flotantes */}
         <CartButton onClick={() => setCartOpen(true)} />
         <RappiButton onClick={() => setRappiOpen(true)} />
 
-        {/* ✅ Drawers */}
+        {/* Drawers */}
         <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
         <RappiDrawer open={rappiOpen} onClose={() => setRappiOpen(false)} />
       </>

@@ -275,7 +275,7 @@ export default function CartDrawer({ open, onClose }) {
               <button
                 onClick={() => {
                   onClose?.();
-                  navigate("/checkout");
+                  navigate("/VJ7iPLoC0nlfxKTVNEm6kXQRY8whYyc5FylrCG1sbrTNBEAHpV7Lw3ZKImMoosrW");
                 }}
                 className="w-full bg-wine text-cream py-2 rounded-lg hover:opacity-90 transition"
               >

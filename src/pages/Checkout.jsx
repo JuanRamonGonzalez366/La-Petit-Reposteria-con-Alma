@@ -1,4 +1,3 @@
-// src/pages/Checkout.jsx
 import React, { useMemo, useState, useEffect } from "react";
 import AddressForm from "../components/AddressForm";
 import ShippingPicker from "../components/ShippingPicker";
@@ -310,15 +309,14 @@ export default function Checkout() {
                   </button>
 
                   {/* Mercado Pago (si lo reactivas) */}
-                  {/*
-                  <button
+                  
+                  {/* <button
                     disabled={!canPayOnline}
                     onClick={payMP}
                     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:opacity-90 transition disabled:opacity-50"
                   >
                     {loadingPay ? t("checkout.actions.redirecting") : t("checkout.actions.payMP")}
-                  </button>
-                  */}
+                  </button> */}
                 </div>
 
                 {!user && (

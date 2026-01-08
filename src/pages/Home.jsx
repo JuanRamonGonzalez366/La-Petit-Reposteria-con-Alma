@@ -65,6 +65,16 @@ export default function Home() {
   return (
     
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
+      <div
+          className="
+            w-full
+            h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/b_rgb:F4E6D4/f_png,e_improve,e_sharpen/v1766510929/pzgevwameenoosuuy5cz.png')]
+            bg-no-repeat
+            bg-center
+            bg-contain
+          "
+        />
     <div className="relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
   <img
     src={BANNER_DESKTOP}
@@ -164,8 +174,8 @@ export default function Home() {
         <div
           className="
             w-full
-            h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1766510929/pzgevwameenoosuuy5cz.png')]
+            h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/b_rgb:F4E6D4/f_png,e_improve,e_sharpen/v1766510929/pzgevwameenoosuuy5cz.png')]
             bg-no-repeat
             bg-center
             bg-contain
