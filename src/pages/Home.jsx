@@ -65,16 +65,22 @@ export default function Home() {
   return (
     
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
-      <div
+      <div className="relative w-full h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
+        <div
           className="
-            w-full
-            h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/b_rgb:F4E6D4/f_png,e_improve,e_sharpen/v1766510929/pzgevwameenoosuuy5cz.png')]
-            bg-no-repeat
+            absolute inset-0
+            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/b_rgb:F4E6D4/v1767882752/sqbbw3kig8xx4mminiwn.png')]
+            bg-repeat-x
             bg-center
             bg-contain
+            opacity-100
+            mix-blend-multiply
           "
         />
+      </div>
+
+
+
     <div className="relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
   <img
     src={BANNER_DESKTOP}
@@ -170,17 +176,21 @@ export default function Home() {
           {t("home.ctaButton")}
         </a>
       </section>
-      <section aria-hidden className="w-full">
-        <div
-          className="
-            w-full
-            h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/b_rgb:F4E6D4/f_png,e_improve,e_sharpen/v1766510929/pzgevwameenoosuuy5cz.png')]
-            bg-no-repeat
-            bg-center
-            bg-contain
-          "
-        />
+      <section aria-hidden className=" bg-cream items-center w-full">
+        <div className="relative w-full h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
+          <div
+            className="
+              absolute inset-0
+              bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/b_rgb:F4E6D4/v1767882752/sqbbw3kig8xx4mminiwn.png')]
+              bg-repeat-x
+              bg-center
+              bg-contain
+              opacity-100
+              mix-blend-multiply
+            "
+          />
+        </div>
+
       </section>
 
 
@@ -203,7 +213,7 @@ export default function Home() {
               <li><strong>{t("home.contactAddress")}:</strong> Francisco I. Madero No. 163, Tlaquepaque Centro, C.P. 45693</li>
               <li>
                 <a
-                  href="https://api.whatsapp.com/send?phone=5213311505057&text=Hola,%20%20tengo%20la%20siguiente%20queja%20y/o%20sugerencia%20que%20hacer%20con%20un%20%20representante%20de%20la%20empresa"
+                  href="https://api.whatsapp.com/send?phone=5213314719680&text=Hola,%20%20tengo%20la%20siguiente%20queja%20y/o%20sugerencia%20que%20hacer%20con%20un%20%20representante%20de%20la%20empresa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-green-700 transition"

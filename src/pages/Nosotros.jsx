@@ -231,9 +231,14 @@ export default function Nosotros() {
             </div>
 
             {/* derecha */}
-            <div className="flex justify-center md:justify-end">
-              <StorySideImage src={PIER_IMG} />
+          <div className="flex justify-center md:justify-end items-center">
+            <div className="w-full max-w-[260px] md:max-w-[320px] lg:max-w-[380px]">
+              <StorySideImage src={PIER_IMG}
+              alt="Pierre"
+              className="w-full h-auto object-contain" />
             </div>
+          </div>
+
           </div>
         </div>
       </section>

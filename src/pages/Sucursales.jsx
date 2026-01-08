@@ -10,7 +10,7 @@ export default function Sucursales() {
       id: "san-juan-bosco",
       name: "San Juan Bosco",
       address: "C. Juan de Dios Robledo 403, Las Huertas, 44739 Guadalajara, Jal",
-      /* horario: "8:30 AM – 9:00 PM", */
+      horario: "8:00 AM – 7:00 PM",
       img: "",
       map: "https://maps.app.goo.gl/gVxk8zHbCwQdow1u7",
       rebanada: true,
@@ -163,21 +163,21 @@ export default function Sucursales() {
                 <img
                   src="https://res.cloudinary.com/dzjupasme/image/upload/v1765560283/z3bonz0a3rfeaotmzsk7.png"
                   alt="Rebanada"
-                  className="h-10 w-10 object-contain"
+                  className="h-14 w-14 object-contain"
                 />
               )}
               {s.cafeteria && (
                 <img
                   src="https://res.cloudinary.com/dzjupasme/image/upload/v1760750658/xqav4uk0dkmxfnyymzdz.png"
                   alt="Cafetería"
-                  className="h-10 w-10 object-contain"
+                  className="h-14 w-14 object-contain"
                 />
               )}
               {s.rappi && (
                 <img
                   src="https://res.cloudinary.com/dzjupasme/image/upload/v1760751843/ap94iwehcefphojg7nnh.png"
                   alt="Rappi"
-                  className="h-10 w-10 object-contain"
+                  className="h-14 w-14 object-contain"
                 />
               )}
             </div>
