@@ -61,7 +61,7 @@ export default function Home() {
     
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
       {/* FRANJA SUPERIOR */}
-    <div className="relative w-full overflow-hidden leading-none">
+    <div className="bg-crema relative w-full overflow-hidden leading-none">
       <img
         src="https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png"
         alt=""
@@ -79,11 +79,11 @@ export default function Home() {
 
 
 
-    <div className="relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
+    <div className="bg-cream relative w-full h-[90vh] md:h-[90vh] lg:h-[115vh] overflow-hidden">
   <img
     src={BANNER_DESKTOP}
     alt="Promoción Petit Plaisir"
-    className="hidden md:block absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
+    className="bg-cream hidden md:block absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
   />
   <img
     src={BANNER_MOBILE}
