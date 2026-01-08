@@ -6,11 +6,6 @@ import { db } from "../lib/firebase";
 import { collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } from "firebase/firestore";
 import { toast } from "react-toastify";
 
-import tronco from "../assets/tronco de cereza.webp";
-import ruso from "../assets/pastel ruso blanco.webp";
-import tiramisu from "../assets/tiramisu.webp";
-import pasteleria from "../assets/pasteleria.jpg";
-
 export default function Home() {
   const BANNER_DESKTOP =
     "https://res.cloudinary.com/dzjupasme/image/upload/c_pad,b_gen_fill,w_1920,h_1080/v1767889249/p3pp6m3one45lmtx0lc1.jpg"; // Imagen de escritorio
@@ -65,17 +60,22 @@ export default function Home() {
   return (
     
     <main className="bg-cream min-h-[calc(100vh-80px)] pt-[88px] pb-6">
-      <div className="relative w-full h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
-        <div
-          className="
-            absolute inset-0
-            bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png')]
-            bg-repeat-x
-            bg-center
-            bg-contain
-          "
-        />
-      </div>
+      {/* FRANJA SUPERIOR */}
+    <div className="relative w-full overflow-hidden leading-none">
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png"
+        alt=""
+        className="
+          block
+          w-full
+          h-6 sm:h-10 md:h-12 lg:h-16 xl:h-20
+          object-cover
+          object-center
+          select-none
+          pointer-events-none
+        "
+      />
+    </div>
 
 
 
@@ -91,63 +91,6 @@ export default function Home() {
     className="block md:hidden absolute inset-0 w-full h-full object-cover object-[center_top] object-center"
   />
 </div>
-
-
-
-
-
-      {/* Productos Destacados */}
-      {/* <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="font-display text-3xl text-wine mb-8 text-center">{t("home.featuredTitle")}</h2>
-        <div className="text-center grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[ 
-            { img: tronco, name: t("home.troncoName"), desc: t("home.troncoDesc") },
-            { img: ruso, name: t("home.rusoName"), desc: t("home.rusoDesc") },
-            { img: tiramisu, name: t("home.tiramisuName"), desc: t("home.tiramisuDesc") },
-          ].map((p, i) => (
-            <div key={i} className="bg-white rounded-2xl shadow border border-rose/30 overflow-hidden">
-              <img src={p.img} alt={p.name} className="w-full h-[200px] object-cover" />
-              <div className="p-5">
-                <h3 className="font-semibold text-wine text-xl">{p.name}</h3>
-                <p className="text-sm text-wineDark/70 mt-2">{p.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* Quiénes Somos */}
-      {/* <section className="bg-rose/10 py-16">
-        <div className="text-center max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
-          <div>
-            <h2 className="font-display text-3xl text-wine mb-4">{t("home.aboutTitle")}</h2>
-            <p className="text-wineDark/80 leading-relaxed">{t("home.aboutText")}</p>
-          </div>
-          <div>
-            <img src={pasteleria} alt="Petit Plaisir" className="w-full h-[320px] object-cover" />
-          </div>
-        </div>
-      </section> */}
-
-      {/* secciojn qr */}
-      {/* <section className="mt-20 bg-wineDark text-white py-1 flex flex-col items-center justify-center text-center">
-        <br />
-        <br />
-        <h2 className="font-display text-3xl mb-4">{t("home.ctaTitle")}</h2>
-        <img
-          src="https://res.cloudinary.com/dzjupasme/image/upload/v1765386730/qr_v3_c13329.jpg"
-          alt="Menu Petit"
-          className="border-4 border-wineDark/20 rounded-xl w-100 h-auto object-cover"
-        />
-        <a 
-          href="https://res.cloudinary.com/dzjupasme/image/upload/v1765378300/zqrurmve7fwig0c47avk.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="bg-red px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
-        >
-          {t("home.ctaButton")}
-        </a>
-      </section> */}
 
       {/* seccion rebanada de tu antojo */}
         <section className="font-maison neue bg-rosepier text-wine py-10 mt-10 flex flex-col items-center justify-center text-center">
@@ -215,7 +158,7 @@ export default function Home() {
               </li>
               <li><strong>{t("home.contactSocial")}</strong></li>
               <a
-                href="https://www.facebook.com/petitplaisirpasteleria/?ref=page_internal"
+                href="https://www.facebook.com/pasteleriaspetit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-blue-700 transition"
