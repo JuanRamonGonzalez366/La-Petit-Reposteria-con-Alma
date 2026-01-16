@@ -28,9 +28,7 @@ const UsersAdmin = lazy(() => import("./pages/admin/UsersAdmin"));
 const CafeteriaAdmin = lazy(() => import("./pages/admin/CafeteriaAdmin"));
 const PedidosEspeciales = lazy(() => import("./pages/PedidosEspeciales"));
 const Privacidad = lazy(() => import("./pages/Privacidad"));
-const PedidosEspecialesAdmin = lazy(() =>
-  import("./pages/admin/PedidosEspecialesAdmin")
-);
+const PedidosEspecialesAdmin = lazy(() =>import("./pages/admin/PedidosEspecialesAdmin"));
 const BolsaTrabajoAdmin = lazy(() => import("./pages/admin/BolsaTrabajoAdmin"));
 const FacturacionAdmin = lazy(() => import("./pages/admin/FacturacionAdmin"));
 const SeedData = lazy(() => import("./pages/admin/SeedData"));
@@ -110,11 +108,22 @@ export default function App() {
                   element={<Novedades />}
                 />
 
-                {/* Checkout */}
-                <Route path="/VJ7iPLoC0nlfxKTVNEm6kXQRY8whYyc5FylrCG1sbrTNBEAHpV7Lw3ZKImMoosrW" element={<Checkout />} />
-                <Route path="/0NcCoYMCZ9bmJqits3+o5Z+emkUHfVRJaiUvORJZP8TzXO6cQy5nDxfTwRcWZjhn" element={<CheckoutSuccess />} />
-                <Route path="/eW+S7H8Amt+oNl+RBNgW8ON218Y499nUkFUp9mtJYvwKcyOgmQJkRJ7HqEZ3VGH" element={<CheckoutPending />} />
-                <Route path="/HjYqq8/EN5361YMLgUtnh/9DIImr+9P4viv80ztopWy05SUi2hUiBEkmMWGU5FJB" element={<CheckoutCancel />} />
+                <Route 
+                  path="/VJ7iPLoC0nlfxKTVNEm6kXQRY8whYyc5FylrCG1sbrTNBEAHpV7Lw3ZKImMoosrW" 
+                  element={<Checkout />} 
+                />
+                <Route 
+                  path="/0NcCoYMCZ9bmJqits3+o5Z+emkUHfVRJaiUvORJZP8TzXO6cQy5nDxfTwRcWZjhn" 
+                  element={<CheckoutSuccess />}
+                />
+                <Route 
+                  path="/eW+S7H8Amt+oNl+RBNgW8ON218Y499nUkFUp9mtJYvwKcyOgmQJkRJ7HqEZ3VGH" 
+                  element={<CheckoutPending />} 
+                />
+                <Route 
+                  path="/HjYqq8/EN5361YMLgUtnh/9DIImr+9P4viv80ztopWy05SUi2hUiBEkmMWGU5FJB" 
+                  element={<CheckoutCancel />} 
+                />
 
                 {/* Admin */}
                 <Route
