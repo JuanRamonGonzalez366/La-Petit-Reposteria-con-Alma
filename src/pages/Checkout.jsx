@@ -148,9 +148,6 @@ export default function Checkout() {
     }
   };
 
-  // ==========================
-  // 2) Pagar con Mercado Pago
-  // ==========================
   const payMP = async () => {
     try {
       setLoadingPay(true);

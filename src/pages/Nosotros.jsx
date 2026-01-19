@@ -7,7 +7,6 @@ import { faCakeCandles, faMugHot, faGift, faStore } from "@fortawesome/free-soli
 export default function Nosotros() {
   const { t } = useTranslation();
 
-  // ✅ Imagen tipo “QR” pero para historia
   const STORY_IMG =
     "https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1766505868/kzcjbkpzvcrv7sdosaya.png";
 
@@ -83,7 +82,7 @@ export default function Nosotros() {
           <img
             src={src}
             alt={STORY_IMG_ALT}
-            className="w-40 h-40 md:w-48 md:h-48 bg-cream"
+            className="w-56 md:w-72 h-auto bg-cream"
             loading="lazy"
             decoding="async"
           />
@@ -94,7 +93,7 @@ export default function Nosotros() {
       <img
         src={src}
         alt={STORY_IMG_ALT}
-        className="w-40 h-40 md:w-48 md:h-48 bg-cream"
+        className="w-56 md:w-72 h-auto bg-cream"
         loading="lazy"
         decoding="async"
       />
