@@ -81,27 +81,52 @@ export default function Home() {
       <main className="bg-cream pt-10 pb-6">
         {/* CTA Rebanada */}
         <section className="font-maison neue bg-rosepier text-wine py-10 flex flex-col items-center text-center">
-          <div className="px-4 py-4">
-            <img
-              src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
-              alt="La rebanada de tu antojo"
-              className="w-full max-w-md h-auto mb-6"
-            />
-          </div>
+  <div className="px-4 py-4">
+    <img
+      src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
+      alt="La rebanada de tu antojo"
+      className="w-full max-w-md h-auto mb-6"
+    />
+  </div>
 
-          <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
-            {t("home.ctaRebanadaText")}
-          </p>
+  <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
+    {t("home.ctaRebanadaText")}
+  </p>
 
-          <a
-            href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
-          >
-            {t("home.ctaButton")}
-          </a>
-        </section>
+  <a
+    href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+  >
+    {t("home.ctaButton")}
+  </a>
+
+  {/* ICONOS DE CALIDAD */}
+  <div className="flex justify-center items-center gap-18 mt-8 px-4 overflow-x-auto">
+    <img
+      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/d0kkhcefwqvnatatmrya.png"
+      alt="Sin conservadores"
+      className="w-24 md:w-32 h-auto"
+    />
+    <img
+      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/al0aullnrjeuroigkd5u.png"
+      alt="Sin saborizantes artificiales"
+      className="w-24 md:w-32 h-auto"
+    />
+    <img
+      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/s0pax4mnwmoufftbrqoi.png"
+      alt="Producto artesanal"
+      className="w-24 md:w-32 h-auto"
+    />
+    <img
+      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476683/ocqcbidknszsub8iyuu9.png"
+      alt="Ingredientes naturales"
+      className="w-24 md:w-32 h-auto"
+    />
+  </div>
+</section>
+
 
         {/* Separador rombos inferior */}
         <div className="relative w-full h-12 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
