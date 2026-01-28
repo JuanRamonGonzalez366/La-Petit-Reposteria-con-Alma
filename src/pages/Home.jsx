@@ -107,18 +107,18 @@ export default function Home() {
     <img
       src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/d0kkhcefwqvnatatmrya.png"
       alt="Sin conservadores"
-      className="w-24 md:w-32 h-auto"
+      className="w-32 md:w-36 h-auto"
     />
     
     <img
       src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/x3h2dhyoe1w3tgjsglvw.jpg"
       alt="Producto artesanal"
-      className="w-24 md:w-32 h-auto"
+      className="w-32 md:w-36 h-auto"
     />
     <img
       src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/hgh75ywru6ic34xbnjuf.jpg"
       alt="Ingredientes naturales"
-      className="w-24 md:w-32 h-auto"
+      className="w-32 md:w-36 h-auto"
     />
   </div>
 </section>
