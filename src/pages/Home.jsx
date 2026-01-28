@@ -109,18 +109,14 @@ export default function Home() {
       alt="Sin conservadores"
       className="w-24 md:w-32 h-auto"
     />
+    
     <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/al0aullnrjeuroigkd5u.png"
-      alt="Sin saborizantes artificiales"
-      className="w-24 md:w-32 h-auto"
-    />
-    <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/s0pax4mnwmoufftbrqoi.png"
+      src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/x3h2dhyoe1w3tgjsglvw.jpg"
       alt="Producto artesanal"
       className="w-24 md:w-32 h-auto"
     />
     <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476683/ocqcbidknszsub8iyuu9.png"
+      src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/hgh75ywru6ic34xbnjuf.jpg"
       alt="Ingredientes naturales"
       className="w-24 md:w-32 h-auto"
     />
@@ -157,7 +153,7 @@ export default function Home() {
               <ul className="space-y-3 text-wineDark">
                 <li><strong>Tel:</strong> 3639 7058</li>
                 <li><strong>Cel:</strong> 33-3639-7058</li>
-                <li><strong>Email:</strong> contacto@petitplaisir.mx</li>
+                <li><strong>Email:</strong> marketing@pasteleriaspetit.com</li>
                 <li>
                   <strong>{t("home.contactAddress")}:</strong> Francisco I. Madero No. 163, Tlaquepaque Centro
                 </li>
