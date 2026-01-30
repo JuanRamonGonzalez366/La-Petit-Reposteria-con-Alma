@@ -56,23 +56,23 @@ export default function Products() {
     const VANILLA =
     "https://res.cloudinary.com/dzjupasme/image/upload/v1769808453/uqo8lhn4s9v8ijhbbl2a.png";
     const QUESO =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769808453/lza1rkcqqa4juxgzv4vh.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769813277/h24woaaolz7ubigcufw8.png";
     const TRES_LECHES =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769808453/qkgk83nuibvtzvu6eh5a.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769812639/yqyrzveppfdwulkribwy.png";
     const CAFE =
-    "https://res.cloudinary.com/dzjupasme/image/upload/c_fill,w_1024,h_1200/v1769808454/ajd5vmjaip8m4stfxb03.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769813534/wu8o7zvw0jberyvurd3b.png";
     const CLASICO =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769808454/furo5d8cteiudlhfy2tb.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769812605/upgkaepzuqmrtakgzhka.png";
     const GELATINA =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769809846/zjqlxgrlpbnzivknyvnx.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769812727/nqddcujogag7k01wq9qx.png";
     const SIN_AZUCAR =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769809846/ora3dkg0djopjpdhgulq.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769812845/qdgjw6ejro1mhtpjjywu.png";
     const GALLETERIA =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769809846/i4c7w3ntyekbjqe1jxd7.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769812929/pnmbzxgzlxk3482xki7w.png";
     const PANADERIA =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769809848/gesbwdzgxf6i608ftgl1.png";
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769813021/amns6cqprfwytvb1jbaa.png";
     const REPOSTERIA =
-    "https://res.cloudinary.com/dzjupasme/image/upload/v1769809846/tth3ih9oym6k0ww4jquc.png"; 
+    "https://res.cloudinary.com/dzjupasme/image/upload/v1769813137/lcgdojgt1mekimrhben9.png"; 
 
   const CATEGORY_IMAGES = {
     productsChoco: CHOCOLATE,
