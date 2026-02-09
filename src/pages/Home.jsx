@@ -80,48 +80,30 @@ export default function Home() {
       {/* ================= CONTENIDO ================= */}
       <main className="bg-cream pt-10 pb-6">
         {/* CTA Rebanada */}
-        <section className="font-maison neue bg-rosepier text-wine py-10 flex flex-col items-center text-center">
-  <div className="px-4 py-4">
-    <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
-      alt="La rebanada de tu antojo"
-      className="w-full max-w-md h-auto mb-6"
-    />
-  </div>
+  <section className="font-maison neue bg-rosepier text-wine py-10 flex flex-col items-center text-center">
+    <div className="px-4 py-4">
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1765908539/xm3exyhaz3sgt4rbjhkk.png"
+        alt="La rebanada de tu antojo"
+        className="w-full max-w-md h-auto mb-6"
+      />
+    </div>
 
-  <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
-    {t("home.ctaRebanadaText")}
-  </p>
+    <p className="text-lg mt-2 mb-6 max-w-4xl px-4">
+      {t("home.ctaRebanadaText")}
+    </p>
 
-  <a
-    href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
-  >
-    {t("home.ctaButton")}
-  </a>
+    <a
+      href="https://res.cloudinary.com/dzjupasme/image/upload/v1765899511/kxgjvmwlvdulddobsjly.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-red text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+    >
+      {t("home.ctaButton")}
+    </a>
 
-  {/* ICONOS DE CALIDAD */}
-  <div className="flex justify-center items-center gap-18 mt-8 px-4 overflow-x-auto">
-    <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/d0kkhcefwqvnatatmrya.png"
-      alt="Sin conservadores"
-      className="w-32 md:w-36 h-auto"
-    />
     
-    <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/x3h2dhyoe1w3tgjsglvw.jpg"
-      alt="Producto artesanal"
-      className="w-32 md:w-36 h-auto"
-    />
-    <img
-      src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/hgh75ywru6ic34xbnjuf.jpg"
-      alt="Ingredientes naturales"
-      className="w-32 md:w-36 h-auto"
-    />
-  </div>
-</section>
+  </section>
 
 
         {/* Separador rombos inferior */}
@@ -135,7 +117,41 @@ export default function Home() {
               bg-contain
             "
           />
+          
         </div>
+        {/* ICONOS DE CALIDAD */}
+    <div className="flex justify-center items-center gap-18 mt-8 mb-8 px-4 overflow-x-auto">
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/v1769476682/d0kkhcefwqvnatatmrya.png"
+        alt="Sin conservadores"
+        className="w-32 md:w-36 h-auto"
+      />
+      
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/x3h2dhyoe1w3tgjsglvw.jpg"
+        alt="Producto artesanal"
+        className="w-32 md:w-36 h-auto"
+      />
+      <img
+        src="https://res.cloudinary.com/dzjupasme/image/upload/e_background_removal/f_png/v1769612892/hgh75ywru6ic34xbnjuf.jpg"
+        alt="Ingredientes naturales"
+        className="w-32 md:w-36 h-auto"
+      />
+    </div>
+    {/* Separador rombos inferior */}
+        <div className="relative w-full h-12 sm:h-10 md:h-12 lg:h-16 xl:h-20 bg-cream overflow-hidden">
+          <div
+            className="
+              absolute inset-0
+              bg-[url('https://res.cloudinary.com/dzjupasme/image/upload/v1767882752/sqbbw3kig8xx4mminiwn.png')]
+              bg-repeat-x
+              bg-center
+              bg-contain
+            "
+          />
+          
+        </div>
+    
 
         {/* Contacto */}
         <section className="font-maison neue bg-cream py-16">

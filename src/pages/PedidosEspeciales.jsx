@@ -259,13 +259,16 @@ function SpecialModal({ item, lang, t, onClose }) {
           <X size={22} />
         </button>
 
-        <img
-          src={imgSrc}
-          alt={name}
-          className="w-full aspect-[4/3] object-cover rounded-lg mb-4 bg-cream"
-          loading="eager"
-          decoding="async"
-        />
+        <div className="w-full bg-cream rounded-xl border border-rose/20 p-2 mb-4">
+          <img
+            src={imgSrc}
+            alt={name}
+            className="w-full max-h-[70vh] object-contain rounded-lg"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
 
         <h2 className="text-2xl font-display text-wine mb-2 text-center">{name}</h2>
 
