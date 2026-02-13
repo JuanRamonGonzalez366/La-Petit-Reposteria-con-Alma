@@ -17,22 +17,52 @@ export default function PedidosEspeciales() {
   const [filtered, setFiltered] = useState([]);
   const [activeCategory, setActiveCategory] = useState("catego0");
   const [loading, setLoading] = useState(true);
+  const [showCategoryGrid, setShowCategoryGrid] = useState(true);
 
   // ✅ Modal “Ver más”
   const [selected, setSelected] = useState(null);
 
-  // 🔹 Categorías por clave (se traducen con i18n)
-  const categories = [
-    "catego0", // Todos
-    "catego1",
-    "catego2",
-    "catego3",
-    "catego4",
-    "catego5",
-    "catego6",
-    "catego7",
-    "catego8",
-  ];
+  // 🔹 Categorías por clave (se traducen con i18n) 
+  const categories = [ 
+  "catego0", 
+  "catego1", 
+  "catego2", 
+  "catego3", 
+  "catego4", 
+  "catego5", 
+  "catego6", 
+  "catego7", 
+  "catego8", ];
+
+  // 🔹 Imágenes por categoría
+const CATEGO1_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906960/m8gydfphc09kwlibb5up.png";
+const CATEGO2_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906571/ds7q9k2kamkwdmqucisr.png";
+const CATEGO3_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906754/wuneci4fzg0b0jdevgvk.png";
+const CATEGO4_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770652032/ded2up3nkrkbvrl6rfmj.png";
+const CATEGO5_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765901056/sallopl39yoljz7nwtgu.png";
+const CATEGO6_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765907619/xjspisgrfmm6yxp3k9sf.png";
+const CATEGO7_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770652586/nl39ybircsanmryyulx5.png";
+const CATEGO8_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770651295/a9rb62qcmiyuuhoo3l5n.png";
+
+const CATEGORY_IMAGES = {
+  catego1: CATEGO1_IMG,
+  catego2: CATEGO2_IMG,
+  catego3: CATEGO3_IMG,
+  catego4: CATEGO4_IMG,
+  catego5: CATEGO5_IMG,
+  catego6: CATEGO6_IMG,
+  catego7: CATEGO7_IMG,
+  catego8: CATEGO8_IMG,
+};
+
+const categoryCards = categories
+  .filter((k) => k !== "catego0")
+  .map((k) => ({
+    key: k,
+    label: t(`special.${k}`),
+    img: CATEGORY_IMAGES[k],
+  }));
+
 
   // 🔹 Cargar productos desde Firestore (colección "pedidosEspeciales")
   useEffect(() => {
@@ -53,15 +83,23 @@ export default function PedidosEspeciales() {
     return () => unsub();
   }, []);
 
-  // 🔹 Filtrar por categoría (usando la clave)
+    // 🔹 Filtrar por categoría (usando la clave)
   const filterByCategory = (catKey) => {
     setActiveCategory(catKey);
+
     if (catKey === "catego0") {
       setFiltered(items);
-    } else {
-      setFiltered(items.filter((p) => p.category === catKey || p.categoryKey === catKey));
+      setShowCategoryGrid(true); // 👈 vuelve a vitrinas
+      return;
     }
+
+    setShowCategoryGrid(false); // 👈 entra a categoría
+
+    setFiltered(
+      items.filter((p) => p.category === catKey || p.categoryKey === catKey)
+    );
   };
+
 
   // 🔹 Link de WhatsApp general (Pedidos Especiales)
   const whatsappGeneral =
@@ -97,6 +135,9 @@ export default function PedidosEspeciales() {
       </motion.div>
 
       {/* Filtros */}
+      {!showCategoryGrid && (
+  <>
+    
       <div className="font-maison neue flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((catKey) => (
           <button
@@ -112,6 +153,8 @@ export default function PedidosEspeciales() {
           </button>
         ))}
       </div>
+  </>
+)}
 
       {/* CTA WhatsApp general */}
       <div className="font-maison neue text-center mt-8 mb-8">
@@ -126,7 +169,39 @@ export default function PedidosEspeciales() {
         </a>
       </div>
 
+      {showCategoryGrid && (
+    <div className="max-w-6xl mx-auto mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categoryCards.map((cat) => (
+          <button
+            key={cat.key}
+            type="button"
+            onClick={() => filterByCategory(cat.key)}
+            className="group text-left border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition bg-white"
+          >
+            <div className="relative">
+              <img
+                src={cat.img}
+                alt={cat.label}
+                className="w-full aspect-[4/3] object-cover bg-cream group-hover:scale-[1.02] transition-transform"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-semibold tracking-wide px-4 text-center">
+                  {cat.label}
+                </h3>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+
+
       {/* Productos */}
+    {!showCategoryGrid && (
       <section className="font-maison neue max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence>
           {loading ? (
@@ -218,6 +293,7 @@ export default function PedidosEspeciales() {
           )}
         </AnimatePresence>
       </section>
+    )}
 
       {/* ✅ Modal tipo Products */}
       <AnimatePresence>
