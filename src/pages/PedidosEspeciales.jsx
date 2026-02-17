@@ -35,14 +35,14 @@ export default function PedidosEspeciales() {
   "catego8", ];
 
   // 🔹 Imágenes por categoría
-const CATEGO1_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906960/m8gydfphc09kwlibb5up.png";
+const CATEGO1_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1771202572/vlpizwdjxwutx92yue1d.png";
 const CATEGO2_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906571/ds7q9k2kamkwdmqucisr.png";
 const CATEGO3_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765906754/wuneci4fzg0b0jdevgvk.png";
 const CATEGO4_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770652032/ded2up3nkrkbvrl6rfmj.png";
 const CATEGO5_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765901056/sallopl39yoljz7nwtgu.png";
-const CATEGO6_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1765907619/xjspisgrfmm6yxp3k9sf.png";
-const CATEGO7_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770652586/nl39ybircsanmryyulx5.png";
-const CATEGO8_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770651295/a9rb62qcmiyuuhoo3l5n.png";
+const CATEGO6_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770953863/jact3e5jagatlqiqg1wf.png";
+const CATEGO7_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1771207542/jcru3xcwzlz5r5sjnl11.png";
+const CATEGO8_IMG = "https://res.cloudinary.com/dzjupasme/image/upload/v1770949723/zlmpk0yii2kkfdvzydzz.png";
 
 const CATEGORY_IMAGES = {
   catego1: CATEGO1_IMG,
